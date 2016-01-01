@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 02:42:43
--- :ddddddddddhyyddddddddddd: Modified: 2015-12-24 04:08:41
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-01 12:54:38
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -15,10 +15,10 @@
 
 local config = {}
 
-config.screen = {
-	width = 32,
-	height = 32
-}
+-- config.screen = {
+-- 	width = 32,
+-- 	height = 32
+-- }
 
 config.grid = {
 	width = 32,

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2015-12-26 15:13:41
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-01 12:54:10
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -32,6 +32,7 @@ end
 Class = require 'libs.Class'
 Drawable = require 'libs.Drawable'
 Asset = require 'libs.Asset'
+Color = require 'libs.Color'
 
 local img1, ext1 = 'hyptosis_tile-art-batch-1', '.png'
 
@@ -43,49 +44,78 @@ local x, y = 0, 0
 
 
 local map
-local size = 300
-local complx = 1
-local mult = 1
-local div = 4
+local size = 100
+local complx = 500
+local mult = 100
+local div = 1
 
+imgdt = love.image.newImageData(size, size)
 function render(f)
-	local imgdt = love.image.newImageData(size, size)
 	local img = render_noise(imgdt, f)
 
 	return img
 end
 
-function draw(imgdt, nbr, x, y)
-	if nbr < 0.4 then imgdt:setPixel(x, y, 34, 102, 102, nbr * 255) end
-	if nbr > 0.4 then imgdt:setPixel(x, y, 45, 136, 45, nbr * 255) end
-	if nbr > 0.75 then imgdt:setPixel(x, y, 85, 39, 0, nbr * 255) end
-	if nbr > 0.9 then imgdt:setPixel(x, y, 255, 255, 255, nbr * 255) end
+function draw(nbr)
+	if nbr > 0.9 then return 255 * nbr, 255 * nbr , 255 * nbr, 255 end
+	if nbr > 0.75 then return 85 * nbr,  39 * nbr ,   0 * nbr, 255 end
+	if nbr > 0.5 then return  45 * nbr, 136 * nbr ,  45 * nbr, 255 end
+	if nbr > 0.4 then return  217 * nbr, 196 * nbr ,  21 * nbr, 255 end
+	if nbr < 0.4 then return  34 * nbr, 102 * nbr , 102 * nbr, 255 end
 end
 
 function render_noise(imgdt, f)
-	for i = 0, size - 1 do
-		for j = 0, size - 1 do
-			local nbr = love.math.noise(
-				(((i - size / 2) * complx / mult) + x / mult) / size,
-				(((j - size / 2) * complx / mult) + y / mult) / size
-			)
 
-			local nbr2 = love.math.noise(
-				(((i - size / 2) * complx / 255) + x / 255) / size,
-				(((j - size / 2) * complx / 255) + y / 255) / size
-			)
+	local s = 100
 
-			draw(imgdt, f(nbr, nbr2), i, j)
-		end
+	function draw_pixel(i, j, r, g, b, a)
+
+		-- I = love.math.noise(
+		-- 	((i - size / 2) * complx + x) / size,
+		-- 	((j - size / 2) * complx + y) / size
+		-- )
+
+		-- II = love.math.noise(
+		-- 	((i - size / 2) * complx + x) / 2 / size,
+		-- 	((j - size / 2) * complx + y) / 2 / size
+		-- )
+
+		-- IV = love.math.noise(
+		-- 	((i - size / 2) * complx + x) / 4 / size,
+		-- 	((j - size / 2) * complx + y) / 4 / size
+		-- )
+
+		-- X = love.math.noise(
+		-- 	((i - size / 2) * complx + x) / 10 / size,
+		-- 	((j - size / 2) * complx + y) / 10 / size
+		-- )
+
+		C = love.math.noise(
+			((i - size / 2) * complx + x) / 10 / size,
+			((j - size / 2) * complx + y) / 10 / size
+		)
+
+		CC = love.math.noise(
+			((i - size / 2) * complx + x) / 100 / size,
+			((j - size / 2) * complx + y) / 100 / size
+		)
+
+		M = love.math.noise(
+			((i - size / 2) * complx + x) / 1000 / size,
+			((j - size / 2) * complx + y) / 1000 / size
+		)
+
+		return f()
 	end
 
+	imgdt:mapPixel(draw_pixel)
 	local img = love.graphics.newImage(imgdt)
 	img:setFilter('nearest', 'nearest')
 	return img
 end
 
 
-local map_screen = math.min(love.graphics.getDimensions())
+local map_screen = 800
 local map_scale = map_screen / size
 
 function love.wheelmoved(x, y)
@@ -94,7 +124,10 @@ function love.wheelmoved(x, y)
 end
 
 function love.keypressed(key)
-
+	if key == 'home' then div = div + 1 end
+	if key == 'end' then
+		if div > 1 then div = div - 1 end
+	end
 end
 
 function love.load()
@@ -106,37 +139,65 @@ function love.update(dt)
 	if love.keyboard.isDown('left') then x = x - complx end
 	if love.keyboard.isDown('right') then x = x + complx end
 
-	if love.keyboard.isDown('pageup') then complx = complx + 10 end
+	if love.keyboard.isDown('pageup') then
+		complx = complx + 10
+		-- div = div + 1
+		 end
 	if love.keyboard.isDown('pagedown') then
-		if complx > 0 then complx = complx - 10 end
+		if complx > 1 then
+		complx = complx - 10
+		-- div = div - 1
+		end
 	end
-	if love.keyboard.isDown('kp1') then mult = mult + 1 end
-	if love.keyboard.isDown('kp2') then
-		if mult > 0 then mult = mult - 1 end
+	if love.keyboard.isDown('a') then mult = mult + 1 end
+	if love.keyboard.isDown('z') then
+		if mult > 1 then mult = mult - 1 end
 	end
-	if love.keyboard.isDown('kp4') then div = div + 1 end
-	if love.keyboard.isDown('kp5') then
-		if div > 0 then div = div - 1 end
-	end
+	-- if love.keyboard.isDown('home') then div = div + 1 end
+	-- if love.keyboard.isDown('end') then
+	-- 	if div > 1 then div = div - 1 end
+	-- end
 	-- img:update(dt)
-	imgmap = render( function (little, big)
-		return big
-	end)
-	imgmap2 = render( function (little, big)
-		-- print((little * 0.1) * (big * 0.9))
-		-- if (little < big ) then
-			return little * (1/div) + big * ((div - 1)/div)
-		-- else
-			-- return little * big
-		-- end
-	end)
+	imgmap = render(function ()
+		if M * ( 1 / 16) > CC * (15 / 16) then return  Color:extract('white') end
+		if M * ( 2 / 16) > CC * (14 / 16) then return  Color:extract('brown') end
+		if M * ( 9 / 16) > C * ( 7 / 16) then return  Color:extract('green') end
+		if M * ( 10 / 16) > C * ( 6 / 16) then return  Color:extract('yellow') end
+
+		return Color:extract('blue')
+		end)
+	-- imgmap2 = render(function ()
+	-- 	if M * ( 1 / 16) > C * (15 / 16) then return  Color:extract('white') end
+	-- 	if M * ( 4 / 16) > C * (12 / 16) then return  Color:extract('brown') end
+	-- 	if M * ( 8 / 16) > C * ( 8 / 16) then return  Color:extract('green') end
+	-- 	if M * (10 / 16) > C * ( 6 / 16) and M * (10 / 16) > X * ( 6 / 16) then return  Color:extract('yellow') end
+
+	-- 	return Color:extract('blue')
+	-- 	end)
+	-- imgmap3 = render( dofile('imgmap3.lua') )
+	-- imgmap4 = render( dofile('imgmap4.lua') )
 end
 
 function love.draw()
+	love.graphics.draw(imgmap, 0, 0, 0, map_scale, map_scale)
+	-- love.graphics.draw(imgmap2, map_screen, 0, 0, map_scale, map_scale)
+
+	if complx < 100 then
+
+	local w = love.graphics.getWidth() / 2 / complx
+	local h = love.graphics.getHeight() / complx
+	for i=0,complx do
+		for j=0,complx do
+			-- love.graphics.rectangle('line', i * w + math.min(love.graphics.getDimensions()), j * h, w, h)
+			-- love.graphics.setColor(255, 255, 255, 255)
+		end
+	end
 	-- img:draw(scale, x, y)
 	-- img2:draw(scale, x, y)
-	love.graphics.draw(imgmap, 0, 0, 0, map_scale, map_scale)
-	love.graphics.draw(imgmap2, math.min(love.graphics.getDimensions()), 0, 0, map_scale, map_scale)
+
+end
+
 	love.graphics.print(complx)
 	love.graphics.print(mult, 0, 15)
+	love.graphics.print(div, 0, 30)
 end
