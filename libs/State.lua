@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-03 13:17:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-03 14:07:51
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-03 14:28:55
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -51,17 +51,45 @@ State.Test = {
 	before = function (self)
 		self.text = 'toto'
 		self.time = 0
-		self.test =  UI.Scrollarea(200, 200, 2000, 2000, {
+
+		self.test =  UI.Scrollarea(0, 0, 400, 20000, {
 			extensions = {Theme.Scrollarea},
 			area_width = 400,
-			area_height = 400,
-			-- show_scrollbars = true,
+			area_height = love.graphics.getHeight(),
+			show_scrollbars = true,
 			dynamic_scroll_set = true
 		})
-		self.test:addElement(UI.Button(0, 0, 50, 50, {extensions = {Theme.Button}}))
-		self.test:addElement(UI.Button(600, 0, 50, 50, {extensions = {Theme.Button}}))
-		self.test:addElement(UI.Button(1200, 0, 50, 50, {extensions = {Theme.Button}}))
-		self.test:addElement(UI.Button(1800, 0, 50, 50, {extensions = {Theme.Button}}))
+
+		local i, j = 0, 0
+		for index,v in ipairs(Dictionnary['hyptosis_tile-art-batch-1']) do
+			self.test:addElement(UI.Frame(0 + i, 0 + j, 64, 64, {extensions = {Theme.Frame,
+				{
+					draw = function (self) love.graphics.setColor(255, 255, 255, 255)
+						v:draw(self.x, self.y, 1.5)
+					end
+				}
+			}}))
+			i = i + 64
+			if i + 64 > 400 then
+				i = 0
+				j = j + 64
+			end
+		end
+		-- local i, j = 0, 0
+		for index,v in ipairs(Dictionnary['hyptosis_til-art-batch-2']) do
+			self.test:addElement(UI.Frame(0 + i, 0 + j, 64, 64, {extensions = {Theme.Frame,
+				{
+					draw = function (self) love.graphics.setColor(255, 255, 255, 255)
+						v:draw(self.x, self.y, 1.5)
+					end
+				}
+			}}))
+			i = i + 64
+			if i + 64 > 400 then
+				i = 0
+				j = j + 64
+			end
+		end
 	end,
 	update = function (self, dt)
 		self.time = self.time + dt
@@ -69,8 +97,8 @@ State.Test = {
 	end,
 	draw = function (self)
 		self.test:draw()
-		love.graphics.setColor(Color:extract('white'))
-		love.graphics.print(State.current)
+		-- love.graphics.setColor(Color:extract('white'))
+		-- love.graphics.print(State.current)
 		-- love.graphics.print(inspect(self), 0, 15)
 	end
 }
