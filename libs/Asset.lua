@@ -6,33 +6,37 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 01:44:25
--- :ddddddddddhyyddddddddddd: Modified: 2015-12-24 04:05:51
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-03 13:31:57
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-local QuadList = require 'libs.QuadList'
+local Loader = require 'libs.Loader'
 local Class = require 'libs.Class'
 local Asset = Class:expand()
 
 function Asset.load(filename, format)
-	local file_img = 'assets/'..filename..format
-	local file_config = 'assets/'..filename..'.lua'
+	local fileimg = 'assets/'..filename..'.'..format
+	local fileconfig = 'assets/'..filename..'.lua'
 
 	local config, img
-	if love.filesystem.exists(file_config) then
-		config = dofile(file_config)
-		config.file = file_config
-	else print('No such file '..file_config) end
 
-	if (love.filesystem.exists(file_img)) then
-		img = love.graphics.newImage(file_img)
+	if love.filesystem.exists(fileconfig) then
+		config = dofile(fileconfig)
+		config.file = fileconfig
+	else return print('No such file '..fileconfig) end
+
+	if (love.filesystem.exists(fileimg)) then
+		img = love.graphics.newImage(fileimg)
 		img:setFilter( 'nearest', 'nearest')
-	else print('No such file '..file_img) end
+	else return print('No such file '..fileimg) end
 
-	return config, img
+	Loader[ format:upper() ]:load(filename, config, img)
+
+	print(filename)
+	return filename
 end
 
 return Asset

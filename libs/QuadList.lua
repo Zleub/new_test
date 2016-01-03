@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 02:09:11
--- :ddddddddddhyyddddddddddd: Modified: 2015-12-24 03:41:33
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-03 11:28:47
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -18,7 +18,7 @@ local QuadList = Class:expand()
 
 function QuadList.create(config, image)
 	local i, j = 0, 0
-	local q = {}
+	local q = { [0] = image }
 	local w, h = image:getDimensions()
 
 	while j < h do
@@ -31,20 +31,6 @@ function QuadList.create(config, image)
 		end
 		j = j + config.height
 	end
-
-	-- q.images = {}
-	-- local canvas = love.graphics.newCanvas(tileset.width, tileset.height)
-	-- love.graphics.setCanvas(canvas)
-
-	-- for i,v in ipairs(q) do
-	-- 	canvas:clear()
-	-- 	love.graphics.draw(q[0], q[i])
-	-- 	local img = love.graphics.newImage(canvas:getImageData())
-	-- 	img:setFilter('nearest')
-	-- 	table.insert(q.images, img)
-	-- end
-
-	-- love.graphics.setCanvas()
 
 	return q
 end
