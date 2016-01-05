@@ -6,14 +6,12 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-03 13:47:27
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-05 18:43:50
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
-
-print(_VERSION)
 
 inspect = require 'libs.inspect'
 
@@ -37,7 +35,6 @@ Asset = require 'libs.Asset'
 Color = require 'libs.Color'
 
 UI = require 'libs.ui'
-UI.registerEvents()
 Theme = require 'Theme'
 
 Dictionnary = {}
@@ -47,6 +44,7 @@ State = require 'libs.State'
 local scale = 4
 
 function love.wheelmoved(x, y)
+	State:wheelmoved(x, y)
 end
 
 function love.keypressed(key)
@@ -55,7 +53,8 @@ end
 function love.load()
 	State('Loading')
 	Loader:push( Asset.load, 'hyptosis_tile-art-batch-1', 'png' )
-	Loader:push( Asset.load, 'hyptosis_til-art-batch-2', 'png' )
+	Loader:push( Asset.load, 'hyptosis_tile-art-batch-2', 'png' )
+	UI.registerEvents()
 end
 
 function love.update(dt)

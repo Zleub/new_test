@@ -130,7 +130,7 @@ TestTheme.Scrollarea.draw = function(self)
             love.graphics.rectangle('fill', self.x + self.x_offset + self.area_width, self.y + self.y_offset + self.scroll_button_height,
                                             self.scroll_button_width, self.area_height - 2*self.scroll_button_height)
 
-            love.graphics.setColor(16, 16, 16)
+            love.graphics.setColor(32, 32, 32)
             love.graphics.rectangle('fill', self.vertical_scrollbar_button.x, self.vertical_scrollbar_button.y,
                                             self.vertical_scrollbar_button.w, self.vertical_scrollbar_button.h)
         end
@@ -139,7 +139,7 @@ TestTheme.Scrollarea.draw = function(self)
             love.graphics.rectangle('fill', self.x + self.x_offset + self.scroll_button_width, self.y + self.y_offset + self.area_height,
                                             self.area_width - 2*self.scroll_button_width, self.scroll_button_height)
 
-            love.graphics.setColor(16, 16, 16)
+            love.graphics.setColor(32, 32, 32)
             love.graphics.rectangle('fill', self.horizontal_scrollbar_button.x, self.horizontal_scrollbar_button.y,
                                             self.horizontal_scrollbar_button.w, self.horizontal_scrollbar_button.h)
         end
