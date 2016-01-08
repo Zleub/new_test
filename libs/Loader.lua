@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-03 13:32:40
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-08 15:55:48
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -16,6 +16,10 @@
 local QuadList = require 'libs.QuadList'
 local Class = require 'libs.Class'
 local Loader = Class:expand()
+
+function Loader:getSize()
+	return #self.queue
+end
 
 function Loader:load()
 	if self.queue and self.queue[1] then
@@ -115,14 +119,12 @@ Loader.PNG.optionalAPI = {
 
 Loader.PNG.load = function (self, filename, config, img)
 	config = Loader.check(self, config)
-	if not config then return end
 
 	local d = Drawable:expand()
-	d.scale = config.screen.width / img:getWidth()
 
 	Dictionnary[filename] = {}
 
-	if config.grid then
+	if config and config.grid then
 		local quadlist = QuadList.create(config.grid, img)
 		local canvas = love.graphics.newCanvas(config.grid.width, config.grid.height)
 		local img

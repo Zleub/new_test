@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 01:44:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-03 13:31:57
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-08 15:56:02
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -26,7 +26,11 @@ function Asset.load(filename, format)
 	if love.filesystem.exists(fileconfig) then
 		config = dofile(fileconfig)
 		config.file = fileconfig
-	else return print('No such file '..fileconfig) end
+	else
+		print('No such file '..fileconfig)
+		config = {}
+		config.file = fileconfig
+	end
 
 	if (love.filesystem.exists(fileimg)) then
 		img = love.graphics.newImage(fileimg)
@@ -34,8 +38,6 @@ function Asset.load(filename, format)
 	else return print('No such file '..fileimg) end
 
 	Loader[ format:upper() ]:load(filename, config, img)
-
-	print(filename)
 	return filename
 end
 

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-05 18:43:50
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-08 15:53:59
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -34,7 +34,7 @@ Drawable = require 'libs.Drawable'
 Asset = require 'libs.Asset'
 Color = require 'libs.Color'
 
-UI = require 'libs.ui'
+Suit = require 'libs.suit'
 Theme = require 'Theme'
 
 Dictionnary = {}
@@ -51,10 +51,14 @@ function love.keypressed(key)
 end
 
 function love.load()
-	State('Loading')
 	Loader:push( Asset.load, 'hyptosis_tile-art-batch-1', 'png' )
 	Loader:push( Asset.load, 'hyptosis_tile-art-batch-2', 'png' )
-	UI.registerEvents()
+	Loader:push( Asset.load, 'hyptosis_tile-art-batch-3', 'png' )
+	Loader:push( Asset.load, 'hyptosis_tile-art-batch-4', 'png' )
+	Loader:push( Asset.load, 'hyptosis_tile-art-batch-5', 'png' )
+	Loader:push( Asset.load, 'pict', 'png' )
+
+	State('Loading')
 end
 
 function love.update(dt)
