@@ -1,28 +1,31 @@
 local inspect = require 'libs.inspect'
 
+function debug(...)
+	if ({...})[1] == nil then print('nil') end
+
+	for i,v in ipairs({...}) do
+		print(inspect(v))
+	end
+end
+
 local Class = require 'libs.Class'
+Class.name = 'Class'
+debug('Class', Class)
+
 local newClass = Class:expand()
+newClass.name = 'newClass'
+debug('newClass', newClass)
 
-function newClass:setX(x) self.x = x end
+local ClassInstance = Class:create()
+ClassInstance.name = 'ClassInstance'
+debug('Class', Class)
+debug('ClassInstance', ClassInstance)
+debug('ClassInstance.name', ClassInstance.name)
+debug('ClassInstance.grettings()', ClassInstance.grettings())
 
-local newI = newClass:create()
-print('newI', inspect(newI))
+local newClassInstance = newClass:create()
+newClassInstance.name = 'newClassInstance'
+debug('newClassInstance', newClassInstance)
+debug('newClassInstance.name', newClassInstance.name)
+debug('newClassInstance.grettings()', newClassInstance.grettings())
 
-newI:setX(42)
-print('newI', inspect(newI))
-
-local newClass2 = newI:expand()
-print('newClass2', inspect(newClass2))
-
-newI:setX(41)
-print('newI', inspect(newI))
-
-newClass2:setX(43)
-print('newClass2', inspect(newClass2))
-
-local test = newClass2:create()
-print(inspect(test))
-
-test:setX(44)
-print(test.x)
-print(inspect(test))

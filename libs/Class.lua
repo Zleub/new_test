@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:25:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 15:25:16
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 18:11:10
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -21,6 +21,10 @@ function Class.grettings()
 	print('Class.grettings')
 end
 
+function Class.dump(self)
+	debug(self)
+end
+
 function Class.expand(baseClass)
 	local new = {}
 
@@ -29,6 +33,18 @@ function Class.expand(baseClass)
 	end
 
 	setmetatable(new, baseClass)
+	return new
+end
+
+function Class.create(baseClass)
+	local new = {}
+
+	for k,v in pairs(baseClass) do
+		new[k] = v
+	end
+
+	setmetatable(new, getmetatable(baseClass))
+
 	return new
 end
 
