@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-08 15:55:48
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 15:26:50
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -122,6 +122,7 @@ Loader.PNG.load = function (self, filename, config, img)
 
 	local d = Drawable:expand()
 
+	print('Loading\t'..filename)
 	Dictionnary[filename] = {}
 
 	if config and config.grid then
@@ -131,6 +132,7 @@ Loader.PNG.load = function (self, filename, config, img)
 
 		love.graphics.setCanvas(canvas)
 		for i,v in ipairs(quadlist) do
+			love.graphics.clear()
 			love.graphics.draw(quadlist[0], quadlist[i])
 			img = love.graphics.newImage(canvas:newImageData())
 			img:setFilter('nearest')

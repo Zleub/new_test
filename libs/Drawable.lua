@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:21:33
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-03 11:23:51
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 15:25:42
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -14,6 +14,7 @@
 --          .-::::-`
 
 local Class = require 'libs.Class'
+
 local Drawable = Class:expand()
 
 Drawable.x = 0

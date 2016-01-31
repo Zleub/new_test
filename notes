@@ -1,5 +1,16 @@
-How many noises and how do you manage them
+Hierarchy Model
 
-You make a parametric module
+[Class] : grettings() expand()
+  |-> [Asset] : load()
+  |-> [Drawable] : update() draw()
+  |-> [Loader] : getSize() load() push() check() validator() error()
+  |-> [QuadList] : create()
 
--> resize, movement
+[Color]
+[Map]
+[State]
+[UI]
+
+-------------------------------
+
+Use Model

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 01:44:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-08 15:56:02
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 15:24:19
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -15,6 +15,7 @@
 
 local Loader = require 'libs.Loader'
 local Class = require 'libs.Class'
+
 local Asset = Class:expand()
 
 function Asset.load(filename, format)

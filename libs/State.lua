@@ -1,3 +1,4 @@
+
 --          `--::-.`
 --      ./shddddddddhs+.
 --    :yddddddddddddddddy:
@@ -6,7 +7,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-03 13:17:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-08 16:11:31
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 15:35:22
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -14,6 +15,7 @@
 --          .-::::-`
 
 local Loader = require 'libs.Loader'
+local UI = require 'libs.UI'
 
 local State = {}
 State.once_t = {}
@@ -77,14 +79,9 @@ State.Test = {
 	update = function (self, dt)
 		self.time = self.time + dt
 
-		Suit.layout:reset(0,0, 0,0)
-		local state = Suit.Button("Click?", Suit.layout:row(200,30))
-		if state.hit then print("Ouch!") end
-
 	end,
 	draw = function (self)
 		love.graphics.print(self.time, 0, love.graphics.getHeight() - 15)
-		Suit.draw()
 	end,
 	wheelmoved = function (self, x, y)
 	end
