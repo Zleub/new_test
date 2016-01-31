@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 02:09:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-03 11:28:47
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 18:06:47
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -24,8 +24,7 @@ function QuadList.create(config, image)
 	while j < h do
 		i = 0
 		while i < w do
-			table.insert(q,
-				love.graphics.newQuad(i, j, config.width, config.height,
+			table.insert(q, love.graphics.newQuad(i, j, config.width, config.height,
 					w, h))
 			i = i + config.width
 		end

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:21:33
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 15:25:42
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 17:55:00
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -20,6 +20,10 @@ local Drawable = Class:expand()
 Drawable.x = 0
 Drawable.y = 0
 Drawable.time = 1
+
+function Drawable:getSize()
+	return self.image:getWidth() * self.scale, self.image:getHeight() * self.scale
+end
 
 function Drawable:update(dt)
 	self.time = self.time + dt * 10

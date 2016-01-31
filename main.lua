@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 15:35:33
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 16:25:23
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -49,7 +49,7 @@ function love.keypressed(key)
 end
 
 function love.load()
-	debug(Asset)
+	debug(_VERSION)
 	Loader:push( Asset.load, 'pict', 'png' )
 	Loader:push( Asset.load, 'hyptosis_tile-art-batch-1', 'png' )
 	Loader:push( Asset.load, 'hyptosis_tile-art-batch-2', 'png' )

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 15:26:50
+-- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 18:10:13
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -120,31 +120,30 @@ Loader.PNG.optionalAPI = {
 Loader.PNG.load = function (self, filename, config, img)
 	config = Loader.check(self, config)
 
-	local d = Drawable:expand()
-
 	print('Loading\t'..filename)
 	Dictionnary[filename] = {}
 
 	if config and config.grid then
 		local quadlist = QuadList.create(config.grid, img)
 		local canvas = love.graphics.newCanvas(config.grid.width, config.grid.height)
-		local img
 
 		love.graphics.setCanvas(canvas)
 		for i,v in ipairs(quadlist) do
 			love.graphics.clear()
 			love.graphics.draw(quadlist[0], quadlist[i])
-			img = love.graphics.newImage(canvas:newImageData())
-			img:setFilter('nearest')
 
-			local d = Drawable:expand()
-			d.scale = config.screen.width / img:getWidth()
-			d.image = img
+			local d = Drawable:create()
+			local new_img = love.graphics.newImage(canvas:newImageData())
+			new_img:setFilter('nearest')
+
+			d.scale = config.screen.width / new_img:getWidth()
+			d.image = new_img
 
 			table.insert(Dictionnary[filename], d)
 		end
 		love.graphics.setCanvas()
 	else
+		local d = Drawable:create()
 		d.image = img
 
 		Dictionnary[filename][1] = d
