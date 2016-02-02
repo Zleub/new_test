@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-02 01:51:24
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-02 17:48:34
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -46,6 +46,7 @@ function love.wheelmoved(x, y)
 end
 
 function love.keypressed(key)
+	State:keypressed(key)
 end
 
 function love.load()

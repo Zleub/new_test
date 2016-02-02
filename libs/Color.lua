@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-31 13:16:27
--- :ddddddddddhyyddddddddddd: Modified: 2015-12-31 17:45:24
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-02 17:36:07
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -32,5 +32,6 @@ Color.brown = { 85, 39 , 0, 255 }
 Color.green = { 45, 136 , 45, 255 }
 Color.yellow = { 217, 196 , 21, 255 }
 Color.blue = { 34, 102 , 102, 255 }
+Color.grey = { 127, 127 , 127, 255 }
 
 return Color
