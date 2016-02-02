@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-11 15:50:56
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-29 20:54:18
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-02 02:02:58
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -45,6 +45,8 @@ function love.load()
 			float x = pow( int(((screen_coords.x - x) - width / 2) / resolution), 2) ;
 			float y = pow( int(((screen_coords.y - y) - height / 2) / resolution), 2) ;
 
+			vec4 toto = texture2D(texture, texture_coords);
+
 			float t = 0. ;
 			float u = 0. ;
 			float v = 0. ;
@@ -56,7 +58,7 @@ function love.load()
 
 			vec4 test = vec4(t, u, v, 1);
 
-			return test;
+			return toto;
 		}
 	]] )
 

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-03 13:17:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 18:11:52
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-02 01:54:53
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -82,6 +82,7 @@ State.Test = {
 	draw = function (self)
 		love.graphics.print(self.time, 0, love.graphics.getHeight() - 15)
 		Dictionnary['hyptosis_tile-art-batch-1'][1]:draw(0, 0, 2)
+		Dictionnary['Untitled_master'][1]:draw(100, 100, 12)
 	end,
 	wheelmoved = function (self, x, y)
 	end
