@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-03 13:17:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-02 19:23:39
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-03 12:02:25
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -96,7 +96,7 @@ State.Test = {
 	end,
 	update = function (self, dt)
 		self.time = self.time + dt / 2.5
-		self.test = math.cos(self.time) * 2
+		self.test = math.cos(self.time) * 4
 
 		self.shader1 = love.graphics.newShader('shaders/test_shader.glsl')
 		self.shader1:send("width", 16 * 12)
@@ -128,14 +128,18 @@ State.Test = {
 		love.graphics.rectangle('fill', 100, 0, 16 * 12, 18 * 12)
 		love.graphics.setShader()
 
-		self.shader1:send("x", 100)
-		self.shader1:send("y", 150)
-		love.graphics.setShader(self.shader1)
-		Dictionnary['Untitled_master'][1]:draw(100, 150, 12)
+		self.shader2:send("x", 100)
+		self.shader2:send("y", 250)
+		self.shader2:send("width", 58)
+		self.shader2:send("height", 32)
+		love.graphics.setShader(self.shader2)
+		Dictionnary['hyptosis_tile-art-batch-1'].banner:draw(100, 250, 2)
 		love.graphics.setShader()
 
 		self.shader2:send("x", 300)
 		self.shader2:send("y", 0)
+		self.shader2:send("width", 16 * 12)
+		self.shader2:send("height", 18 * 12)
 		love.graphics.setShader(self.shader2)
 		love.graphics.rectangle('fill', 300, 0, 16 * 12, 18 * 12)
 		love.graphics.setShader()
@@ -157,16 +161,16 @@ State.Test = {
 
 
 
-		Dictionnary['Untitled_master'][1]:draw(100, 300, 12)
+		Dictionnary['hyptosis_tile-art-batch-1'].banner:draw(100, 400, 2)
 		Dictionnary['Untitled_master'][2]:draw(300, 300, 12)
 	end,
 	wheelmoved = function (self, x, y)
 		self.cmp  = self.cmp + y
 	end,
 	keypressed = function (self, key)
-		if key == 'kp+' then
+		if key == 'a' then
 			self.test = self.test + 1
-		elseif key == 'kp-' then
+		elseif key == 'z' then
 			self.test = self.test - 1
 		end
 	end

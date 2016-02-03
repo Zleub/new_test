@@ -23,7 +23,7 @@ vec4 effect( vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords 
 	float u = 0. ;
 	float v = 0. ;
 	// if ( (x + y) < (pow(size / resolution, 2)) ) {
-		t = x * y;
+		t = cos(x * y);
 		// u = tan(x + y) / tan(x * y);
 		// v = tan(x + y) / tan(x * y);
 	// }
