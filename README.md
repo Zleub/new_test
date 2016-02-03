@@ -2,5 +2,5 @@
 
 https://love2d.org/
 ```
-love .
+~/Applications/love.app/Contents/MacOS/love .
 ```

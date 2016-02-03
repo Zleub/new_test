@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-03 13:17:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-03 12:02:25
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-03 15:21:00
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -103,8 +103,8 @@ State.Test = {
 		self.shader1:send("height", 18 * 12)
 
 		self.shader2 = love.graphics.newShader('shaders/test_shader2.glsl')
-		self.shader2:send("width", 16 * 12)
-		self.shader2:send("height", 18 * 12)
+		self.shader2:send("width", 16 * 6)
+		self.shader2:send("height", 18 * 6)
 
 		self.shader1:send("resolution", self.cmp)
 		self.shader2:send("resolution", self.cmp)
@@ -145,9 +145,11 @@ State.Test = {
 		love.graphics.setShader()
 
 		self.shader2:send("x", 300)
-		self.shader2:send("y", 150)
+		self.shader2:send("y", 250)
+		self.shader2:send("width", 16 * 6)
+		self.shader2:send("height", 18 * 6)
 		love.graphics.setShader(self.shader2)
-		Dictionnary['Untitled_master'][2]:draw(300, 150, 12)
+		Dictionnary['Untitled_master'][2]:draw(300, 250, 6)
 		love.graphics.setShader()
 
 		self.shader2:send("x", 500)

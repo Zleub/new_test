@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-02 17:48:34
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-03 16:01:57
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -29,15 +29,26 @@ function debug(...)
 	end
 end
 
-Class = require 'libs.Class'
-Drawable = require 'libs.Drawable'
-Asset = require 'libs.Asset'
-Color = require 'libs.Color'
+function print_require_list(...)
+	for k,v in ipairs({...}) do
+		local name = v:match('.+%.(%w+)')
+
+		_G[name] = require(v)
+		print(name..' required:', inspect( _G[name], {depth = 1} ) )
+	end
+end
 
 Dictionnary = {}
-UI = require 'libs.UI'
-Loader = require 'libs.Loader'
-State = require 'libs.State'
+
+print_require_list(
+	'libs.Class',
+	'libs.Drawable',
+	'libs.Asset',
+	'libs.Color',
+	'libs.UI',
+	'libs.Loader',
+	'libs.State'
+)
 
 local scale = 4
 

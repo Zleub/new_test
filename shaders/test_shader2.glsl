@@ -24,12 +24,12 @@ vec4 effect( vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords 
 	float v = 0. ;
 
 
-	if ((cos(x * y) - log(x) ) > test) {
+	if ((cos(x * y) * 2 - log(x + y) ) > test) {
 		t = 170. / 255  ;
 		u = 57. / 255  ;
 		v = 57. / 255 ;
 	}
-	else if (sin(x + y) - cos(x * y) < test) {
+	else if (cos(x * y) * 5 - cos(x * y) > test) {
 		t = 122. / 255  ;
 		u = 159. / 255  ;
 		v = 53. / 255 ;

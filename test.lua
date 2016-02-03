@@ -18,14 +18,8 @@ debug('newClass', newClass)
 
 local ClassInstance = Class:create()
 ClassInstance.name = 'ClassInstance'
-debug('Class', Class)
 debug('ClassInstance', ClassInstance)
-debug('ClassInstance.name', ClassInstance.name)
-debug('ClassInstance.grettings()', ClassInstance.grettings())
 
 local newClassInstance = newClass:create()
 newClassInstance.name = 'newClassInstance'
 debug('newClassInstance', newClassInstance)
-debug('newClassInstance.name', newClassInstance.name)
-debug('newClassInstance.grettings()', newClassInstance.grettings())
-
