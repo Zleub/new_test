@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-03 13:17:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-03 15:21:00
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-03 21:53:38
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -112,7 +112,7 @@ State.Test = {
 	end,
 	draw = function (self)
 
-		love.graphics.setColor(Color:extract('blue'))
+		love.graphics.setColor(Color:extract('grey'))
 		love.graphics.rectangle('fill', 0, 0, love.graphics.getDimensions())
 		love.graphics.setColor(Color:extract('white'))
 
@@ -131,7 +131,7 @@ State.Test = {
 		self.shader2:send("x", 100)
 		self.shader2:send("y", 250)
 		self.shader2:send("width", 58)
-		self.shader2:send("height", 32)
+		self.shader2:send("height", 64 + 64)
 		love.graphics.setShader(self.shader2)
 		Dictionnary['hyptosis_tile-art-batch-1'].banner:draw(100, 250, 2)
 		love.graphics.setShader()
@@ -175,6 +175,14 @@ State.Test = {
 		elseif key == 'z' then
 			self.test = self.test - 1
 		end
+
+		if key == 'w' then
+			self.cmp = self.cmp + 1
+		elseif key == 'x' then
+			self.cmp = self.cmp - 1
+		end
+
+
 	end
 }
 
