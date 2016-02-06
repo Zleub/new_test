@@ -26,36 +26,39 @@ end
 
 local test = {
 	binop = { '+', '-', '*', '/' },
-	operand = { 'x', 'y' ,'expression'},
+	operand = { 'x', 'y' },
 	expression = { 'operand', 'binop', 'operand' }
 }
 
 function iter(t)
-   local i = 1
-   return function (opt)
-	  local v = t[i]
-	  if opt then i = i + 1 end
-	  if i > #t then i = 1 end
-	  return v
-   end
+	local i = 1
+	return function (opt)
+		local v = t[i]
+
+		i = i + 1
+
+		if test[v] then
+			return iter(test[v])
+		end
+		-- if opt then i = i + 1 end
+		-- if i > #t then i = 1 end
+
+		return v
+	end
 end
 
-function A(t, max)
+function call(it, str)
+	str = str or ""
 
-   local l = 1
-   local reg = {}
-   while l < max do
-	  print(l)
+	local v = it()
 
-	  for i,v in ipairs(t) do
-		 if test[v] then
-			reg[i] = reg[i] or iter(test[v])
-			print( reg[i](true) )
-		 end
-	  end
-	  l = l + 1
-   end
+	if type(v) == 'string' then
+		return call(it, str..v)
+	elseif type(v) == 'function' then
+		return call(v, str)
+	end
 
+	return str
 end
 
-A(test.expression, 12)
+print( call( iter(test.expression) ) )
