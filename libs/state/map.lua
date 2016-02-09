@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:52:52
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 20:08:59
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 20:37:00
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -39,61 +39,35 @@ function Map:update(dt)
 
 	if love.keyboard.isDown('pageup') then
 		self.complx = self.complx + 10
-		-- div = div + 1
 		 end
 	if love.keyboard.isDown('pagedown') then
 		if self.complx > 1 then
-		self.complx = self.complx - 10
-		-- div = div - 1
+			self.complx = self.complx - 10
 		end
 	end
+
 	if love.keyboard.isDown('a') then
-		self.mult = self.mult + 1 end
-	if love.keyboard.isDown('z') then
-		if self.mult > 1 then self.mult = self.mult - 1 end
+		self.mult = self.mult + 1
 	end
-	-- if love.keyboard.isDown('home') then div = div + 1 end
-	-- if love.keyboard.isDown('end') then
-	-- 	if div > 1 then div = div - 1 end
-	-- end
-	-- img:update(dt)
-	self.imgmap = self:render_noise(function ()
-		if M * ( 1 / 16) > C * (15 / 16) then return  Color:extract('white') end
-		if M * ( 2 / 16) > C * (14 / 16) then return  Color:extract('brown') end
-		if M * ( 9 / 16) > C * ( 7 / 16) then return  Color:extract('green') end
-		if M * ( 10 / 16) > C * ( 6 / 16) then return  Color:extract('yellow') end
+	if love.keyboard.isDown('z') then
+		if self.mult > 1 then
+			self.mult = self.mult - 1
+		end
+	end
+
+	self.img = self:render_noise(function ()
+		if C * ( 1 / 16) > M * (15 / 16) then return  Color:extract('white') end
+		if C * ( 2 / 16) > M * (14 / 16) then return  Color:extract('brown') end
+		if C * ( 9 / 16) > M * ( 7 / 16) then return  Color:extract('green') end
+		if C * ( 10 / 16) > M * ( 6 / 16) then return  Color:extract('yellow') end
 
 		return Color:extract('blue')
 		end)
-	-- imgmap2 = render(function ()
-	-- 	if M * ( 1 / 16) > C * (15 / 16) then return  Color:extract('white') end
-	-- 	if M * ( 4 / 16) > C * (12 / 16) then return  Color:extract('brown') end
-	-- 	if M * ( 8 / 16) > C * ( 8 / 16) then return  Color:extract('green') end
-	-- 	if M * (10 / 16) > C * ( 6 / 16) and M * (10 / 16) > X * ( 6 / 16) then return  Color:extract('yellow') end
-
-	-- 	return Color:extract('blue')
-	-- 	end)
-	-- imgmap3 = render( dofile('imgmap3.lua') )
-	-- imgmap4 = render( dofile('imgmap4.lua') )
 end
 
 function Map:draw()
-	love.graphics.draw(self.imgmap, 0, 0, 0, self.map_scale, self.map_scale)
+	love.graphics.draw(self.img, 0, 0, 0, self.map_scale, self.map_scale)
 	-- love.graphics.draw(imgmap2, map_screen, 0, 0, map_scale, map_scale)
-
-	if self.complx < 100 then
-
-	local w = love.graphics.getWidth() / 2 / self.complx
-	local h = love.graphics.getHeight() / self.complx
-	for i=0,self.complx do
-		for j=0,self.complx do
-			-- love.graphics.rectangle('line', i * w + math.min(love.graphics.getDimensions()), j * h, w, h)
-			-- love.graphics.setColor(255, 255, 255, 255)
-		end
-	end
-	-- img:draw(scale, x, y)
-	-- img2:draw(scale, x, y)
-	end
 end
 
 function Map:keypressed(key)
@@ -114,26 +88,6 @@ function Map:render_noise(f)
 	local s = 100
 
 	function draw_pixel(i, j, r, g, b, a)
-
-		-- I = love.math.noise(
-		-- 	((i - size / 2) * complx + x) / size,
-		-- 	((j - size / 2) * complx + y) / size
-		-- )
-
-		-- II = love.math.noise(
-		-- 	((i - size / 2) * complx + x) / 2 / size,
-		-- 	((j - size / 2) * complx + y) / 2 / size
-		-- )
-
-		-- IV = love.math.noise(
-		-- 	((i - size / 2) * complx + x) / 4 / size,
-		-- 	((j - size / 2) * complx + y) / 4 / size
-		-- )
-
-		-- X = love.math.noise(
-		-- 	((i - size / 2) * complx + x) / 10 / size,
-		-- 	((j - size / 2) * complx + y) / 10 / size
-		-- )
 
 		C = love.math.noise(
 			((i - self.size / 2) * self.complx + self.x) / self.mult / self.size,
