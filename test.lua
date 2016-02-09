@@ -26,39 +26,76 @@ end
 
 local test = {
 	binop = { '+', '-', '*', '/' },
-	operand = { 'x', 'y' },
+	operand = { 'x', 'y' , 'expression'},
 	expression = { 'operand', 'binop', 'operand' }
 }
 
 function iter(t)
-	local i = 1
-	return function (opt)
-		local v = t[i]
+	local i = 0
+	local j = 1
+	local rg = {}
 
+	return function (opt)
 		i = i + 1
+		if i > #t then
+			i = 1
+			j = j + 1
+			if j > #t then j = 1 end
+		end
+
+		local v = t[j]
 
 		if test[v] then
-			return iter(test[v])
+			rg[j] = rg[j] or iter(test[v])
+			return rg[j]
 		end
 		-- if opt then i = i + 1 end
-		-- if i > #t then i = 1 end
+
 
 		return v
 	end
 end
 
-function call(it, str)
+function toto(t)
+	local i = 0
+	local rg = {}
+
+	return function (opt)
+		i = i + 1
+		if i > #t then
+			i = 1
+		end
+
+		local v = t[i]
+
+		if test[v] then
+			rg[i] = rg[i] or iter(test[v])
+			return rg[i]
+		end
+		-- if opt then i = i + 1 end
+
+
+		return v
+	end
+end
+
+function call(it, max, str, lvl)
+	lvl = lvl or 1
 	str = str or ""
 
 	local v = it()
 
+	if lvl > max then print('max') return str end
+
 	if type(v) == 'string' then
-		return call(it, str..v)
+		return v--..call(it, max, str, lvl + 1)
 	elseif type(v) == 'function' then
-		return call(v, str)
+		-- local var = call(v, max, "", lvl)
+		return v()..call(it, max, str, lvl + 1)
 	end
 
 	return str
 end
 
-print( call( iter(test.expression) ) )
+print( call( toto(test.expression), 42 ) )
+

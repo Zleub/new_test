@@ -19,13 +19,3 @@ Use Model
 
 
 -------------------------------
-
-Lexical Generator
-
-[
-	[ Maker
-		return function.state
-	]
-
-		[ Consumer ]
-]
