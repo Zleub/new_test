@@ -6,17 +6,14 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 01:44:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-31 15:24:19
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:52:17
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-local Loader = require 'libs.Loader'
-local Class = require 'libs.Class'
-
-local Asset = Class:expand()
+local Asset = {}
 
 function Asset.load(filename, format)
 	local fileimg = 'assets/'..filename..'.'..format

@@ -6,14 +6,14 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 18:34:29
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:38:30
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-inspect = require 'libs.inspect'
+inspect = require 'exts.inspect'
 
 function clamp(num, min, max)
 	if num < min then return min
@@ -43,6 +43,7 @@ Dictionnary = {}
 print_require_list(
 	'libs.Class',
 	'libs.Drawable',
+	'libs.Draggable',
 	'libs.Asset',
 	'libs.Color',
 	'libs.UI',

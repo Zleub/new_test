@@ -6,14 +6,12 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:25:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-03 19:35:48
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:38:58
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
-
-local inspect = require 'libs.inspect'
 
 local Class = {}
 

@@ -6,16 +6,14 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:21:07
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:52:34
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-local QuadList = require 'libs.QuadList'
-local Class = require 'libs.Class'
-local Loader = Class:expand()
+local Loader = {}
 
 function Loader:getSize()
 	return #self.queue

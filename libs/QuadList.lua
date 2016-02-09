@@ -6,14 +6,13 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 02:09:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 18:44:30
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:51:45
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-local Class = require 'libs.Class'
 local QuadList = Class:expand()
 
 function QuadList.create(config, image)

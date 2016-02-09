@@ -6,15 +6,12 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-03 13:17:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:19:43
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:56:28
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
-
-local Loader = require 'libs.Loader'
-local UI = require 'libs.UI'
 
 local State = {}
 State.once_t = {}
@@ -59,5 +56,7 @@ State.Loading = require('libs.state.loading')
 State.Test = require('libs.state.test')
 
 State.Other = require('libs.state.other')
+
+State.Map = require('libs.state.map')
 
 return State
