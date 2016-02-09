@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-03 16:01:57
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 18:34:29
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -66,6 +66,7 @@ function love.load()
 	Loader:push( Asset.load, 'hyptosis_tile-art-batch-1', 'png' )
 	Loader:push( Asset.load, 'hyptosis_tile-art-batch-2', 'png' )
 	Loader:push( Asset.load, 'Untitled_master', 'png' )
+	Loader:push( Asset.load, 'UI', 'png' )
 	-- Loader:push( Asset.load, 'hyptosis_tile-art-batch-3', 'png' )
 	-- Loader:push( Asset.load, 'hyptosis_tile-art-batch-4', 'png' )
 	-- Loader:push( Asset.load, 'hyptosis_tile-art-batch-5', 'png' )
