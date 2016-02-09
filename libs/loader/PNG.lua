@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-03 18:21:06
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-03 19:39:06
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:14:37
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -32,7 +32,14 @@ PNG.optionalAPI = {
 		model = {
 			width = 42,
 			height = 42,
-		},
+		}
+	},
+	spacing = {
+		name = "spacing",
+		model = {
+			width = 42,
+			height = 42
+		}
 	}
 }
 
@@ -44,7 +51,14 @@ function PNG:load(filename, config, img)
 
 	if config and config.grid then
 
-		local quadlist = QuadList.create(config.grid, img)
+		if not config.spacing then
+			config.spacing = {
+				width = 0,
+				height = 0
+			}
+		end
+
+		local quadlist = QuadList.create(config, img)
 		local canvas = love.graphics.newCanvas(config.grid.width, config.grid.height)
 
 		love.graphics.setCanvas(canvas)
@@ -65,12 +79,12 @@ function PNG:load(filename, config, img)
 
 		if config.exports then
 			for k,v in pairs(config.exports) do
-				local canvas = love.graphics.newCanvas(v.width * config.grid.width, v.height * config.grid.height)
+				local canvas = love.graphics.newCanvas(v.width * config.screen.width, v.height * config.screen.height)
 
 				love.graphics.setCanvas(canvas)
 				for i = 0, v.height - 1 do
 					for j = 0, v.width - 1 do
-						Dictionnary[filename][v[i + 1][j + 1]]:draw(j * config.grid.width, i * config.grid.height, 1)
+						Dictionnary[filename][v[i + 1][j + 1]]:draw(j * config.screen.width, i * config.screen.height, 1)
 					end
 				end
 

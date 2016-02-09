@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-03 18:29:21
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:21:07
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -42,14 +42,14 @@ function Loader.check(api, config)
 	for k,v in pairs(api.mandatoryAPI) do
 
 		if not config[k] then
-			io.write(config.file.." error:\n"..Loader.error(api.mandatoryAPI[k]))
+			io.write(config.file.." error:\n"..Loader.error(api.mandatoryAPI[k])..'\n')
 			config[k] = nil
 			return
 		end
 
 		local err = Loader.validator(api.mandatoryAPI[k], config[k])
 		if err then
-			io.write(config.file.." error:\n"..err)
+			io.write(config.file.." error:\n"..err..'\n')
 			config[k] = nil
 			return
 		end
@@ -93,6 +93,6 @@ function Loader.error(member)
 end
 
 print('Reminder -->')
-Loader.PNG = require 'libs.PNG'
+Loader.PNG = require 'libs.loader.PNG'
 
 return Loader
