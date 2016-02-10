@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 20:40:57
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 21:22:50
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -24,7 +24,7 @@ function Loader:load()
 		local name = self.queue[1].f( unpack(self.queue[1].args) )
 
 		table.remove(self.queue, 1)
-		return name
+		if self.queue[1] then return self.queue[1].args[1] end
 	end
 end
 
