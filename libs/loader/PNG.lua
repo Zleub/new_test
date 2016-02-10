@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-03 18:21:06
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 12:49:52
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 20:44:34
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -22,13 +22,20 @@ PNG.mandatoryAPI = {
 		name = "screen",
 		model = {
 			width = 'number',
-			height = 'number',
+			height = 'number'
 		},
 	}
 }
 PNG.optionalAPI = {
 	grid = {
 		name = "grid",
+		model = {
+			width = 'number',
+			height = 'number'
+		}
+	},
+	spacing = {
+		name = "spacing",
 		model = {
 			width = {
 				type = 'number',
@@ -37,14 +44,7 @@ PNG.optionalAPI = {
 			height = {
 				type = 'number',
 				value = 0
-			},
-		}
-	},
-	spacing = {
-		name = "spacing",
-		model = {
-			width = 'number',
-			height = 'number'
+			}
 		}
 	}
 }
@@ -52,17 +52,10 @@ PNG.optionalAPI = {
 function PNG:load(filename, config, img)
 	config = Loader.check(self, config)
 
-	print('Loading\t'..filename)
+	print('Loading '..Color.shell('PNG', 'green')..':\t'..filename)
 	Dictionnary[filename] = {}
 
 	if config and config.grid then
-
-		if not config.spacing then
-			config.spacing = {
-				width = 0,
-				height = 0
-			}
-		end
 
 		local quadlist = QuadList.create(config, img)
 		Dictionnary[filename] = QuadList.toCanvasList(config, quadlist)
@@ -89,9 +82,9 @@ function PNG:load(filename, config, img)
 
 				love.graphics.setCanvas()
 
-
 			end
 		end
+
 	else
 		local d = Drawable:create()
 		d.image = img

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 12:40:14
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 20:40:57
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -37,32 +37,41 @@ end
 ----------------------------------------
 
 function Loader.check(api, config)
+
 	for k,v in pairs(api.mandatoryAPI) do
 
 		if not config[k] then
-			io.write(config.file.." error:\n"..Loader.error(api.mandatoryAPI[k])..'\n')
+			io.write(config.file..", "..Color.shell("error:\n", "red")..Loader.error(v)..'\n')
 			config[k] = nil
 			return
 		end
 
-		local err = Loader.validator(api.mandatoryAPI[k], config[k])
+		local err = Loader.validator(v, config[k])
 		if err then
-			io.write(config.file.." error:\n"..err..'\n')
+			io.write(config.file..", "..Color.shell("error:\n", "red")..err..'\n')
 			config[k] = nil
 			return
 		end
 	end
 
 
-	for k,v in pairs(config) do
+	for k, v in pairs(api.optionalAPI) do
 
-		if api.optionalAPI[k] then
-			local err = Loader.validator(api.optionalAPI[k], v)
+		if config[k] then
+			local err = Loader.validator(v, config[k])
 
 			if err then
-				io.write(config.file.." error:\n"..err)
+				io.write(config.file..", "..Color.shell("warning:\n", 202)..err..'\n')
 				config[k] = nil
-				return
+			end
+		end
+
+		if not config[k] then
+			local t = {}
+			local err = Loader.validator(v, t)
+
+			if next(t) ~= nil then
+				config[k] = t
 			end
 		end
 
@@ -73,17 +82,20 @@ end
 
 function Loader.validator(member, input)
 	if type(input) ~= 'table' then
-		return 'Expected : '..Loader.error()
+		return Loader.error(member)
 	end
+
 	for k,v in pairs(member.model) do
 
-		-- debug(k, v)
-		local t
-		if type(v) == 'table' then t = v.type
-		else t = v end
-
-		if not input[k] or type(input[k]) ~= t then
-			return 'Expected '..Loader.error(member)
+		if type(v) == 'table' then
+			if input[k] and type(input[k]) ~= v.type then
+				return Loader.error(member)
+			end
+			input[k] = input[k] or v.value
+		else
+			if not input[k] or type(input[k]) ~= v then
+				return Loader.error(member)
+			end
 		end
 	end
 end
@@ -97,10 +109,9 @@ function Loader.error(member)
 			err = err.."  "..k..": "..v..",\n"
 		end
 	end
-	return err.."}\n"
+	return err.."}"
 end
 
-print('Reminder -->')
 Loader.PNG = require 'libs.loader.PNG'
 
 return Loader
