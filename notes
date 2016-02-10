@@ -19,3 +19,9 @@ Use Model
 
 
 -------------------------------
+
+Loader
+  config, img ->
+	-> screen -> Drawable
+	-> grid -> QuadList -> CanvasList -> Drawable
+	-> export -> Drawable

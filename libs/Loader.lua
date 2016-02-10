@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:52:34
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 12:40:14
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -76,7 +76,13 @@ function Loader.validator(member, input)
 		return 'Expected : '..Loader.error()
 	end
 	for k,v in pairs(member.model) do
-		if not input[k] or type(input[k]) ~= type(v) then
+
+		-- debug(k, v)
+		local t
+		if type(v) == 'table' then t = v.type
+		else t = v end
+
+		if not input[k] or type(input[k]) ~= t then
 			return 'Expected '..Loader.error(member)
 		end
 	end
@@ -85,7 +91,11 @@ end
 function Loader.error(member)
 	local err = member.name.." : {\n"
 	for k,v in pairs(member.model) do
-		err = err.."  "..k..": "..type(v)..",\n"
+		if type(v) == 'table' then
+			err = err.."  "..k..": "..v.type..",\n"
+		else
+			err = err.."  "..k..": "..v..",\n"
+		end
 	end
 	return err.."}\n"
 end

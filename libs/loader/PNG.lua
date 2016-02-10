@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-03 18:21:06
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:14:37
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 12:49:52
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -21,8 +21,8 @@ PNG.mandatoryAPI = {
 	screen = {
 		name = "screen",
 		model = {
-			width = 42,
-			height = 42,
+			width = 'number',
+			height = 'number',
 		},
 	}
 }
@@ -30,15 +30,21 @@ PNG.optionalAPI = {
 	grid = {
 		name = "grid",
 		model = {
-			width = 42,
-			height = 42,
+			width = {
+				type = 'number',
+				value = 0
+			},
+			height = {
+				type = 'number',
+				value = 0
+			},
 		}
 	},
 	spacing = {
 		name = "spacing",
 		model = {
-			width = 42,
-			height = 42
+			width = 'number',
+			height = 'number'
 		}
 	}
 }
@@ -59,23 +65,7 @@ function PNG:load(filename, config, img)
 		end
 
 		local quadlist = QuadList.create(config, img)
-		local canvas = love.graphics.newCanvas(config.grid.width, config.grid.height)
-
-		love.graphics.setCanvas(canvas)
-		for i,v in ipairs(quadlist) do
-			love.graphics.clear()
-			love.graphics.draw(quadlist[0], quadlist[i])
-
-			local d = Drawable:create()
-			local new_img = love.graphics.newImage(canvas:newImageData())
-			new_img:setFilter('nearest')
-
-			d.scale = config.screen.width / new_img:getWidth()
-			d.image = new_img
-
-			table.insert(Dictionnary[filename], d)
-		end
-		love.graphics.setCanvas()
+		Dictionnary[filename] = QuadList.toCanvasList(config, quadlist)
 
 		if config.exports then
 			for k,v in pairs(config.exports) do
