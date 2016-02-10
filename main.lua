@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 20:27:57
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 20:09:09
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -25,7 +25,12 @@ function debug(...)
 	if ({...})[1] == nil then print('nil') end
 
 	for i,v in ipairs({...}) do
-		print(inspect(v))
+		io.write(inspect(v))
+		if ({...})[i + 1] then
+			io.write(', ')
+		else
+			io.write('\n')
+		end
 	end
 end
 
@@ -38,9 +43,17 @@ function print_require_list(...)
 	end
 end
 
+function require_list(...)
+	for k,v in ipairs({...}) do
+		local name = v:match('.+%.(%w+)')
+
+		_G[name] = require(v)
+	end
+end
+
 Dictionnary = {}
 
-print_require_list(
+require_list(
 	'libs.Class',
 	'libs.Drawable',
 	'libs.Draggable',
@@ -66,7 +79,7 @@ function love.load()
 	debug(_VERSION)
 	Loader:push( Asset.load, 'pict', 'png' )
 	Loader:push( Asset.load, 'hyptosis_tile-art-batch-1', 'png' )
-	Loader:push( Asset.load, 'hyptosis_tile-art-batch-2', 'png' )
+	-- Loader:push( Asset.load, 'hyptosis_tile-art-batch-2', 'png' )
 	Loader:push( Asset.load, 'Untitled_master', 'png' )
 	Loader:push( Asset.load, 'UI', 'png' )
 	-- Loader:push( Asset.load, 'hyptosis_tile-art-batch-3', 'png' )
