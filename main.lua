@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 20:09:09
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 00:52:30
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -58,7 +58,6 @@ require_list(
 	'libs.Drawable',
 	'libs.Draggable',
 
-	'libs.Asset',
 	'libs.Color',
 	'libs.UI',
 	'libs.Loader',
@@ -77,14 +76,14 @@ end
 
 function love.load()
 	debug(_VERSION)
-	Loader:push( Asset.load, 'pict', 'png' )
-	Loader:push( Asset.load, 'hyptosis_tile-art-batch-1', 'png' )
-	-- Loader:push( Asset.load, 'hyptosis_tile-art-batch-2', 'png' )
-	Loader:push( Asset.load, 'Untitled_master', 'png' )
-	Loader:push( Asset.load, 'UI', 'png' )
-	-- Loader:push( Asset.load, 'hyptosis_tile-art-batch-3', 'png' )
-	-- Loader:push( Asset.load, 'hyptosis_tile-art-batch-4', 'png' )
-	-- Loader:push( Asset.load, 'hyptosis_tile-art-batch-5', 'png' )
+	Loader:push( Loader.Asset.load, 'pict', 'png' )
+	Loader:push( Loader.Asset.load, 'hyptosis_tile-art-batch-1', 'png' )
+	-- Loader:push( Loader.Asset.Load, 'hyptosis_tile-art-batch-2', 'png' )
+	Loader:push( Loader.Asset.load, 'Untitled_master', 'png' )
+	Loader:push( Loader.Asset.load, 'UI', 'png' )
+	-- Loader:push( Loader.Asset.Load, 'hyptosis_tile-art-batch-3', 'png' )
+	-- Loader:push( Loader.Asset.Load, 'hyptosis_tile-art-batch-4', 'png' )
+	-- Loader:push( Loader.Asset.Load, 'hyptosis_tile-art-batch-5', 'png' )
 
 	State('Loading')
 end

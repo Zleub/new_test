@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 21:22:50
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 00:52:12
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -112,6 +112,7 @@ function Loader.error(member)
 	return err.."}"
 end
 
+Loader.Asset = require 'libs.loader.Asset'
 Loader.PNG = require 'libs.loader.PNG'
 
 return Loader
