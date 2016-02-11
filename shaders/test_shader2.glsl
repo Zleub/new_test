@@ -19,7 +19,7 @@ vec4 effect( vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords 
 
 	vec4 t_color = texture2D(texture, texture_coords);
 
-	float t_grey = (t_color.r + t_color.g + t_color.b) / 3;
+	float t_grey = (t_color.r + t_color.g + t_color.b) / 3.3;
 	vec4 grey = vec4(
 		t_grey,
 		t_grey,
