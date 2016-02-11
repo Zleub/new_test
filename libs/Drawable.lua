@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:21:33
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 01:20:51
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 01:41:44
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -14,11 +14,6 @@
 --          .-::::-`
 
 local Drawable = Class:expand()
-
-Drawable.x = 0
-Drawable.y = 0
-Drawable.time = 1
-Drawable.scale = 1
 
 function Drawable:create(img)
 	if img and img:type() ~= 'Image' then
@@ -30,6 +25,10 @@ function Drawable:create(img)
 		d.image = img
 		d.image:setFilter('nearest')
 	end
+
+	d.x = 0
+	d.y = 0
+	d.scale = 1
 
 	return d
 end

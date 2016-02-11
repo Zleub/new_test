@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:18:37
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 20:03:04
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 03:00:12
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -21,31 +21,22 @@ return {
 		self.test = 1
 		Dictionnary['pict'][1].scale = 1
 
+		local img = Dictionnary['hyptosis_tile-art-batch-1'].banner:expand()
+		img.scale = 4
+		self.s1 = Shader:create(img, 'shaders/test_shader2.glsl')
 
-		self.shader1 = love.graphics.newShader('shaders/test_shader.glsl')
-		self.shader1:send("width", 16 * 12)
-		self.shader1:send("height", 18 * 12)
-
-		self.shader2 = love.graphics.newShader('shaders/test_shader2.glsl')
-		self.shader2:send("width", 16 * 12)
-		self.shader2:send("height", 18 * 12)
+		local img = Dictionnary['Untitled_master'][2]:expand()
+		img.scale = 12
+		self.s2 = Shader:create(img, 'shaders/test_shader2.glsl')
 
 	end,
 	update = function (self, dt)
 		self.time = self.time + dt / 2.5
 		self.test = math.cos(self.time) * 4
 
-		self.shader1 = love.graphics.newShader('shaders/test_shader.glsl')
-		self.shader1:send("width", 16 * 12)
-		self.shader1:send("height", 18 * 12)
+		self.s1:update(dt, self.cmp, self.test)
+		self.s2:update(dt, self.cmp, self.test)
 
-		self.shader2 = love.graphics.newShader('shaders/test_shader2.glsl')
-		self.shader2:send("width", 16 * 6)
-		self.shader2:send("height", 18 * 6)
-
-		self.shader1:send("resolution", self.cmp)
-		self.shader2:send("resolution", self.cmp)
-		self.shader2:send("test", self.test)
 	end,
 	draw = function (self)
 
@@ -53,49 +44,12 @@ return {
 		love.graphics.rectangle('fill', 0, 0, love.graphics.getDimensions())
 		love.graphics.setColor(Color:extract('white'))
 
-
 		love.graphics.print('self.time: '..self.time, 0, love.graphics.getHeight() - 15)
 		love.graphics.print('self.cmp: '..self.cmp, 0, love.graphics.getHeight() - 30)
 		love.graphics.print('self.test: '..self.test, 0, love.graphics.getHeight() - 54)
-		Dictionnary['hyptosis_tile-art-batch-1'][1]:draw(0, 0, 2)
 
-		self.shader1:send("x", 100)
-		self.shader1:send("y", 0)
-		love.graphics.setShader(self.shader1)
-		love.graphics.rectangle('fill', 100, 0, 16 * 12, 18 * 12)
-		love.graphics.setShader()
-
-		self.shader2:send("x", 100)
-		self.shader2:send("y", 250)
-		self.shader2:send("width", 58)
-		self.shader2:send("height", 64 + 64)
-		love.graphics.setShader(self.shader2)
-		Dictionnary['hyptosis_tile-art-batch-1'].banner:draw(100, 250, 2)
-		love.graphics.setShader()
-
-		self.shader2:send("x", 300)
-		self.shader2:send("y", 0)
-		self.shader2:send("width", 16 * 12)
-		self.shader2:send("height", 18 * 12)
-		love.graphics.setShader(self.shader2)
-		love.graphics.rectangle('fill', 300, 0, 16 * 12, 18 * 12)
-		love.graphics.setShader()
-
-		self.shader2:send("x", 300)
-		self.shader2:send("y", 250)
-		self.shader2:send("width", 16 * 6)
-		self.shader2:send("height", 18 * 6)
-		love.graphics.setShader(self.shader2)
-		Dictionnary['Untitled_master'][2]:draw(300, 250, 6)
-		love.graphics.setShader()
-
-		self.shader2:send("x", 500)
-		self.shader2:send("y", 0)
-		self.shader2:send("width", 500)
-		self.shader2:send("height", 500)
-		love.graphics.setShader(self.shader2)
-		love.graphics.rectangle('fill', 500, 0, 500, 500)
-		love.graphics.setShader()
+		self.s1:draw(10, 0)
+		self.s2:draw()
 
 		Dictionnary['hyptosis_tile-art-batch-1'].banner:draw(100, 400, 2)
 		Dictionnary['Untitled_master'][2]:draw(300, 300, 12)

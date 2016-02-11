@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 01:21:04
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 02:28:05
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -58,6 +58,7 @@ require_list(
 	'libs.Drawable',
 	'libs.Draggable',
 	'libs.Compound',
+	'libs.Shader',
 
 	'libs.Color',
 	'libs.UI',

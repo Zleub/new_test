@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 02:42:43
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 12:50:39
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 02:01:48
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -29,8 +29,8 @@ config.exports = {}
 config.exports.banner = {
 	width = 1,
 	height = 2,
-	{ 743, },
-	{ 773 }
+	{ 743 - 2, },
+	{ 773 - 2 }
 }
 
 return config

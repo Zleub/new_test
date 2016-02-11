@@ -17,29 +17,42 @@ vec4 effect( vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords 
 	float x = pow( int(((screen_coords.x - x) - width / 2) / resolution), 2) ;
 	float y = pow( int(((screen_coords.y - y) - height / 2) / resolution), 2) ;
 
-	vec4 toto = texture2D(texture, texture_coords);
+	vec4 t_color = texture2D(texture, texture_coords);
 
-	float t = 0. ;
-	float u = 0. ;
-	float v = 0. ;
+	float t_grey = (t_color.r + t_color.g + t_color.b) / 3;
+	vec4 grey = vec4(
+		t_grey,
+		t_grey,
+		t_grey,
+		t_color.a
+	);
+
+	float t = 0.5 ;
+	float u = 0.5 ;
+	float v = 0.5 ;
 
 
-	if ((sin(x * y) * 2 + log(x * y) ) < test) {
-		t = 217 / 255. ;
-		u = 196 / 255. ;
-		v =  21 / 255. ;
+	if ((sin(x * y) * 2 + log(x + y) ) < test) {
+		t = 219 / 255. ;
+		u =   0 / 255. ;
+		v =   0 / 255. ;
 	}
-	else if (cos(x + y) * 2 - log(x + y) < test) {
-		t =  45 / 255. ;
-		u = 136 / 255. ;
-		v =  45 / 255. ;
+	else if (cos(x + y) * 2 - log(x + y) > test) {
+		t = 136 / 255. ;
+		u = 204 / 255. ;
+		v =   0 / 255. ;
 	}
-	else {
-		return toto;
-	}
+	// else {
+	// 	return grey ;
+	// }
 	// u = tan(x + y) / tan(x * y) / 12;
 
 	vec3 test = vec3(t, u, v);
 
-	return vec4( toto.r * test.r, toto.g * test.g, toto.b * test.b, toto.a);
+	return vec4(
+		t_grey * test.r,
+		t_grey * test.g,
+		t_grey * test.b,
+		t_color.a
+	);
 }
