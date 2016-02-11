@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:21:33
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 20:10:38
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 01:20:51
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -19,6 +19,20 @@ Drawable.x = 0
 Drawable.y = 0
 Drawable.time = 1
 Drawable.scale = 1
+
+function Drawable:create(img)
+	if img and img:type() ~= 'Image' then
+		print('I got some error')
+	end
+
+	local d = Class.create(self)
+	if img then
+		d.image = img
+		d.image:setFilter('nearest')
+	end
+
+	return d
+end
 
 function Drawable:getSize()
 	return self.image:getWidth() * self.scale, self.image:getHeight() * self.scale

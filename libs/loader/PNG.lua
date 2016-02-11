@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-03 18:21:06
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 20:44:34
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 01:26:04
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -62,25 +62,8 @@ function PNG:load(filename, config, img)
 
 		if config.exports then
 			for k,v in pairs(config.exports) do
-				local canvas = love.graphics.newCanvas(v.width * config.screen.width, v.height * config.screen.height)
 
-				love.graphics.setCanvas(canvas)
-				for i = 0, v.height - 1 do
-					for j = 0, v.width - 1 do
-						Dictionnary[filename][v[i + 1][j + 1]]:draw(j * config.screen.width, i * config.screen.height, 1)
-					end
-				end
-
-				local d = Drawable:create()
-				local new_img = love.graphics.newImage(canvas:newImageData())
-				new_img:setFilter('nearest')
-
-				d.scale = config.screen.width * v.width / new_img:getWidth()
-				d.image = new_img
-
-				Dictionnary[filename][k] = d
-
-				love.graphics.setCanvas()
+				Dictionnary[filename][k] = Compound:create(config.screen, filename, v)
 
 			end
 		end
