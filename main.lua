@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 02:28:05
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 03:33:27
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -45,7 +45,7 @@ end
 
 function require_list(...)
 	for k,v in ipairs({...}) do
-		local name = v:match('.+%.(%w+)')
+		local name = v:match('.+%.([%w_]+)')
 
 		_G[name] = require(v)
 	end
@@ -59,6 +59,7 @@ require_list(
 	'libs.Draggable',
 	'libs.Compound',
 	'libs.Shader',
+	'libs.Shader_Rectangle',
 
 	'libs.Color',
 	'libs.UI',
