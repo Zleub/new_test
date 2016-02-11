@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:18:37
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 03:34:04
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 03:36:17
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -30,7 +30,7 @@ return {
 		self.s2 = Shader:create(img, 'shaders/test_shader2.glsl')
 
 		self.s3 = Shader_Rectangle:create({width = 300, height = 300}, 'shaders/test_shader2.glsl')
-
+		self.s3.x = 300
 	end,
 	update = function (self, dt)
 		self.time = self.time + dt / 2.5
