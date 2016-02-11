@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:19:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 01:46:19
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 17:40:44
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -21,12 +21,16 @@ return {
 		self.test.image = Dictionnary['UI'].test.image
 		self.test.width, self.test.height = Dictionnary['UI'].test.image:getDimensions()
 
-		self.test2 = Compound:create({width = 64, height = 64 }, 'UI', {
+		self.test2 = Compound:create({width = 64, height = 64}, 'UI', {
 			width = 3,
-			height = 1,
+			height = 2,
+			{ 1, 2, 3 },
 			{ 1, 2, 3 }
 		})
+		self.test2.y = 64
 
+		self.default_font = love.graphics.getFont()
+		self.font = love.graphics.newFont('Minimal3x5.ttf', 32 )
 	end,
 
 	update = function (self, dt)
@@ -39,16 +43,14 @@ return {
 	draw = function (self)
 		love.graphics.print(self.time)
 
+		love.graphics.rectangle('fill', self.test.x - 1, self.test.y - 1, self.test.width + 2, self.test.height + 2)
 		self.test:draw()
+
 		self.test2:draw()
-		-- Dictionnary['UI'].test:draw(0, 0, 1)
-		-- local j = 0
-		-- for i,v in ipairs(Dictionnary['UI']) do
-		-- 	v:draw(0 + 40 * ((i - 1) % 25), 0 + 40 * j, 1)
-		-- 	if (i % 25) == 0 then
-		-- 		j = j + 1
-		-- 	end
-		-- end
+
+		love.graphics.setFont(self.font)
+		love.graphics.print('Hello Workl', self.test.x, self.test.y)
+		love.graphics.setFont(self.default_font)
 	end,
 
 	keypressed = function (self, key)
