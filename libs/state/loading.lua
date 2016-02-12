@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:18:29
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:18:57
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 16:08:30
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -15,7 +15,7 @@
 
 return {
 
-	once = function (self)
+	before = function (self)
 		self.nbr = Loader:getSize()
 	end,
 
@@ -23,7 +23,7 @@ return {
 		local elem = Loader:load()
 
 		if elem then self.text = elem
-		else State('Test') end
+		else State(State.previous) end
 	end,
 
 	draw = function (self)

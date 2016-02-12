@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 03:33:27
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 17:31:43
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -51,10 +51,10 @@ function require_list(...)
 	end
 end
 
-Dictionnary = {}
-
 require_list(
 	'libs.Class',
+
+	'libs.Dictionnary',
 	'libs.Drawable',
 	'libs.Draggable',
 	'libs.Compound',
@@ -79,15 +79,13 @@ end
 
 function love.load()
 	debug(_VERSION)
-	Loader:push( Loader.Asset.load, 'pict', 'png' )
-	Loader:push( Loader.Asset.load, 'hyptosis_tile-art-batch-1', 'png' )
-	-- Loader:push( Loader.Asset.Load, 'hyptosis_tile-art-batch-2', 'png' )
-	Loader:push( Loader.Asset.load, 'Untitled_master', 'png' )
-	Loader:push( Loader.Asset.load, 'UI', 'png' )
-	-- Loader:push( Loader.Asset.Load, 'hyptosis_tile-art-batch-3', 'png' )
-	-- Loader:push( Loader.Asset.Load, 'hyptosis_tile-art-batch-4', 'png' )
-	-- Loader:push( Loader.Asset.Load, 'hyptosis_tile-art-batch-5', 'png' )
+	Loader:push( Loader.PNG, 'pict' )
+	Loader:push( Loader.PNG, 'hyptosis_tile-art-batch-1' )
+	Loader:push( Loader.PNG, 'hyptosis_tile-art-batch-2' )
+	Loader:push( Loader.PNG, 'Untitled_master' )
+	Loader:push( Loader.PNG, 'UI' )
 
+	State.previous = 'Test'
 	State('Loading')
 end
 

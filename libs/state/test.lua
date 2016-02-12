@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:18:37
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 03:36:17
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 17:10:09
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -19,9 +19,8 @@ return {
 		self.time = 0
 		self.cmp = 1
 		self.test = 1
-		Dictionnary['pict'][1].scale = 1
 
-		local img = Dictionnary['hyptosis_tile-art-batch-1'].banner:expand()
+		local img = Dictionnary.banner:expand()
 		img.scale = 4
 		self.s1 = Shader:create(img, 'shaders/test_shader2.glsl')
 
@@ -31,6 +30,8 @@ return {
 
 		self.s3 = Shader_Rectangle:create({width = 300, height = 300}, 'shaders/test_shader2.glsl')
 		self.s3.x = 300
+
+
 	end,
 	update = function (self, dt)
 		self.time = self.time + dt / 2.5
@@ -55,7 +56,7 @@ return {
 		self.s2:draw()
 		self.s3:draw()
 
-		Dictionnary['hyptosis_tile-art-batch-1'].banner:draw(100, 400, 2)
+		Dictionnary.banner:draw(100, 400, 2)
 		Dictionnary['Untitled_master'][2]:draw(300, 300, 12)
 	end,
 	wheelmoved = function (self, x, y)

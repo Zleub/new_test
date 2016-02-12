@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-03 13:17:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:56:28
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 17:12:22
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -17,8 +17,14 @@ local State = {}
 State.once_t = {}
 setmetatable(State, {
 	__call = function (self, state)
+
 		if self.current and self[self.current].after then
-			self[self.current]:after() end
+			self[self.current]:after()
+		end
+
+		self.previous = self.current or self.previous
+
+		print(self.previous..' -> '..state)
 		self.current = state
 
 		if not self.once_t[self.current] and self[self.current].once then
@@ -27,7 +33,8 @@ setmetatable(State, {
 		end
 
 		if self[self.current].before then
-			self[self.current]:before() end
+			self[self.current]:before()
+		end
 	end
 })
 
@@ -58,5 +65,7 @@ State.Test = require('libs.state.test')
 State.Other = require('libs.state.other')
 
 State.Map = require('libs.state.map')
+
+
 
 return State

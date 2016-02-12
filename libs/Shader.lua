@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-11 02:06:58
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 03:03:34
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 18:15:57
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -32,7 +32,7 @@ end
 function Shader:update(dt, resolution, test)
 	Draggable.update(self, dt)
 
-	self.shader = love.graphics.newShader(self.filename)
+	-- self.shader = love.graphics.newShader(self.filename)
 	self.drawable.x, self.drawable.y = self.x, self.y
 	self.shader:send("width", self.width)
 	self.shader:send("height", self.height)

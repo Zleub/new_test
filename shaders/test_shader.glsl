@@ -1,13 +1,13 @@
 #define M_PI 3.1415926535897932384626433832795
 
-extern float x;
-extern float y;
-extern float width;
-extern float height;
-// extern float size;
-extern float resolution;
+uniform float x;
+uniform float y;
+uniform float width;
+uniform float height;
+// uniform float size;
+uniform float resolution;
 
-// extern float time;
+// uniform float time;
 
 vec4 effect( vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords )
 {
