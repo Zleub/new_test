@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 00:52:12
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 16:40:50
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -21,20 +21,23 @@ end
 
 function Loader:load()
 	if self.queue and self.queue[1] then
-		local name = self.queue[1].f( unpack(self.queue[1].args) )
+		local name = self.queue[1].mod:load( unpack(self.queue[1].args) )
 
 		table.remove(self.queue, 1)
 		if self.queue[1] then return self.queue[1].args[1] end
 	end
 end
 
-function Loader:push(f, ...)
+function Loader:push(mod , ...)
 	self.queue = self.queue or {}
 
-	table.insert(self.queue, {f = f, args = {...}})
+	table.insert(self.queue, {mod = mod, args = {...}})
 end
 
 ----------------------------------------
+
+Loader.PNG = require 'libs.loader.PNG'
+Loader.Shader = require 'libs.loader.Shader'
 
 function Loader.check(api, config)
 
@@ -61,7 +64,7 @@ function Loader.check(api, config)
 			local err = Loader.validator(v, config[k])
 
 			if err then
-				io.write(config.file..", "..Color.shell("warning:\n", 202)..err..'\n')
+				io.write(config.file..", "..Color.shell("warning:\n", 'orange')..err..'\n')
 				config[k] = nil
 			end
 		end
@@ -111,8 +114,5 @@ function Loader.error(member)
 	end
 	return err.."}"
 end
-
-Loader.Asset = require 'libs.loader.Asset'
-Loader.PNG = require 'libs.loader.PNG'
 
 return Loader

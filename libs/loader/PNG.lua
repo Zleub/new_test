@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-03 18:21:06
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 01:26:04
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 17:10:25
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -49,22 +49,42 @@ PNG.optionalAPI = {
 	}
 }
 
-function PNG:load(filename, config, img)
-	config = Loader.check(self, config)
+function PNG.files(filename)
+	local fileimg = 'assets/'..filename..'.png'
+	local fileconfig = 'assets/'..filename..'.lua'
 
-	print('Loading '..Color.shell('PNG', 'green')..':\t'..filename)
-	Dictionnary[filename] = {}
+	local config, img
+
+	if love.filesystem.exists(fileconfig) then
+		config = dofile(fileconfig)
+		config.file = fileconfig
+	else
+		print('No such file '..fileconfig)
+		config = {}
+		config.file = fileconfig
+	end
+
+	if (love.filesystem.exists(fileimg)) then
+		img = love.graphics.newImage(fileimg)
+		img:setFilter( 'nearest', 'nearest')
+	else return print('No such file '..fileimg) end
+
+	return config, img
+end
+
+function PNG:load(filename)
+	config, img = PNG.files(filename)
+	config = Loader.check(self, config)
 
 	if config and config.grid then
 
 		local quadlist = QuadList.create(config, img)
-		Dictionnary[filename] = QuadList.toCanvasList(config, quadlist)
+		Dictionnary:set(filename, QuadList.toCanvasList(config, quadlist))
+
 
 		if config.exports then
 			for k,v in pairs(config.exports) do
-
-				Dictionnary[filename][k] = Compound:create(config.screen, filename, v)
-
+				Dictionnary:set(k, Compound:create(config.screen, filename, v))
 			end
 		end
 
@@ -72,9 +92,10 @@ function PNG:load(filename, config, img)
 		local d = Drawable:create()
 		d.image = img
 
-		Dictionnary[filename][1] = d
+		Dictionnary:set(filename, d)
 	end
 
+	return filename
 end
 
 return PNG
