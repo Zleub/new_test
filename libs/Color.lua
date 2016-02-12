@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-31 13:16:27
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-10 20:37:11
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 16:40:40
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -43,7 +43,9 @@ Color.shell = function (str, color)
 		blue = 4,
 		magenta = 5,
 		cyan = 6,
-		white = 7
+		white = 7,
+
+		orange = 202
 	}
 
 	if colors[color] then
