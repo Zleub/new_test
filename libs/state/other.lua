@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:19:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 19:53:16
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 20:23:26
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -43,7 +43,8 @@ return {
 		for i=0, love.graphics.getWidth() - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.width do
 			for j=0, love.graphics.getHeight() - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.height do
 
-				Dictionnary['hyptosis_tile-art-batch-1'][302]:draw(i, j)
+				local n = love.math.random(-1, 1)
+				Dictionnary['hyptosis_tile-art-batch-1'][302 + 30 * n ]:draw(i, j)
 
 			end
 		end
@@ -84,7 +85,7 @@ return {
 		-- container:push(Drawable:create(item2.image))
 		container:push(Drawable:create(item.image))
 		-- container:push()
-		-- container:push(Drawable:create(item.image))
+		container:push(Drawable:create(item.image))
 
 		table.insert(self.queue, container)
 
