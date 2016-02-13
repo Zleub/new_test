@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:21:33
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 01:41:44
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 17:55:12
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -24,13 +24,25 @@ function Drawable:create(img)
 	if img then
 		d.image = img
 		d.image:setFilter('nearest')
+		d.width, d.height = img:getDimensions()
 	end
 
-	d.x = 0
-	d.y = 0
+	d.x, d.y = 0, 0
 	d.scale = 1
 
 	return d
+end
+
+function Drawable.type()
+	return 'Drawable'
+end
+
+function Drawable:moveBy(x, y)
+	self.x, self.y = self.x + x, self.y + y
+end
+
+function Drawable:moveAt(x, y)
+	self.x, self.y = x, y
 end
 
 function Drawable:getSize()

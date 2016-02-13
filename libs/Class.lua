@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:25:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:38:58
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 14:50:52
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -22,6 +22,10 @@ end
 function Class.__index(t, k)
 		return getmetatable(t)[k]
 	end
+
+function Class.type()
+	return 'Class'
+end
 
 function Class.dump(self)
 	debug(self)
