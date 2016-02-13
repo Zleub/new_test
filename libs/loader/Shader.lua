@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-11 19:34:03
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 17:11:37
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 18:59:55
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -18,9 +18,9 @@ local Shader = {}
 Shader.mandatoryAPI = {}
 Shader.optionalAPI = {}
 
-function Shader.files(filename)
-	local fileshader = 'shaders/'..filename..'.glsl'
-	local fileconfig = 'shaders/'..filename..'.lua'
+function Shader.files(path, filename)
+	local fileshader = path..filename..'.glsl'
+	local fileconfig = path..filename..'.lua'
 
 	local config, shader
 
