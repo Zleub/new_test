@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 17:31:43
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 19:02:18
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -79,13 +79,15 @@ end
 
 function love.load()
 	debug(_VERSION)
-	Loader:push( Loader.PNG, 'pict' )
-	Loader:push( Loader.PNG, 'hyptosis_tile-art-batch-1' )
-	Loader:push( Loader.PNG, 'hyptosis_tile-art-batch-2' )
-	Loader:push( Loader.PNG, 'Untitled_master' )
-	Loader:push( Loader.PNG, 'UI' )
+	Loader:push( Loader.PNG, 'assets/', 'pict' )
+	Loader:push( Loader.PNG, 'assets/', 'hyptosis_tile-art-batch-1' )
+	Loader:push( Loader.PNG, 'assets/', 'hyptosis_tile-art-batch-2' )
+	Loader:push( Loader.PNG, 'assets/', 'Untitled_master' )
+	Loader:push( Loader.PNG, 'assets/', 'UI' )
 
-	State.previous = 'Test'
+	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_m')
+
+	State.previous = 'Other'
 	State('Loading')
 end
 

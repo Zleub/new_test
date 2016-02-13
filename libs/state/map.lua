@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:52:52
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 20:37:00
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 15:45:05
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -58,8 +58,9 @@ function Map:update(dt)
 	self.img = self:render_noise(function ()
 		if C * ( 1 / 16) > M * (15 / 16) then return  Color:extract('white') end
 		if C * ( 2 / 16) > M * (14 / 16) then return  Color:extract('brown') end
-		if C * ( 9 / 16) > M * ( 7 / 16) then return  Color:extract('green') end
-		if C * ( 10 / 16) > M * ( 6 / 16) then return  Color:extract('yellow') end
+		if C * ( 6 / 16) > M * (10 / 16) then return  Color:extract('green') end
+		if C * ( 6.5 / 16) > M * (9.5 / 16) then return  Color:extract('yellow') end
+		-- if C * ( 4 / 16) > M * (12 / 16) then return  Color:extract('yellow') end
 
 		return Color:extract('blue')
 		end)
