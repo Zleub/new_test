@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:19:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 20:23:26
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 20:45:45
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -55,12 +55,12 @@ return {
 		table.insert(self.queue, d )
 
 		local container = UI.Container:create(
-			-- {
-			-- 	image = 'UI',
-			-- 	ul = 26, ur = 28, dl = 76, dr = 78,
-			-- 	bl = 51, br = 53, bu = 27, bd = 77,
-			-- 	body = 52
-			-- },
+			{
+				image = 'UI',
+				ul = 26, ur = 28, dl = 76, dr = 78,
+				bl = 51, br = 53, bu = 27, bd = 77,
+				body = 52
+			},
 			love.graphics.getWidth(),
 			love.graphics.getHeight() / 4
 		)

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-11 17:15:43
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 18:49:59
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 20:46:42
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -119,7 +119,22 @@ function Container:draw(x, y, scale)
 	end
 end
 
+-- function definitions_solver(def_table, ...)
+-- 	local s = ''
+
+-- 	for i,v in ipairs({...}) do
+-- 		s = s..(v:type() or type(v))
+-- 		if ({...})[i + 1] then s = s..', ' end
+-- 	end
+
+-- 	if def_table[s] then def_table[s]()
+-- 	else def_table['_']() end
+
+-- 	print(s)
+-- end
+
 function Container:create(...)
+	definitions_solver({ _ = print }, ...)
 	local args = ({...})
 
 	if args[1] == nil then
