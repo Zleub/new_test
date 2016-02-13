@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:19:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 18:52:58
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 23:32:54
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -31,7 +31,7 @@ return {
 		self.test2.y = 64
 
 		self.default_font = love.graphics.getFont()
-		self.font = love.graphics.newFont('Minimal3x5.ttf', 32 )
+		self.font = love.graphics.newFont('Minimal3x5.ttf', 16 )
 
 		Loader:push( Loader.Shader, 'test_shader' )
 		State('Loading')
@@ -46,6 +46,23 @@ return {
 		self.test_shader.y = 0
 		self.test_shader.width, self.test_shader.height = drawable.image:getDimensions()
 
+		local step = 16
+		local canvas = love.graphics.newCanvas(drawable.image:getDimensions())
+		love.graphics.setCanvas(canvas)
+		love.graphics.setFont(self.font)
+		love.graphics.print('Hello Workl', self.test.x + 16, self.test.y + step * 1)
+		love.graphics.print('Hello Workl', self.test.x + 16, self.test.y + step * 2)
+		love.graphics.print('Hello Workl', self.test.x + 16, self.test.y + step * 3)
+		love.graphics.print('Hello Workl', self.test.x + 16, self.test.y + step * 4)
+		love.graphics.print('Hello Workl', self.test.x + 16, self.test.y + step * 5)
+		love.graphics.print('Hello Workl', self.test.x + 16, self.test.y + step * 6)
+		love.graphics.print('Hello Workl', self.test.x + 16, self.test.y + step * 7)
+		love.graphics.print('Hello Workl', self.test.x + 16, self.test.y + step * 8)
+		love.graphics.print('Hello Workl', self.test.x + 16, self.test.y + step * 9)
+		love.graphics.setFont(self.default_font)
+		love.graphics.setCanvas()
+
+
 		self.test_shader.update = function (self, dt, time)
 			Draggable.update(self, dt)
 
@@ -54,14 +71,14 @@ return {
 
 			self.shader:send('entity', {self.x, self.y, self.width, self.height})
 			self.shader:send('time', time)
+			self.shader:send('img', canvas)
 		end
 
 		debug(self.test_shader)
 
 	end,
 
-	before = function (self)
-	end,
+	before = function (self) end,
 
 	update = function (self, dt)
 		self.time = self.time + dt
@@ -86,14 +103,16 @@ return {
 
 		self.test_shader:draw()
 
-		love.graphics.setFont(self.font)
-		love.graphics.print('Hello Workl', self.test.x, self.test.y)
-		love.graphics.setFont(self.default_font)
+		-- love.graphics.setFont(self.font)
+		-- love.graphics.setColor(Color:extract('black'))
+		-- love.graphics.print('Hello Workl', self.test.x + 10, self.test.y + 10)
+		-- love.graphics.setColor(Color:extract('white'))
+		-- love.graphics.setFont(self.default_font)
 	end,
 
 	keypressed = function (self, key)
 		if key == 'space' then State('Map') end
-		if key == 'a' then debug(self.test) end
+		if key == 'a' then self.time = 1 end
 	end
 
 }
