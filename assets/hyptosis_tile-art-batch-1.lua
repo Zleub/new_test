@@ -6,31 +6,32 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 02:42:43
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-11 02:01:48
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 19:28:54
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-local config = {}
+return {
 
-config.screen = {
-	width = 32,
-	height = 32
+	screen = {
+		width = 64,
+		height = 64
+	},
+
+	grid = {
+		width = 32,
+		height = 32
+	},
+
+	exports = {
+		banner = {
+			width = 1,
+			height = 2,
+			{ 743 - 2, },
+			{ 773 - 2 }
+		}
+	}
+
 }
-
-config.grid = {
-	width = 32,
-	height = 32
-}
-
-config.exports = {}
-config.exports.banner = {
-	width = 1,
-	height = 2,
-	{ 743 - 2, },
-	{ 773 - 2 }
-}
-
-return config
