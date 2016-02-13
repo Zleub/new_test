@@ -1,27 +1,72 @@
-Hierarchy Model
+API description
 
-[Class] : grettings() expand()
-  |-> [Asset] : load()
-  |-> [Drawable] : update() draw()
-  |-> [Loader] : getSize() load() push() check() validator() error()
-  |-> [QuadList] : create()
+/assets/*.lua
 
-[Color]
-[Map]
-[State]
-[UI]
+screen :
+	[grid: false] -> Size on screen of the image
+	[grid: true] -> Size on screen of one image
 
--------------------------------
+grid :
+	Size of grid applied on the sprite
 
-Use Model
+spacing :
+	Size of spacing applied on the grid
 
+exports :
+	EXPORT_NAME : A Compound composant api table
 
+/libs/loader/*.lua
 
+mandatoryAPI :
+	the mandatory api to be check
 
--------------------------------
+optionalAPI :
+	the optional api to be check
 
-Loader
-  config, img ->
-	-> screen -> Drawable
-	-> grid -> QuadList -> CanvasList -> Drawable
-	-> export -> Drawable
+load :
+	function called by the Loader,
+	should return a string identifier as a name
+
+/libs/state/*.lua
+
+once :
+	function called once on state change
+
+before :
+	function called every time before state change
+
+after :
+	function called every time after state change
+
+update :
+	the love.update emulation
+
+draw :
+	the love.draw emulation
+
+wheelmoved :
+	the love.wheelmoved emulation
+
+keypressed :
+	the love.keypressed emulation
+
+---------------------------------
+
+self.test = UI.Container:create(
+	{
+		image = 'UI',
+		screen_size = {
+			width = 64,
+			height = 64
+		},
+		-- ul : upper left corner,	ur : upper right corner
+		-- dl : down left corner,	du : down right corner
+		-- bl : border left,		br : border right
+		-- bu : border up,			bd : border down
+		ul = 26, ur = 28, dl = 76, dr = 78,
+		bl = 51, br = 53, bu = 27, bd = 77,
+		body = 52
+	},
+	love.graphics.getWidth(),
+	love.graphics.getHeight() / 4
+)
