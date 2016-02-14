@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-31 13:16:27
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 16:40:40
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 20:49:11
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -34,7 +34,7 @@ Color.yellow = { 217, 196 , 21, 255 }
 Color.blue = { 34, 102 , 102, 255 }
 Color.grey = { 127, 127 , 127, 255 }
 
-Color.shell = function (str, color)
+function Color.shell(str, color)
 	local colors = {
 		black = 0,
 		red = 1,

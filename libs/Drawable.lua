@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:21:33
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 17:55:12
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 22:27:44
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -33,9 +33,7 @@ function Drawable:create(img)
 	return d
 end
 
-function Drawable.type()
-	return 'Drawable'
-end
+Drawable.name =  'Drawable'
 
 function Drawable:moveBy(x, y)
 	self.x, self.y = self.x + x, self.y + y
