@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:19:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 20:45:45
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 22:53:35
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -19,40 +19,32 @@ return {
 		self.cmp = 0
 		self.mousewheel = 1
 
-		self.queue = {}
-		local canvas = love.graphics.newCanvas(love.graphics.getWidth(), love.graphics.getHeight() / 2)
+		self.queue = Collection:create('Drawable')
 
-		love.graphics.setCanvas(canvas)
-		for i=0, love.graphics.getWidth() - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.width do
-			for j=0, love.graphics.getHeight() - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.height do
-
+		local batch = CanvasBatch:create(
+			function (i, j)
 				Dictionnary['hyptosis_tile-art-batch-1'][313]:draw(i, j)
+			end,
+			love.graphics.getWidth(),
+			love.graphics.getHeight() / 2
+		)
 
-			end
-		end
-		love.graphics.setCanvas()
+		batch.y = love.graphics.getHeight() / 4
+		self.queue:add( batch )
 
-		local d = Drawable:create( love.graphics.newImage( canvas:newImageData() ) )
-		d.y = love.graphics.getHeight() / 4
-		table.insert(self.queue, d )
-
-
-		local canvas = love.graphics.newCanvas(love.graphics.getWidth(), Dictionnary['hyptosis_tile-art-batch-1'].screen.height * 2)
-
-		love.graphics.setCanvas(canvas)
-		for i=0, love.graphics.getWidth() - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.width do
-			for j=0, love.graphics.getHeight() - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.height do
-
+		local batch = CanvasBatch:create(
+			function (i, j)
 				local n = love.math.random(-1, 1)
 				Dictionnary['hyptosis_tile-art-batch-1'][302 + 30 * n ]:draw(i, j)
+			end,
+			love.graphics.getWidth(),
+			Dictionnary['hyptosis_tile-art-batch-1'].screen.height * 2
+		)
 
-			end
-		end
-		love.graphics.setCanvas()
+		local drawable = Drawable:create(batch.image)
+		drawable.y = love.graphics.getHeight() / 4 - Dictionnary['hyptosis_tile-art-batch-1'].screen.height * 2
+		self.queue:add( drawable )
 
-		local d = Drawable:create( love.graphics.newImage( canvas:newImageData() ) )
-		d.y = love.graphics.getHeight() / 4 - Dictionnary['hyptosis_tile-art-batch-1'].screen.height * 2
-		table.insert(self.queue, d )
 
 		local container = UI.Container:create(
 			{
@@ -71,8 +63,6 @@ return {
 			height = 1,
 			{ 13, 14, 15 }
 		})
-		-- container:push(Drawable:create(item.image))
-		-- container:push(Drawable:create(item.image))
 
 		local item2 = Compound:create('UI', {
 			width = 2,
@@ -81,13 +71,14 @@ return {
 			{ 20 + 25 * 6, 21 + 25 * 6}
 		})
 
+
 		container:push(Drawable:create(item2.image))
-		-- container:push(Drawable:create(item2.image))
 		container:push(Drawable:create(item.image))
-		-- container:push()
+		container:push(Drawable:create(item.image))
+		container:push(Drawable:create(item.image))
 		container:push(Drawable:create(item.image))
 
-		table.insert(self.queue, container)
+		self.queue:add( container )
 
 	end,
 

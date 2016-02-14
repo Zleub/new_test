@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 20:46:43
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 22:17:26
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -14,6 +14,23 @@
 --          .-::::-`
 
 inspect = require 'exts.inspect'
+
+function definitions_solver(self, def_table, ...)
+	local s = ''
+
+	for i,v in ipairs({...}) do
+		if type(v) == 'table' and v.type then s = s..v:type()
+		elseif type(v) == 'userdata' then s = s..v:type()
+		else s = s..type(v) end
+		if ({...})[i + 1] then s = s..', ' end
+	end
+
+	if def_table[s] then
+		return def_table[s](self, ...)
+	else
+		return def_table['_'](self, ...)
+	end
+end
 
 function clamp(num, min, max)
 	if num < min then return min
@@ -60,6 +77,8 @@ require_list(
 	'libs.Compound',
 	'libs.Shader',
 	'libs.Shader_Rectangle',
+	'libs.Collection',
+	'libs.CanvasBatch',
 
 	'libs.Color',
 	'libs.UI',
