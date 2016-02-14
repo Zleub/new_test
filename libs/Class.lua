@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:25:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 14:50:52
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 22:01:14
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -14,6 +14,8 @@
 --          .-::::-`
 
 local Class = {}
+
+Class.name = 'Class'
 
 function Class.grettings()
 	print('Class.grettings')
@@ -23,8 +25,20 @@ function Class.__index(t, k)
 		return getmetatable(t)[k]
 	end
 
-function Class.type()
-	return 'Class'
+function Class:type()
+	return self.name
+end
+
+function Class:type_iter()
+	local s = self
+
+	return function ()
+		if s == nil then return end
+
+		local t = s:type()
+		s = getmetatable(s)
+		return t
+	end
 end
 
 function Class.dump(self)
