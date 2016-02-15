@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 00:18:23
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 23:58:59
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -77,8 +77,9 @@ require_list(
 	'libs.Compound',
 	'libs.Shader',
 	'libs.Shader_Rectangle',
-	'libs.Collection',
+	'libs.EventDispatcher',
 	'libs.CanvasBatch',
+	'libs.Clickable',
 
 	'libs.Color',
 	'libs.UI',
@@ -119,5 +120,9 @@ end
 
 function love.keypressed(key)
 	State:keypressed(key)
+end
+
+function love.mousepressed(x, y, button)
+	State:mousepressed(x, y, button)
 end
 

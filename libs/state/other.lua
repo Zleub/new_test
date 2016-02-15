@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:19:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 12:41:42
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 00:28:50
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -19,7 +19,7 @@ return {
 		self.cmp = 0
 		self.mousewheel = 1
 
-		self.queue = Collection:create('Drawable')
+		self.EventDispatch = EventDispatcher:create()
 
 		local batch = CanvasBatch:create(
 			function (i, j)
@@ -30,7 +30,7 @@ return {
 		)
 
 		batch.y = love.graphics.getHeight() / 4
-		self.queue:add( batch )
+		self.EventDispatch:add( batch )
 
 		local batch = CanvasBatch:create(
 			function (i, j)
@@ -43,7 +43,7 @@ return {
 
 		local drawable = Drawable:create(batch.image)
 		drawable.y = love.graphics.getHeight() / 4 - Dictionnary['hyptosis_tile-art-batch-1'].screen.height * 2
-		self.queue:add( drawable )
+		self.EventDispatch:add( drawable )
 
 
 		local container = UI.Container:create(
@@ -75,10 +75,10 @@ return {
 		self.b = container:push(Drawable:create(item2.image))
 		self.b1 = container:push(Drawable:create(item.image))
 		self.b2 = container:push(Drawable:create(item.image))
-		self.b3 = container:push(Drawable:create(item.image))
+		self.b3 = container:push(Clickable:create(item.image))
 		self.b4 = container:push(Drawable:create(item.image))
 
-		self.queue:add( container )
+		self.EventDispatch:add( container )
 
 		self.font = love.graphics.newFont('Minimal3x5.ttf', 32)
 
@@ -92,23 +92,14 @@ return {
 			self.cmp = math.floor(self.time)
 		end
 
-		for i,v in ipairs(self.queue) do
-			if v.update then v:update(dt) end
-		end
+		self.EventDispatch.update:dispatch(dt)
 
 	end,
 
 	draw = function (self)
-		-- love.graphics.setColor(Color:extract('grey'))
-		-- love.graphics.rectangle('fill', 0, 0, love.graphics.getDimensions())
-		-- love.graphics.setColor(Color:extract('white'))
-
 		love.graphics.print(self.mousewheel)
-		-- love.graphics.print(self.queue[2].x..self.queue[2].y, 0, 15)
 
-		for i,v in ipairs(self.queue) do
-			if v.draw then v:draw() end
-		end
+		self.EventDispatch.draw:dispatch()
 
 		love.graphics.setColor(Color:extract('black'))
 		love.graphics.setFont(self.font)
@@ -133,6 +124,10 @@ return {
 	wheelmoved = function (self, x, y)
 		self.mousewheel = self.mousewheel + y
 		if self.mousewheel < 1 then self.mousewheel = 1 end
+	end,
+
+	mousepressed = function (self, x, y, button)
+		self.EventDispatch.mousepressed:dispatch(x, y, button)
 	end
 
 }
