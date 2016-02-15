@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 22:17:26
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 00:18:23
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -88,23 +88,18 @@ require_list(
 
 local scale = 4
 
-function love.wheelmoved(x, y)
-	State:wheelmoved(x, y)
-end
-
-function love.keypressed(key)
-	State:keypressed(key)
-end
-
 function love.load()
 	debug(_VERSION)
+	love.defaultfont = love.graphics.getFont()
+
 	Loader:push( Loader.PNG, 'assets/', 'pict' )
 	Loader:push( Loader.PNG, 'assets/', 'hyptosis_tile-art-batch-1' )
 	Loader:push( Loader.PNG, 'assets/', 'hyptosis_tile-art-batch-2' )
 	Loader:push( Loader.PNG, 'assets/', 'Untitled_master' )
 	Loader:push( Loader.PNG, 'assets/', 'UI' )
 
-	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_m')
+	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_m', 'character')
+	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_f', 'character')
 
 	State.previous = 'Other'
 	State('Loading')
@@ -116,5 +111,13 @@ end
 
 function love.draw()
 	State:draw()
+end
+
+function love.wheelmoved(x, y)
+	State:wheelmoved(x, y)
+end
+
+function love.keypressed(key)
+	State:keypressed(key)
 end
 

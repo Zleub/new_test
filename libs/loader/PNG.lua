@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-03 18:21:06
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 19:01:48
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 23:55:03
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -49,9 +49,9 @@ PNG.optionalAPI = {
 	}
 }
 
-function PNG.files(path, filename)
+function PNG.files(path, filename, configname)
 	local fileimg = path..filename..'.png'
-	local fileconfig = path..filename..'.lua'
+	local fileconfig = path..(configname or filename)..'.lua'
 
 	local config, img
 
@@ -72,8 +72,8 @@ function PNG.files(path, filename)
 	return config, img
 end
 
-function PNG:load(path, filename)
-	config, img = PNG.files(path, filename)
+function PNG:load(path, filename, configname)
+	config, img = PNG.files(path, filename, configname)
 	config = Loader.check(self, config)
 
 	if config and config.grid then
