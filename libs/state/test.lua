@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:18:37
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 17:10:09
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 00:10:47
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -21,7 +21,7 @@ return {
 		self.test = 1
 
 		local img = Dictionnary.banner:expand()
-		img.scale = 4
+		img.scale = 2
 		self.s1 = Shader:create(img, 'shaders/test_shader2.glsl')
 
 		local img = Dictionnary['Untitled_master'][2]:expand()
@@ -30,7 +30,6 @@ return {
 
 		self.s3 = Shader_Rectangle:create({width = 300, height = 300}, 'shaders/test_shader2.glsl')
 		self.s3.x = 300
-
 
 	end,
 	update = function (self, dt)
@@ -52,7 +51,7 @@ return {
 		love.graphics.print('self.cmp: '..self.cmp, 0, love.graphics.getHeight() - 30)
 		love.graphics.print('self.test: '..self.test, 0, love.graphics.getHeight() - 54)
 
-		self.s1:draw(10, 0)
+		self.s1:draw(5 * self.s1.drawable.scale, 0)
 		self.s2:draw()
 		self.s3:draw()
 

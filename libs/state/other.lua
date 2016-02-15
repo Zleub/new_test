@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:19:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 22:53:35
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 12:41:42
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -47,12 +47,12 @@ return {
 
 
 		local container = UI.Container:create(
-			{
-				image = 'UI',
-				ul = 26, ur = 28, dl = 76, dr = 78,
-				bl = 51, br = 53, bu = 27, bd = 77,
-				body = 52
-			},
+			-- {
+			-- 	image = 'UI',
+			-- 	ul = 26, ur = 28, dl = 76, dr = 78,
+			-- 	bl = 51, br = 53, bu = 27, bd = 77,
+			-- 	body = 52
+			-- },
 			love.graphics.getWidth(),
 			love.graphics.getHeight() / 4
 		)
@@ -71,14 +71,16 @@ return {
 			{ 20 + 25 * 6, 21 + 25 * 6}
 		})
 
-
-		container:push(Drawable:create(item2.image))
-		container:push(Drawable:create(item.image))
-		container:push(Drawable:create(item.image))
-		container:push(Drawable:create(item.image))
-		container:push(Drawable:create(item.image))
+		self.container = container
+		self.b = container:push(Drawable:create(item2.image))
+		self.b1 = container:push(Drawable:create(item.image))
+		self.b2 = container:push(Drawable:create(item.image))
+		self.b3 = container:push(Drawable:create(item.image))
+		self.b4 = container:push(Drawable:create(item.image))
 
 		self.queue:add( container )
+
+		self.font = love.graphics.newFont('Minimal3x5.ttf', 32)
 
 	end,
 
@@ -108,13 +110,24 @@ return {
 			if v.draw then v:draw() end
 		end
 
+		love.graphics.setColor(Color:extract('black'))
+		love.graphics.setFont(self.font)
+		love.graphics.print('test', self.b1.x + (self.b1.width - self.font:getWidth('test')) / 2, self.b1.y + (self.b1.height - self.font:getHeight()) / 2)
+		love.graphics.setFont(love.defaultfont)
+		love.graphics.setColor(Color:extract('white'))
+
+
 		Dictionnary['warrior_m'][5]:draw(200, 200)
+		Dictionnary['warrior_f'][5]:draw(200, 300)
 
 	end,
 
 	keypressed = function (self, key)
 		if key == 'space' then State('Map') end
 		if key == 'a' then self.time = 1 end
+
+		if key == 'q' then self.mousewheel = self.mousewheel + 1 end
+		if key == 's' then self.mousewheel = self.mousewheel - 1 end
 	end,
 
 	wheelmoved = function (self, x, y)

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-11 17:15:43
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 22:53:14
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 00:15:46
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -68,12 +68,11 @@ function Container:push(item)
 	if not self.padd then self.padd = padd
 	elseif padd < self.padd then self.padd = padd end
 
-	print(self.padd)
-
 	item.x = item.x + self.padd / 2
 	item.y = item.y + self.padd / 2
 
 	self.queue:add(item)
+	return item
 end
 
 function Container:update(dt)

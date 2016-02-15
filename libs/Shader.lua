@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-11 02:06:58
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 18:15:57
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 00:04:34
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -22,8 +22,7 @@ function Shader:create(drawable, filename)
 	s.filename = filename
 	s.shader = love.graphics.newShader(s.filename)
 
-	s.width = s.drawable.image:getWidth() * s.drawable.scale
-	s.height = s.drawable.image:getHeight() * s.drawable.scale
+	s.width, s.height = s.drawable:getSize()
 	s.x, s.y = s.drawable.x, s.drawable.y
 
 	return s
