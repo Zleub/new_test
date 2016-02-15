@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-11 17:15:43
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 00:15:46
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 00:28:19
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -36,14 +36,14 @@ function Container:create_from_dimensions(width, height)
 
 	c.x, c.y = 0, 0
 	c.width, c.height = width, height
-	c.queue = Collection:create('Drawable')
+	c.queue = EventDispatcher:create()
 
 	return c
 end
 
 function Container:create_from_description(desc, width, height)
 	local c = Compound.create(self, desc, width, height)
-	c.queue = Collection:create('Drawable')
+	c.queue = EventDispatcher:create()
 
 	return c
 end
@@ -52,7 +52,7 @@ function Container:push(item)
 	if item.x < self.x then item.x = self.x end
 	if item.y < self.y then item.y = self.y end
 
-	local last_elem = self.queue[#self.queue]
+	local last_elem = self.last_elem
 	if last_elem then
 		if last_elem.y + last_elem.height + item.height < self.y + self.height then
 			item.y = last_elem.y + last_elem.height - self.padd / 2
@@ -72,19 +72,16 @@ function Container:push(item)
 	item.y = item.y + self.padd / 2
 
 	self.queue:add(item)
+	self.last_elem = item
 	return item
 end
 
 function Container:update(dt)
-	self.queue:iter( function (i, v)
-		if v.update then v:update(dt) end
-		if v:type() == 'Draggable' then
-			if v.x < self.x then v.x = self.x end
-			if v.y < self.y then v.y = self.y end
-			if v.x + v.width > self.x + self.width then v.x = self.x + self.width - v.width end
-			if v.y + v.height > self.y + self.height then v.y = self.y + self.height - v.height end
-		end
-	end )
+	self.queue.update:dispatch(dt)
+end
+
+function Container:mousepressed(x, y, button)
+	self.queue.mousepressed:dispatch(x, y, button)
 end
 
 function Container:draw(x, y, scale)
@@ -92,9 +89,7 @@ function Container:draw(x, y, scale)
 		Drawable.draw(self, x, y, scale)
 	end
 
-	self.queue:iter( function (i, v)
-		if v.draw then v:draw(x, y, scale) end
-	end )
+	self.queue.draw:dispatch(x, y, scale)
 end
 
 function Container:create(...)

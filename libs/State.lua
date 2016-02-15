@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-01-03 13:17:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 17:12:22
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 23:57:09
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -55,6 +55,12 @@ end
 function State:keypressed(x, y)
 	if State[self.current].keypressed then
 		State[self.current]:keypressed(x, y)
+	end
+end
+
+function State:mousepressed(x, y, button)
+	if State[self.current].mousepressed then
+		State[self.current]:mousepressed(x, y, button)
 	end
 end
 
