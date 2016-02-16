@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:18:37
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 00:10:47
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 17:27:40
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -20,43 +20,85 @@ return {
 		self.cmp = 1
 		self.test = 1
 
-		local img = Dictionnary.banner:expand()
-		img.scale = 2
-		self.s1 = Shader:create(img, 'shaders/test_shader2.glsl')
+		self.EventDispatch = EventDispatcher:create()
 
-		local img = Dictionnary['Untitled_master'][2]:expand()
-		img.scale = 12
-		self.s2 = Shader:create(img, 'shaders/test_shader2.glsl')
+		local m = Modulable.create(Draggable)
 
-		self.s3 = Shader_Rectangle:create({width = 300, height = 300}, 'shaders/test_shader2.glsl')
-		self.s3.x = 300
+		m.load = function (self)
+			self.x, self.y = 0, 0
+			self.width, self.height = 32, 32
+			self.scale = 4
+			self.canvas = love.graphics.newCanvas(self.width, self.height)
+			self.d = Drawable:create( love.graphics.newImage( self.canvas:newImageData() ) )
+			self.data = self.d.image:getData( )
+			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
+		end
+		m.update = function (self, dt, cmp, test)
+			Draggable.update(self)
+
+			self.shader:send("width", self.width)
+			self.shader:send("height", self.height)
+			self.shader:send("resolution", cmp)
+			self.shader:send("test", test)
+			self.shader:send("x", 0)
+			self.shader:send("y", 0)
+
+			love.graphics.setCanvas(self.canvas)
+				love.graphics.clear()
+				love.graphics.setShader(self.shader)
+				love.graphics.polygon('fill',
+					16,  0,
+					 1, 11,
+					 7, 29,
+					25, 29,
+					31, 11
+				)
+				love.graphics.setShader()
+				love.graphics.setColor(0, 0, 0, 255)
+				love.graphics.polygon('fill',
+					16,  2,
+					 3, 12,
+					 8, 27,
+					24, 27,
+					29, 12
+				)
+				love.graphics.setColor(Color:extract('white'))
+			love.graphics.setCanvas()
+
+			local d = self.canvas:newImageData()
+			self.data:paste( d, 0, 0, 0, 0, 32, 32 )
+			self.d.image:refresh()
+			self.d.x, self.d.y = self.x, self.y
+
+		end
+		m.draw = function (self, x, y, scale)
+			self.d:draw(x, y, self.scale)
+		end
+
+		local m2 = m:create()
+
+		m:load()
+		m2:load()
+		m2.x = 400
+		self.EventDispatch:add(m)
+		self.EventDispatch:add(m2)
 
 	end,
 	update = function (self, dt)
 		self.time = self.time + dt / 2.5
 		self.test = math.cos(self.time) * 4
 
-		self.s1:update(dt, self.cmp, self.test)
-		self.s2:update(dt, self.cmp, self.test)
-		self.s3:update(dt, self.cmp, self.test)
+		self.EventDispatch.update:dispatch(dt, self.cmp, self.test)
 
 	end,
 	draw = function (self)
+		love.graphics.print(self.time, 0, 0)
+		love.graphics.print(self.cmp, 0, 15)
+		love.graphics.print(self.test, 0, 30)
 
-		love.graphics.setColor(Color:extract('grey'))
-		love.graphics.rectangle('fill', 0, 0, love.graphics.getDimensions())
-		love.graphics.setColor(Color:extract('white'))
 
-		love.graphics.print('self.time: '..self.time, 0, love.graphics.getHeight() - 15)
-		love.graphics.print('self.cmp: '..self.cmp, 0, love.graphics.getHeight() - 30)
-		love.graphics.print('self.test: '..self.test, 0, love.graphics.getHeight() - 54)
+		self.EventDispatch.draw:dispatch()
 
-		self.s1:draw(5 * self.s1.drawable.scale, 0)
-		self.s2:draw()
-		self.s3:draw()
-
-		Dictionnary.banner:draw(100, 400, 2)
-		Dictionnary['Untitled_master'][2]:draw(300, 300, 12)
 	end,
 	wheelmoved = function (self, x, y)
 		self.cmp  = self.cmp + y

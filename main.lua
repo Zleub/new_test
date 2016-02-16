@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-19 23:19:42
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 23:58:59
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 17:29:12
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -75,11 +75,12 @@ require_list(
 	'libs.Drawable',
 	'libs.Draggable',
 	'libs.Compound',
-	'libs.Shader',
-	'libs.Shader_Rectangle',
+	-- 'libs.Shader',
+	-- 'libs.Shader_Rectangle',
 	'libs.EventDispatcher',
 	'libs.CanvasBatch',
 	'libs.Clickable',
+	'libs.Modulable',
 
 	'libs.Color',
 	'libs.UI',
@@ -102,7 +103,7 @@ function love.load()
 	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_m', 'character')
 	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_f', 'character')
 
-	State.previous = 'Other'
+	State.previous = 'Test'
 	State('Loading')
 end
 
