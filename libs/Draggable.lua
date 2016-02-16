@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:25:49
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 00:20:46
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 16:26:01
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -24,8 +24,8 @@ function Draggable:update(dt)
 		self:moveBy(x - self.drag.x, y - self.drag.y)
 		self.drag = nil
 	end
-	if self.x < x and x < self.x + self.width
-		and self.y < y and y < self.y + self.height then
+	if self.x < x and x < self.x + self.width * self.scale
+		and self.y < y and y < self.y + self.height * self.scale then
 
 		if love.mouse.isDown(1) then
 			self.drag = {x = x, y = y}
