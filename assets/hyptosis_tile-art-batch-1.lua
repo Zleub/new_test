@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-12-20 02:42:43
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 19:28:54
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 18:17:30
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -29,7 +29,7 @@ return {
 		banner = {
 			width = 1,
 			height = 2,
-			{ 743 - 2, },
+			{ 743 - 2 },
 			{ 773 - 2 }
 		}
 	}

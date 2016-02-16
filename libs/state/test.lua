@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:18:37
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 17:47:28
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 18:16:59
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -26,8 +26,8 @@ return {
 
 		function m:load()
 			self.x, self.y = 0, 0
-			self.width, self.height = 32, 32
-			self.scale = 4
+			self.width, self.height = 32 * 2, 32 * 2
+			self.scale = 2
 			self.canvas = love.graphics.newCanvas(self.width, self.height)
 			self.d = Drawable:create( love.graphics.newImage( self.canvas:newImageData() ) )
 			self.data = self.d.image:getData( )
@@ -36,6 +36,7 @@ return {
 		function m:update(dt, cmp, test)
 			Draggable.update(self)
 
+			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
 			self.shader:send("width", self.width)
 			self.shader:send("height", self.height)
 			self.shader:send("resolution", cmp)
@@ -47,26 +48,26 @@ return {
 				love.graphics.clear()
 				love.graphics.setShader(self.shader)
 				love.graphics.polygon('fill',
-					16,  0,
-					 1, 11,
-					 7, 29,
-					25, 29,
-					31, 11
+					16 * 2,  0 * 2,
+					 1 * 2, 11 * 2,
+					 7 * 2, 29 * 2,
+					25 * 2, 29 * 2,
+					31 * 2, 11 * 2
 				)
 				love.graphics.setShader()
 				love.graphics.setColor(0, 0, 0, 255)
 				love.graphics.polygon('fill',
-					16,  2,
-					 3, 12,
-					 8, 27,
-					24, 27,
-					29, 12
+					16 * 2,  2 * 2,
+					 3 * 2, 12 * 2,
+					 8 * 2, 27 * 2,
+					24 * 2, 27 * 2,
+					29 * 2, 12 * 2
 				)
 				love.graphics.setColor(Color:extract('white'))
 			love.graphics.setCanvas()
 
 			local d = self.canvas:newImageData()
-			self.data:paste( d, 0, 0, 0, 0, 32, 32 )
+			self.data:paste( d, 0, 0, 0, 0, self.width, self.height )
 			self.d.image:refresh()
 			self.d.x, self.d.y = self.x, self.y
 
@@ -89,6 +90,7 @@ return {
 		function m:update(dt, cmp, test)
 			Draggable.update(self)
 
+			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
 			self.shader:send("width", self.width * self.scale)
 			self.shader:send("height", self.height * self.scale)
 			self.shader:send("resolution", cmp)
@@ -97,6 +99,7 @@ return {
 			self.shader:send("y", self.y)
 		end
 		function m:draw()
+			self.d:draw(self.x, self.y, self.scale)
 			love.graphics.setShader(self.shader)
 			self.d:draw(self.x, self.y, self.scale)
 			love.graphics.setShader()
@@ -111,12 +114,13 @@ return {
 			self.d = Dictionnary['Untitled_master'][8]
 			self.scale = 1
 			self.x, self.y = 0, 0
-			self.width, self.height = 100, 100
+			self.width, self.height = 200, 200
 			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
 		end
 		function m:update(dt, cmp, test)
 			Draggable.update(self)
 
+			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
 			self.shader:send("width", self.width * self.scale)
 			self.shader:send("height", self.height * self.scale)
 			self.shader:send("resolution", cmp)
@@ -135,11 +139,10 @@ return {
 		self.EventDispatch:add(m)
 	end,
 	update = function (self, dt)
-		self.time = self.time + dt / 2.5
+		if not self.pause then self.time = self.time + dt / 2.5 end
 		self.test = math.cos(self.time) * 4
 
 		self.EventDispatch.update:dispatch(dt, self.cmp, self.test)
-
 	end,
 	draw = function (self)
 		love.graphics.print(self.time, 0, 0)
@@ -149,12 +152,18 @@ return {
 
 		self.EventDispatch.draw:dispatch()
 
+		Dictionnary.banner:draw()
 	end,
 	wheelmoved = function (self, x, y)
 		self.cmp  = self.cmp + y
 	end,
 	keypressed = function (self, key)
 		if key == 'space' then State('Other') end
+		if key == 'return' then
+			if self.pause then self.pause = false
+			else self.pause = true end
+		end
+
 
 		if key == 'a' then
 			self.test = self.test + 1
@@ -171,3 +180,4 @@ return {
 
 	end
 }
+

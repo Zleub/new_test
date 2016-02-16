@@ -32,18 +32,23 @@ vec4 effect( vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords 
 	float v = 0.3 ;
 
 
-	if (sin(x * y) + log(x + y) < test) {
+	if (sin(x * y) * 2 + log(x + y) < test) {
 		t = 219 / 255. ;
 		u =   0 / 255. ;
 		v =   0 / 255. ;
 	}
-	else if (cos(x + y) - log(x + y) > test) {
+	else if (cos(x + y) * 2 - log(x + y) > test) {
 		t = 136 / 255. ;
 		u = 204 / 255. ;
 		v =   0 / 255. ;
 	}
 	else {
-		return grey ;
+		return vec4(
+		0.,
+		0.,
+		0.,
+		0.
+	);
 	}
 	// u = tan(x + y) / tan(x * y) / 12;
 
