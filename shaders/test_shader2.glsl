@@ -50,9 +50,9 @@ vec4 effect( vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords 
 	vec3 new_color = vec3(t, u, v);
 
 	return vec4(
-		new_color.r,
-		new_color.g,
-		new_color.b,
+		t_color.r * new_color.r,
+		t_color.g * new_color.g,
+		t_color.b * new_color.b,
 		t_color.a
 	);
 }

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2016-02-09 19:18:37
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 17:27:40
+-- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 17:47:28
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -24,7 +24,7 @@ return {
 
 		local m = Modulable.create(Draggable)
 
-		m.load = function (self)
+		function m:load()
 			self.x, self.y = 0, 0
 			self.width, self.height = 32, 32
 			self.scale = 4
@@ -33,7 +33,7 @@ return {
 			self.data = self.d.image:getData( )
 			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
 		end
-		m.update = function (self, dt, cmp, test)
+		function m:update(dt, cmp, test)
 			Draggable.update(self)
 
 			self.shader:send("width", self.width)
@@ -71,18 +71,68 @@ return {
 			self.d.x, self.d.y = self.x, self.y
 
 		end
-		m.draw = function (self, x, y, scale)
+		function m:draw(x, y, scale)
 			self.d:draw(x, y, self.scale)
 		end
 
-		local m2 = m:create()
+		m:load()
+		self.EventDispatch:add(m)
+
+		local m = Modulable.create(Draggable)
+		function m:load()
+			self.d = Dictionnary['Untitled_master'][8]
+			self.scale = 8
+			self.x, self.y = self.d.x, self.d.y
+			self.width, self.height = self.d:getSize()
+			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
+		end
+		function m:update(dt, cmp, test)
+			Draggable.update(self)
+
+			self.shader:send("width", self.width * self.scale)
+			self.shader:send("height", self.height * self.scale)
+			self.shader:send("resolution", cmp)
+			self.shader:send("test", test)
+			self.shader:send("x", self.x)
+			self.shader:send("y", self.y)
+		end
+		function m:draw()
+			love.graphics.setShader(self.shader)
+			self.d:draw(self.x, self.y, self.scale)
+			love.graphics.setShader()
+		end
 
 		m:load()
-		m2:load()
-		m2.x = 400
+		m.x = 100
 		self.EventDispatch:add(m)
-		self.EventDispatch:add(m2)
 
+		local m = Modulable.create(Draggable)
+		function m:load()
+			self.d = Dictionnary['Untitled_master'][8]
+			self.scale = 1
+			self.x, self.y = 0, 0
+			self.width, self.height = 100, 100
+			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
+		end
+		function m:update(dt, cmp, test)
+			Draggable.update(self)
+
+			self.shader:send("width", self.width * self.scale)
+			self.shader:send("height", self.height * self.scale)
+			self.shader:send("resolution", cmp)
+			self.shader:send("test", test)
+			self.shader:send("x", self.x)
+			self.shader:send("y", self.y)
+		end
+		function m:draw()
+			love.graphics.setShader(self.shader)
+			love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
+			love.graphics.setShader()
+		end
+
+		m:load()
+		m.x = 200
+		self.EventDispatch:add(m)
 	end,
 	update = function (self, dt)
 		self.time = self.time + dt / 2.5
