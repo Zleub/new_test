@@ -30,6 +30,7 @@ Color.white = { 255, 255 , 255, 255 }
 Color.black = { 0, 0 , 0, 255 }
 Color.brown = { 85, 39 , 0, 255 }
 Color.green = { 45, 136 , 45, 255 }
+Color.red = { 158, 45 , 45, 255 }
 Color.yellow = { 217, 196 , 21, 255 }
 Color.blue = { 34, 102 , 102, 255 }
 Color.grey = { 127, 127 , 127, 255 }
