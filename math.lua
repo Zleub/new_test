@@ -24,15 +24,10 @@ end
 
 local Character = Class:expand()
 
-function Character.name(name)
-	local f = Function(name)
-	return function () f() end
-end
-
 function Character:create(name)
 	self = Class.create(Character)
 
-	self.name(name)
+	self.name = Function(name)
 
 	self.life = Range(0, 10)
 
@@ -49,14 +44,23 @@ function CharactertoString(Character)
 	..'\tdefense: '..Character.defense()
 end
 
-local q = Character:create('Qwerty')
-local a = Character:create('Azerty')
+metatable = {
+	__call = function (t, size, ...)
+		print(size)
+		for i=1,size do
+			io.write(({...})[i])
+			if i ~= size then io.write(' ') end
+		end
+		io.write('\n')
+	end,
+	__index = function (a, b, c)
+		debug(a,b,c)
+	end
+}
 
-print( CharactertoString(q) )
-print( CharactertoString(a) )
+local NMatrix = {}
+setmetatable(NMatrix, metatable)
 
-function Mod(Class)
-	debug(Class)
-end
+local m = NMatrix(4, 0, 0, 0, 0)
 
-Mod(Character)
+debug( NMatrix[42] )
