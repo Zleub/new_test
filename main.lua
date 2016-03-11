@@ -48,7 +48,7 @@ function love.load()
 	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_m', 'character')
 	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_f', 'character')
 
-	State.previous = 'Test'
+	State.previous = 'Math'
 	State('Loading')
 end
 

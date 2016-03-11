@@ -72,6 +72,8 @@ State.Other = require('libs.state.other')
 
 State.Map = require('libs.state.map')
 
+State.Math = require('libs.state.math')
+
 
 
 return State
