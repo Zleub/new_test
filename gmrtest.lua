@@ -17,8 +17,13 @@ inspect = require 'exts.inspect'
 
 rules = {}
 
+separators = {
+	['|'] = 'or',
+	['%s'] = 'and'
+}
+
 function split(s, symbol)
-	local tmp = { type = symbol}
+	local tmp = { type = separators[symbol]}
 
 	for v in s:gmatch("[^"..symbol.."]+") do
 		table.insert(tmp, v)
@@ -34,7 +39,9 @@ function make_split(s, pattern)
 	else return t end
 end
 
-for l in io.lines('gmr.bnf') do
+local file = arg[1] or 'gmr.bnf'
+
+for l in io.lines(file) do
 	for name, rule in l:gmatch("(.-)%s-:(.+)") do
 		rules[name] = make_split(rule, '|')
 
@@ -50,5 +57,53 @@ end
 
 print(inspect(rules))
 
-print(rules.binop[1]:match("'(.+)'"))
-print(rules.expression[1]:match("'(.+)'"))
+
+function and_function(t, line)
+	local l = line
+	for i,v in ipairs(t) do
+		local s = match_litteral(v, l)
+		print('andloop:', v, s)
+		l = s
+	end
+end
+
+function or_function(t, line)
+	-- print('or function:', inspect(t))
+
+	local l = line
+	for i,v in ipairs(t) do
+		match_litteral(v, l)
+		print('orloop:', v, l)
+	end
+end
+
+function match_litteral(v, line)
+	if type(v) == 'table' then
+		do_table(v, line)
+	elseif v:match("'.+'") == nil then
+		do_rule(rules, v, line)
+	else
+		local value = v:match("'(.+)'")
+		return line:match('^'..value..'(.+)')
+		-- print('matching: '..value, line:match('^'..value..'(.+)') )
+	end
+end
+
+separator_table = {
+	['and'] = and_function,
+	['or'] = or_function
+}
+
+function do_rule(t, i, line)
+	separator_table[t[i].type](t[i], line)
+end
+
+function do_table(t, line)
+	separator_table[t.type](t, line)
+end
+
+function parse(line)
+	do_rule(rules, 'main', line)
+end
+
+parse('Hello World !')
