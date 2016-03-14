@@ -61,8 +61,12 @@ print(inspect(rules))
 function and_function(t, line)
 	local l = line
 	for i,v in ipairs(t) do
+		print('andloop:', v)
 		local s = match_litteral(v, l)
-		print('andloop:', v, s)
+
+		print('and result:', s)
+		if not s then return end
+
 		l = s
 	end
 end
@@ -72,9 +76,14 @@ function or_function(t, line)
 
 	local l = line
 	for i,v in ipairs(t) do
-		match_litteral(v, l)
 		print('orloop:', v, l)
+		local res = match_litteral(v, l)
 	end
+end
+
+local quotepattern = '(['..("%^$().[]*+-?"):gsub("(.)", "%%%1")..'])'
+string.quote = function(str)
+	return str:gsub(quotepattern, "%%%1")
 end
 
 function match_litteral(v, line)
@@ -84,6 +93,8 @@ function match_litteral(v, line)
 		do_rule(rules, v, line)
 	else
 		local value = v:match("'(.+)'")
+
+		local value = string.quote(value)
 		return line:match('^'..value..'(.+)')
 		-- print('matching: '..value, line:match('^'..value..'(.+)') )
 	end
@@ -95,6 +106,7 @@ separator_table = {
 }
 
 function do_rule(t, i, line)
+	print(i, line)
 	separator_table[t[i].type](t[i], line)
 end
 
@@ -107,3 +119,4 @@ function parse(line)
 end
 
 parse('Hello World !')
+

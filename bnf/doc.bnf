@@ -1,0 +1,4 @@
+alpha ::= 'aud' | 'o'
+
+main ::= 'He' 'llo' 'World !' | 'a' 'r' 'n' alpha
+

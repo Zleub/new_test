@@ -1,4 +1,0 @@
-binop		: '+' | '-' | '*' | '/' | '<' | '>'
-operand		: 'x' | 'y' | '(' expression ')'
-
-main		: operand binop operand

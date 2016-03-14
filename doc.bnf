@@ -1,3 +1,0 @@
-alpha : 'aud' | 'o'
-
-main : 'He' 'llo' | 'a' 'r' 'n' alpha
