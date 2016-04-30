@@ -1,0 +1,131 @@
+[{
+"examples": ["CanvasBatch:create(f, w, h)"],
+"extendedDescription": "",
+"arguments": [],
+"namespace": "CanvasBatch",
+"description": "This is a standard construction of the Drawable type.",
+"tags": ["Drawable", "needCare", "CanvasBatch"],
+"returns": ["Drawable"],
+"name": "CanvasBatch"
+}
+,{
+"examples": ["local Module = Class:expand()"],
+"extendedDescription": "",
+"arguments": [],
+"namespace": "",
+"description": "This is the standard Class module.",
+"tags": ["Class", "Module"],
+"returns": [],
+"name": "Class"
+}
+,{
+"examples": ["Something:grettings()"],
+"extendedDescription": "",
+"arguments": [],
+"namespace": "Class",
+"description": "This is the standard grettings function",
+"tags": ["Class"],
+"returns": [],
+"name": "grettings"
+}
+,{
+"examples": [],
+"extendedDescription": "",
+"arguments": [],
+"namespace": "Class",
+"description": "This is the Class __index metamethod, allowing inheritance by metatable.",
+"tags": ["Class", "Metatable"],
+"returns": [],
+"name": "__index"
+}
+,{
+"examples": ["Something:type()"],
+"extendedDescription": "",
+"arguments": [],
+"namespace": "Class",
+"description": "The standard type function for the Class inheritance tree.",
+"tags": ["Class", "needCare"],
+"returns": [],
+"name": "type"
+}
+,{
+"examples": ["for t in Something:type_iter do ... end"],
+"extendedDescription": "",
+"arguments": [],
+"namespace": "Class",
+"description": "The standard type iterator function for the Class inheritance tree.",
+"tags": ["Class", "needCare"],
+"returns": [],
+"name": "type_iter"
+}
+,{
+"examples": ["Something:dump()"],
+"extendedDescription": "",
+"arguments": [],
+"namespace": "Class",
+"description": "The standard debug function.",
+"tags": ["Class"],
+"returns": [],
+"name": "dump"
+}
+,{
+"examples": ["newClass = Class:expand()", "newC = newClass:expand()"],
+"extendedDescription": "This function take a table as an argument and returns a new table with the paramter as a metatable.",
+"arguments": ["baseClass"],
+"namespace": "Class",
+"description": "The standard function for prototyping.",
+"tags": ["Class", "Metatable"],
+"returns": ["newClass"],
+"name": "expand"
+}
+,{
+"examples": ["s = Something:create()"],
+"extendedDescription": "This function take a table as an argument and return a shallow copy of that table.",
+"arguments": ["baseClass"],
+"namespace": "Class",
+"description": "The standard function to create an instance to a class.",
+"tags": ["Class", "Metatable"],
+"returns": ["newInstance"],
+"name": "create"
+}
+,{
+"examples": [],
+"extendedDescription": "The Clickable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatch to get it triggered.",
+"arguments": [],
+"namespace": "",
+"description": "The Clickable base",
+"tags": ["Clickable"],
+"returns": [],
+"name": "Clickable"
+}
+,{
+"examples": ["function Something:create(...)\n\treturn definitions_solver(self, {\n\t['_'] = function (...) debug('Something._', {...}) end,\n\t['string'] = Something.create_from_string,\n\t['number, number'] = Something.create_from_size\n\t}, ...)\nend"],
+"extendedDescription": "The function work with some stringifiction of type into a string to find out which function of the definiton_table to call.\nDefinitively not classy.",
+"arguments": ["module", "definition_table", "..."],
+"namespace": "",
+"description": "Function for polymorphism in Lua.",
+"tags": ["Tips&Tricks"],
+"returns": [],
+"name": "definition_solver"
+}
+,{
+"examples": ["debug(...)"],
+"extendedDescription": "",
+"arguments": ["anything"],
+"namespace": "",
+"description": "Function for easy debugging.",
+"tags": [],
+"returns": [],
+"name": "debug"
+}
+,{
+"examples": ["require_list('lib.Class', 'ext.inspect')"],
+"extendedDescription": "That function use the last part of a path as the index for the global variable.",
+"arguments": ["path"],
+"namespace": "",
+"description": "Function for easy requirement",
+"tags": ["Tips&Tricks"],
+"returns": [],
+"name": "require_list"
+}
+]

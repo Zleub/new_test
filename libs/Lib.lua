@@ -13,6 +13,16 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: definition_solver
+-- namespace:
+-- description: Function for polymorphism in Lua.
+-- extendedDescription: The function work with some stringifiction of type into a string to find out which function of the definiton_table to call.\nDefinitively not classy.
+-- arguments: "module", "definition_table", "..."
+-- returns:
+-- tags: "Tips&Tricks"
+-- examples: "function Something:create(...)\n\treturn definitions_solver(self, {\n\t['_'] = function (...) debug('Something._', {...}) end,\n\t['string'] = Something.create_from_string,\n\t['number, number'] = Something.create_from_size\n\t}, ...)\nend"
+
 function definitions_solver(self, def_table, ...)
 	local s = ''
 
@@ -36,6 +46,16 @@ function clamp(num, min, max)
 	else return num end
 end
 
+----
+-- name: debug
+-- namespace:
+-- description: Function for easy debugging.
+-- extendedDescription:
+-- arguments: "anything"
+-- returns:
+-- tags:
+-- examples: "debug(...)"
+
 function debug(...)
 	if ({...})[1] == nil then print('nil') end
 
@@ -58,8 +78,19 @@ function print_require_list(...)
 	end
 end
 
+----
+-- name: require_list
+-- namespace:
+-- description: Function for easy requirement
+-- extendedDescription: That function use the last part of a path as the index for the global variable.
+-- arguments: "path"
+-- returns:
+-- tags: "Tips&Tricks"
+-- examples: "require_list('lib.Class', 'ext.inspect')"
+
 function require_list(...)
-	for k,v in ipairs({...}) do
+	local args = ({...})
+	for k,v in ipairs(args) do
 		local name = v:match('.+%.([%w_]+)')
 
 		_G[name] = require(v)

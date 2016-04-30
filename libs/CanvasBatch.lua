@@ -15,6 +15,16 @@
 
 local CanvasBatch = Drawable:expand()
 
+----
+-- name: CanvasBatch
+-- namespace: CanvasBatch
+-- description: This is a standard construction of the Drawable type.
+-- extendedDescription:
+-- arguments:
+-- returns: "Drawable"
+-- tags: "Drawable", "needCare", "CanvasBatch"
+-- examples: "CanvasBatch:create(f, w, h)"
+
 function CanvasBatch:create_from_function(f, width, height)
 	local canvas = love.graphics.newCanvas(width, height)
 
