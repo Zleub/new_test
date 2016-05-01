@@ -13,6 +13,16 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: Loading
+-- namespace:
+-- description: The Loading State lasts until the static Loader's queue is empty.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Loading", "State"
+-- examples:
+
 return {
 
 	before = function (self)

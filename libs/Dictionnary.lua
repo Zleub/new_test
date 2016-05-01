@@ -13,7 +13,27 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: Dictionnary
+-- namespace:
+-- description: The Love2D Image Dictionnary
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Dictionnary"
+-- examples: "Dictionnary[image]..."
+
 local Dictionnary = {}
+
+----
+-- name: set
+-- namespace: Dictionnary
+-- description: The standard Dictionnary setter
+-- extendedDescription:
+-- arguments: "key", "value"
+-- returns:
+-- tags: "Dictionnary"
+-- examples: "Dictionnary.set('image', Image)"
 
 function Dictionnary:set(k, v)
 	if Dictionnary[k] then

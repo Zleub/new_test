@@ -13,7 +13,27 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: UI
+-- namespace:
+-- description: The UI module
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "UI"
+-- examples:
+
 local UI = {}
+
+----
+-- name: Container
+-- namespace: UI
+-- description: A basic UI container
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "UI", "Container"
+-- examples: "container = UI.Container:create(...)"
 
 UI.Container = require 'libs.ui.container'
 

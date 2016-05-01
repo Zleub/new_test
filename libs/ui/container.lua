@@ -13,9 +13,29 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: Container
+-- namespace:
+-- description: The UI Container module.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Container", "Drawable"
+-- examples:
+
 local Container = Drawable:expand()
 
 Container.name = 'Container'
+
+----
+-- name: create_from_nothing
+-- namespace: Container
+-- description: Create a Container from nothing.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Container"
+-- examples:
 
 function Container:create_from_nothing()
 	local c = Drawable.create(self)
@@ -27,9 +47,29 @@ function Container:create_from_nothing()
 	return c
 end
 
+----
+-- name: create_from_Image
+-- namespace: Container
+-- description: Create a Container from an Image
+-- extendedDescription:
+-- arguments: "Image"
+-- returns:
+-- tags: "Container"
+-- examples:
+
 function Container:create_from_Image(image)
 	return Drawable.create(self, image)
 end
+
+----
+-- name: create_from_dimensions
+-- namespace: Container
+-- description: Create a Container from a sizing.
+-- extendedDescription:
+-- arguments: "width", "height"
+-- returns:
+-- tags: "Container"
+-- examples:
 
 function Container:create_from_dimensions(width, height)
 	local c = Drawable.create(self)
@@ -41,12 +81,32 @@ function Container:create_from_dimensions(width, height)
 	return c
 end
 
+----
+-- name: create_from_description
+-- namespace: Container
+-- description: Create a Container from a Description
+-- extendedDescription:
+-- arguments: "Description", "width", "height"
+-- returns:
+-- tags: "Container"
+-- examples:
+
 function Container:create_from_description(desc, width, height)
 	local c = Compound.create(self, desc, width, height)
 	c.queue = EventDispatcher:create()
 
 	return c
 end
+
+----
+-- name: push
+-- namespace: Container
+-- description: Adds an item to a Container and calculate his position relative to the inner queue.
+-- extendedDescription:
+-- arguments: "item"
+-- returns:
+-- tags: "Container"
+-- examples:
 
 function Container:push(item)
 	if item.x < self.x then item.x = self.x end
@@ -76,13 +136,43 @@ function Container:push(item)
 	return item
 end
 
+----
+-- name: update
+-- namespace: Container
+-- description: The update event for EventDispatcher
+-- extendedDescription:
+-- arguments: "dt"
+-- returns:
+-- tags: "Container", "EventDispatcher"
+-- examples:
+
 function Container:update(dt)
 	self.queue.update:dispatch(dt)
 end
 
+----
+-- name: mousepressed
+-- namespace: Container
+-- description: The mousepressed event for EventDispatcher
+-- extendedDescription:
+-- arguments: "x", "y", "button"
+-- returns:
+-- tags: "Container", "EventDispatcher"
+-- examples:
+
 function Container:mousepressed(x, y, button)
 	self.queue.mousepressed:dispatch(x, y, button)
 end
+
+----
+-- name: draw
+-- namespace: Container
+-- description: The draw event for EventDispatcher
+-- extendedDescription:
+-- arguments: "x", "y", "scale"
+-- returns:
+-- tags: "Container", "EventDispatcher"
+-- examples:
 
 function Container:draw(x, y, scale)
 	if self.image then
@@ -91,6 +181,16 @@ function Container:draw(x, y, scale)
 
 	self.queue.draw:dispatch(x, y, scale)
 end
+
+----
+-- name: create
+-- namespace: Container
+-- description: Standard Selector Constructor
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Container"
+-- examples: "Container:create()", "Container:create({}, 100, 100)", "Container:create(100, 100)", "Container:create(image)"
 
 function Container:create(...)
 	return definitions_solver(self, {

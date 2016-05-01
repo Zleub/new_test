@@ -13,7 +13,27 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: Drawable
+-- namespace:
+-- description: The standard Drawable type.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Drawable", "EventDispatcher"
+-- examples:
+
 local Drawable = Class:expand()
+
+----
+-- name: create
+-- namespace: Drawable
+-- description: The standard way to construct a Drawable from an Love2d Image.
+-- extendedDescription:
+-- arguments: "Image"
+-- returns:
+-- tags: "Drawable"
+-- examples: "Drawable:create(image)"
 
 function Drawable:create(img)
 	if img and img:type() ~= 'Image' then
@@ -35,17 +55,57 @@ end
 
 Drawable.name =  'Drawable'
 
+----
+-- name: moveBy
+-- namespace: Drawable
+-- description: This method allow to move a Drawable.
+-- extendedDescription:
+-- arguments: "x", "y"
+-- returns:
+-- tags: "Drawable"
+-- examples: "d:moveBy(10, 10)"
+
 function Drawable:moveBy(x, y)
 	self.x, self.y = self.x + x, self.y + y
 end
+
+----
+-- name: moveAt
+-- namespace: Drawable
+-- description: This method allow to position a Drawable
+-- extendedDescription:
+-- arguments: "x", "y"
+-- returns:
+-- tags: "Drawable"
+-- examples: "d:moveAt(10, 10)"
 
 function Drawable:moveAt(x, y)
 	self.x, self.y = x, y
 end
 
+----
+-- name: getSize
+-- namespace: Drawable
+-- description: This method returns the actual (scaled) size of a Drawable.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Drawable"
+-- examples: "d:getSize()"
+
 function Drawable:getSize()
 	return self.image:getWidth() * self.scale, self.image:getHeight() * self.scale
 end
+
+----
+-- name: draw
+-- namespace: Drawable
+-- description: The draw event for an EventDispatcher
+-- extendedDescription:
+-- arguments: "padding_x", "padding_y", "scale"
+-- returns:
+-- tags: "Drawable"
+-- examples: "d:draw()"
 
 function Drawable:draw(x, y, scale)
 	x = x or 0

@@ -13,6 +13,16 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: Other
+-- namespace:
+-- description: Some other demo state.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "State", "Other"
+-- examples:
+
 return {
 	once = function (self)
 		self.time = 0

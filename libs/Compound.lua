@@ -13,9 +13,39 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: Compound
+-- namespace:
+-- description: A Compound is a Drawable made from others Drawables.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Compound", "Drawable"
+-- examples: "Compound:create('file', {})", "Compound:create({}, w, h)"
+
+----
+-- name: Description
+-- namespace: Compound
+-- description: A Compound Description
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Compound"
+-- examples:
+
 local Compound = Drawable:expand()
 
 Compound.name = 'Compound'
+
+----
+-- name: create_from_filename
+-- namespace: Compound
+-- description: This function create a Drawable from a filename and an arbitrary description
+-- extendedDescription:
+-- arguments: "filename", "description"
+-- returns:
+-- tags: "Compound", "Description"
+-- examples:
 
 function Compound:create_from_filename(filename, desc)
 	local _w, _h = Dictionnary[filename].screen.width, Dictionnary[filename].screen.height
@@ -34,6 +64,16 @@ function Compound:create_from_filename(filename, desc)
 
 	return c
 end
+
+----
+-- name: create_from_size
+-- namespace: Compound
+-- description: This function create a Drawable given a description and some size
+-- extendedDescription:
+-- arguments: "description", "width", "height"
+-- returns:
+-- tags: "Compound", "Description"
+-- examples:
 
 function Compound:create_from_size(desc, width, height)
 	local d = Dictionnary[desc.image]
@@ -68,6 +108,17 @@ function Compound:create_from_size(desc, width, height)
 
 	return c
 end
+
+----
+-- name: create
+-- namespace: Compound
+-- description: Standard Selector Constructor
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Compound"
+-- examples: "Compound:create('filename', {})", "Compound:create({}, 100, 100)"
+
 
 function Compound:create(...)
 	return definitions_solver(self, {

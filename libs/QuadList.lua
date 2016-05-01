@@ -13,7 +13,27 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: QuadList
+-- namespace:
+-- description: The standard QuadList type that encapsulate the Love2D Quad type.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "QuadList", "Static", "needCare"
+-- examples:
+
 local QuadList = {}
+
+----
+-- name: create
+-- namespace: QuadList
+-- description: This function create a QuadList from a config and an Image.
+-- extendedDescription:
+-- arguments: "config", "image"
+-- returns:
+-- tags: "QuadList"
+-- examples: "ql = QuadList.create({...}, image)"
 
 function QuadList.create(config, image)
 	local i, j = 0, 0
@@ -32,6 +52,16 @@ function QuadList.create(config, image)
 
 	return q
 end
+
+----
+-- name: toCanvasList
+-- namespace: QuadList
+-- description: This function create a list of Drawable from a QuadList.
+-- extendedDescription:
+-- arguments: "config", "quadlist"
+-- returns:
+-- tags: "QuadList"
+-- examples: "t = QuadList.toCanvasList({...}, ql)"
 
 function QuadList.toCanvasList(config, quadlist)
 	local canvaslist = {

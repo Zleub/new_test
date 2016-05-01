@@ -13,6 +13,16 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: Test
+-- namespace:
+-- description: Some test state.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "State", "Test"
+-- examples:
+
 return {
 	once = function (self)
 		self.text = 'toto'

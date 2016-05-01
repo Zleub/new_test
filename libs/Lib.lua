@@ -40,6 +40,16 @@ function definitions_solver(self, def_table, ...)
 	end
 end
 
+----
+-- name: clamp
+-- namespace:
+-- description: The function to clamp a number
+-- extendedDescription:
+-- arguments: "number", "min", "max"
+-- returns:
+-- tags:
+-- examples:
+
 function clamp(num, min, max)
 	if num < min then return min
 	elseif num > max then return max

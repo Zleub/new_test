@@ -13,10 +13,30 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: Shader
+-- namespace:
+-- description: The Shader loading mod.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Loader", "Shader"
+-- examples:
+
 local Shader = {}
 
 Shader.mandatoryAPI = {}
 Shader.optionalAPI = {}
+
+----
+-- name: files
+-- namespace: Shader
+-- description: This function takes a .glsl path and optionnaly a .lua file
+-- extendedDescription:
+-- arguments: "path", "filename"
+-- returns:
+-- tags: "Shader"
+-- examples:
 
 function Shader.files(path, filename)
 	local fileshader = path..filename..'.glsl'
@@ -39,6 +59,16 @@ function Shader.files(path, filename)
 
 	return config, shader
 end
+
+----
+-- name: load
+-- namespace: Shader
+-- description: This function load a Shader type into the Dictionnary.
+-- extendedDescription:
+-- arguments: "filename"
+-- returns:
+-- tags: "Shader"
+-- examples:
 
 function Shader:load(filename)
 	config, shader = Shader.files(filename)

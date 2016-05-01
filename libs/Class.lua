@@ -22,7 +22,7 @@ local Class = {}
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Class", "Module"
+-- tags: "Class"
 -- examples: "local Module = Class:expand()"
 
 Class.name = 'Class'

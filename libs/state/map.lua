@@ -15,6 +15,16 @@
 
 local Map = {}
 
+----
+-- name: Map
+-- namespace:
+-- description: The Map State, where magic is done.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Map", "State"
+-- examples:
+
 function Map:once()
 	self.scale = 1
 	self.x, self.y = 0, 0

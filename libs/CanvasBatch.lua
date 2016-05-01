@@ -13,17 +13,27 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-local CanvasBatch = Drawable:expand()
-
 ----
 -- name: CanvasBatch
--- namespace: CanvasBatch
+-- namespace:
 -- description: This is a standard construction of the Drawable type.
 -- extendedDescription:
 -- arguments:
 -- returns: "Drawable"
 -- tags: "Drawable", "needCare", "CanvasBatch"
 -- examples: "CanvasBatch:create(f, w, h)"
+
+local CanvasBatch = Drawable:expand()
+
+----
+-- name: create_from_function
+-- namespace: CanvasBatch
+-- description: This function create a Drawable of W * H and apply an function for filling.
+-- extendedDescription:
+-- arguments: "function", "width", "height"
+-- returns:
+-- tags: "needCare", "CanvasBatch"
+-- examples:
 
 function CanvasBatch:create_from_function(f, width, height)
 	local canvas = love.graphics.newCanvas(width, height)
@@ -42,6 +52,16 @@ function CanvasBatch:create_from_function(f, width, height)
 
 	return d
 end
+
+----
+-- name: create
+-- namespace: CanvasBatch
+-- description: Standard Selector Constructor
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "CanvasBatch"
+-- examples: "CanvasBatch:create(function, number, number)"
 
 function CanvasBatch:create(...)
 	return definitions_solver(self, {

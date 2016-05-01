@@ -15,4 +15,14 @@
 
 local Modulable = Class:expand()
 
+----
+-- name: Modulable
+-- namespace:
+-- description: The Modulable type is a dummy type.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Modulable"
+-- examples:
+
 return Modulable

@@ -1,131 +1,855 @@
 [{
-"examples": ["CanvasBatch:create(f, w, h)"],
-"extendedDescription": "",
 "arguments": [],
-"namespace": "CanvasBatch",
-"description": "This is a standard construction of the Drawable type.",
+"name": "CanvasBatch",
 "tags": ["Drawable", "needCare", "CanvasBatch"],
-"returns": ["Drawable"],
-"name": "CanvasBatch"
+"namespace": "",
+"description": "This is a standard construction of the Drawable type.",
+"extendedDescription": "",
+"examples": ["CanvasBatch:create(f, w, h)"],
+"returns": ["Drawable"]
 }
 ,{
-"examples": ["local Module = Class:expand()"],
+"arguments": ["function", "width", "height"],
+"name": "create_from_function",
+"tags": ["needCare", "CanvasBatch"],
+"namespace": "CanvasBatch",
+"description": "This function create a Drawable of W * H and apply an function for filling.",
 "extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
 "arguments": [],
+"name": "create",
+"tags": ["CanvasBatch"],
+"namespace": "CanvasBatch",
+"description": "Standard Selector Constructor",
+"extendedDescription": "",
+"examples": ["CanvasBatch:create(function, number, number)"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Class",
+"tags": ["Class"],
 "namespace": "",
 "description": "This is the standard Class module.",
-"tags": ["Class", "Module"],
-"returns": [],
-"name": "Class"
+"extendedDescription": "",
+"examples": ["local Module = Class:expand()"],
+"returns": []
 }
 ,{
-"examples": ["Something:grettings()"],
-"extendedDescription": "",
 "arguments": [],
+"name": "grettings",
+"tags": ["Class"],
 "namespace": "Class",
 "description": "This is the standard grettings function",
-"tags": ["Class"],
-"returns": [],
-"name": "grettings"
+"extendedDescription": "",
+"examples": ["Something:grettings()"],
+"returns": []
 }
 ,{
-"examples": [],
-"extendedDescription": "",
 "arguments": [],
+"name": "__index",
+"tags": ["Class", "Metatable"],
 "namespace": "Class",
 "description": "This is the Class __index metamethod, allowing inheritance by metatable.",
-"tags": ["Class", "Metatable"],
-"returns": [],
-"name": "__index"
+"extendedDescription": "",
+"examples": [],
+"returns": []
 }
 ,{
-"examples": ["Something:type()"],
-"extendedDescription": "",
 "arguments": [],
+"name": "type",
+"tags": ["Class", "needCare"],
 "namespace": "Class",
 "description": "The standard type function for the Class inheritance tree.",
-"tags": ["Class", "needCare"],
-"returns": [],
-"name": "type"
+"extendedDescription": "",
+"examples": ["Something:type()"],
+"returns": []
 }
 ,{
-"examples": ["for t in Something:type_iter do ... end"],
-"extendedDescription": "",
 "arguments": [],
+"name": "type_iter",
+"tags": ["Class", "needCare"],
 "namespace": "Class",
 "description": "The standard type iterator function for the Class inheritance tree.",
-"tags": ["Class", "needCare"],
-"returns": [],
-"name": "type_iter"
+"extendedDescription": "",
+"examples": ["for t in Something:type_iter do ... end"],
+"returns": []
 }
 ,{
-"examples": ["Something:dump()"],
-"extendedDescription": "",
 "arguments": [],
+"name": "dump",
+"tags": ["Class"],
 "namespace": "Class",
 "description": "The standard debug function.",
-"tags": ["Class"],
-"returns": [],
-"name": "dump"
+"extendedDescription": "",
+"examples": ["Something:dump()"],
+"returns": []
 }
 ,{
-"examples": ["newClass = Class:expand()", "newC = newClass:expand()"],
-"extendedDescription": "This function take a table as an argument and returns a new table with the paramter as a metatable.",
 "arguments": ["baseClass"],
+"name": "expand",
+"tags": ["Class", "Metatable"],
 "namespace": "Class",
 "description": "The standard function for prototyping.",
-"tags": ["Class", "Metatable"],
-"returns": ["newClass"],
-"name": "expand"
+"extendedDescription": "This function take a table as an argument and returns a new table with the paramter as a metatable.",
+"examples": ["newClass = Class:expand()", "newC = newClass:expand()"],
+"returns": ["newClass"]
 }
 ,{
-"examples": ["s = Something:create()"],
-"extendedDescription": "This function take a table as an argument and return a shallow copy of that table.",
 "arguments": ["baseClass"],
+"name": "create",
+"tags": ["Class", "Metatable"],
 "namespace": "Class",
 "description": "The standard function to create an instance to a class.",
-"tags": ["Class", "Metatable"],
-"returns": ["newInstance"],
-"name": "create"
+"extendedDescription": "This function take a table as an argument and return a shallow copy of that table.",
+"examples": ["s = Something:create()"],
+"returns": ["newInstance"]
 }
 ,{
-"examples": [],
-"extendedDescription": "The Clickable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatch to get it triggered.",
 "arguments": [],
+"name": "Clickable",
+"tags": ["Clickable", "EventDispatcher", "Drawable"],
 "namespace": "",
 "description": "The Clickable base",
-"tags": ["Clickable"],
-"returns": [],
-"name": "Clickable"
+"extendedDescription": "The Clickable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatcher to get it triggered.",
+"examples": [],
+"returns": []
 }
 ,{
-"examples": ["function Something:create(...)\n\treturn definitions_solver(self, {\n\t['_'] = function (...) debug('Something._', {...}) end,\n\t['string'] = Something.create_from_string,\n\t['number, number'] = Something.create_from_size\n\t}, ...)\nend"],
-"extendedDescription": "The function work with some stringifiction of type into a string to find out which function of the definiton_table to call.\nDefinitively not classy.",
+"arguments": ["x", "y", "button"],
+"name": "mousepressed",
+"tags": ["Clickable"],
+"namespace": "Clickable",
+"description": "The mousepressed event for an EventDispatcher",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["x", "y", "scale"],
+"name": "draw",
+"tags": ["Clickable"],
+"namespace": "Clickable",
+"description": "The Drawable's draw implementation",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Color",
+"tags": ["Color"],
+"namespace": "",
+"description": "The Color module is meant to shorter ascii and love2d color management.",
+"extendedDescription": "",
+"returns": []
+}
+,{
+"arguments": ["colorName", "factor"],
+"name": "apply",
+"tags": ["Color", "Graphics"],
+"namespace": "Color",
+"description": "The apply function returns a quartet of (number * factor) given a string for color purposes.",
+"extendedDescription": "",
+"examples": ["Color:apply('white', 0.2)"],
+"returns": []
+}
+,{
+"arguments": ["colorName"],
+"name": "extract",
+"tags": ["Color", "Graphics"],
+"namespace": "Color",
+"description": "The extract function returns a quartet of number given a string for color purposes.",
+"extendedDescription": "",
+"examples": ["Color:extract('white')"],
+"returns": []
+}
+,{
+"name": "white",
+"tags": ["Color", "ColorList", "Graphics"],
+"namespace": "Color"
+}
+,{
+"name": "black",
+"tags": ["Color", "ColorList", "Graphics"],
+"namespace": "Color"
+}
+,{
+"name": "brown",
+"tags": ["Color", "ColorList", "Graphics"],
+"namespace": "Color"
+}
+,{
+"name": "green",
+"tags": ["Color", "ColorList", "Graphics"],
+"namespace": "Color"
+}
+,{
+"name": "yellow",
+"tags": ["Color", "ColorList", "Graphics"],
+"namespace": "Color"
+}
+,{
+"name": "blue",
+"tags": ["Color", "ColorList", "Graphics"],
+"namespace": "Color"
+}
+,{
+"name": "grey",
+"tags": ["Color", "ColorList", "Graphics"],
+"namespace": "Color"
+}
+,{
+"arguments": ["string", "asciiColor"],
+"name": "shell",
+"tags": ["Color"],
+"namespace": "Color",
+"description": "A function for shell's color rendering",
+"extendedDescription": "",
+"examples": ["str = Color.shell('HelloWorld', 'red')"],
+"returns": ["string"]
+}
+,{
+"arguments": [],
+"name": "Compound",
+"tags": ["Compound", "Drawable"],
+"namespace": "",
+"description": "A Compound is a Drawable made from others Drawables.",
+"extendedDescription": "",
+"examples": ["Compound:create('file', {})", "Compound:create({}, w, h)"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Description",
+"tags": ["Compound"],
+"namespace": "Compound",
+"description": "A Compound Description",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["filename", "description"],
+"name": "create_from_filename",
+"tags": ["Compound", "Description"],
+"namespace": "Compound",
+"description": "This function create a Drawable from a filename and an arbitrary description",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["description", "width", "height"],
+"name": "create_from_size",
+"tags": ["Compound", "Description"],
+"namespace": "Compound",
+"description": "This function create a Drawable given a description and some size",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "create",
+"tags": ["Compound"],
+"namespace": "Compound",
+"description": "Standard Selector Constructor",
+"extendedDescription": "",
+"examples": ["Compound:create('filename', {})", "Compound:create({}, 100, 100)"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Dictionnary",
+"tags": ["Dictionnary"],
+"namespace": "",
+"description": "The Love2D Image Dictionnary",
+"extendedDescription": "",
+"examples": ["Dictionnary[image]..."],
+"returns": []
+}
+,{
+"arguments": ["key", "value"],
+"name": "set",
+"tags": ["Dictionnary"],
+"namespace": "Dictionnary",
+"description": "The standard Dictionnary setter",
+"extendedDescription": "",
+"examples": ["Dictionnary.set('image', Image)"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Draggable",
+"tags": ["Draggable", "EventDispatcher", "Drawable"],
+"namespace": "",
+"description": "The Draggable base",
+"extendedDescription": "The Draggable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatcher to get it triggered.",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["dt"],
+"name": "update",
+"tags": ["Draggable"],
+"namespace": "Draggable",
+"description": "The update event for an EventDispatcher",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["x", "y", "scale"],
+"name": "draw",
+"tags": ["Draggable"],
+"namespace": "Draggable",
+"description": "The draw event for an EventDispatcher",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Drawable",
+"tags": ["Drawable", "EventDispatcher"],
+"namespace": "",
+"description": "The standard Drawable type.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["Image"],
+"name": "create",
+"tags": ["Drawable"],
+"namespace": "Drawable",
+"description": "The standard way to construct a Drawable from an Love2d Image.",
+"extendedDescription": "",
+"examples": ["Drawable:create(image)"],
+"returns": []
+}
+,{
+"arguments": ["x", "y"],
+"name": "moveBy",
+"tags": ["Drawable"],
+"namespace": "Drawable",
+"description": "This method allow to move a Drawable.",
+"extendedDescription": "",
+"examples": ["d:moveBy(10, 10)"],
+"returns": []
+}
+,{
+"arguments": ["x", "y"],
+"name": "moveAt",
+"tags": ["Drawable"],
+"namespace": "Drawable",
+"description": "This method allow to position a Drawable",
+"extendedDescription": "",
+"examples": ["d:moveAt(10, 10)"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "getSize",
+"tags": ["Drawable"],
+"namespace": "Drawable",
+"description": "This method returns the actual (scaled) size of a Drawable.",
+"extendedDescription": "",
+"examples": ["d:getSize()"],
+"returns": []
+}
+,{
+"arguments": ["padding_x", "padding_y", "scale"],
+"name": "draw",
+"tags": ["Drawable"],
+"namespace": "Drawable",
+"description": "The draw event for an EventDispatcher",
+"extendedDescription": "",
+"examples": ["d:draw()"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "EventDispatcher",
+"tags": ["EventDispatcher"],
+"namespace": "",
+"description": "The standard EventDispatcher type.",
+"extendedDescription": "It allow you to pack a set of object which need callback propagation for a minimal iteration.",
+"examples": ["ED = EventDispatcher:create()", "ED:add( drawable )"],
+"returns": []
+}
+,{
+"arguments": ["..."],
+"name": "EventList",
+"tags": ["EventDispatcher"],
+"namespace": "EventDispatcher",
+"description": "The event list handled by an EventDispatcher's instance.",
+"extendedDescription": "",
+"examples": ["load", "update", "draw", "keypressed", "mousepressed", "wheelmoved"],
+"returns": []
+}
+,{
+"arguments": ["objet"],
+"name": "add",
+"tags": ["EventDispatcher"],
+"namespace": "EventDispatcher",
+"description": "The standard way to add an object to an EventDispatcher.",
+"extendedDescription": "",
+"examples": ["ED:add( drawable )"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "create",
+"tags": ["EventDispatcher"],
+"namespace": "EventDispatcher",
+"description": "The standard way to create a new instance of the EventDispatcher type.",
+"extendedDescription": "",
+"examples": ["ED = EventDispatcher:create()"],
+"returns": []
+}
+,{
 "arguments": ["module", "definition_table", "..."],
+"name": "definition_solver",
+"tags": ["Tips&Tricks"],
 "namespace": "",
 "description": "Function for polymorphism in Lua.",
-"tags": ["Tips&Tricks"],
-"returns": [],
-"name": "definition_solver"
+"extendedDescription": "The function work with some stringifiction of type into a string to find out which function of the definiton_table to call.\nDefinitively not classy.",
+"examples": ["function Something:create(...)\n\treturn definitions_solver(self, {\n\t['_'] = function (...) debug('Something._', {...}) end,\n\t['string'] = Something.create_from_string,\n\t['number, number'] = Something.create_from_size\n\t}, ...)\nend"],
+"returns": []
 }
 ,{
-"examples": ["debug(...)"],
+"arguments": ["number", "min", "max"],
+"name": "clamp",
+"tags": [],
+"namespace": "",
+"description": "The function to clamp a number",
 "extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
 "arguments": ["anything"],
+"name": "debug",
+"tags": [],
 "namespace": "",
 "description": "Function for easy debugging.",
-"tags": [],
-"returns": [],
-"name": "debug"
+"extendedDescription": "",
+"examples": ["debug(...)"],
+"returns": []
 }
 ,{
-"examples": ["require_list('lib.Class', 'ext.inspect')"],
-"extendedDescription": "That function use the last part of a path as the index for the global variable.",
 "arguments": ["path"],
+"name": "require_list",
+"tags": ["Tips&Tricks"],
 "namespace": "",
 "description": "Function for easy requirement",
-"tags": ["Tips&Tricks"],
-"returns": [],
-"name": "require_list"
+"extendedDescription": "That function use the last part of a path as the index for the global variable.",
+"examples": ["require_list('lib.Class', 'ext.inspect')"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Loader",
+"tags": ["Loader", "needCare", "Static"],
+"namespace": "",
+"description": "This is the standard loader for assets and such.",
+"extendedDescription": "The Loader type is divided into two main uses so that asset declaration should be distinct from asset instanciation. Point is to allow diversity in manipulation of both image's format and composition.",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "getSize",
+"tags": ["Loader"],
+"namespace": "Loader",
+"description": "This is a method that return the number of element into the Loader that need to be loaded.",
+"extendedDescription": "",
+"examples": ["Loader:getSize()"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "load",
+"tags": ["Loader", "needCare"],
+"namespace": "Loader",
+"description": "The standard method to load the next ressource from the loader's queue. Return the next element to load.",
+"extendedDescription": "",
+"examples": ["Loader:load()"],
+"returns": []
+}
+,{
+"arguments": ["mod", "..."],
+"name": "push",
+"tags": ["Loader", "needCare"],
+"namespace": "Loader",
+"description": "This is the standard way to add a ressource to the loader's queue.",
+"extendedDescription": "The first parameter is the Loader's module to use in order to load the ressource.",
+"examples": ["Loader:push( Loader.PNG, '/images/hello.png')"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "LoaderAPIList",
+"tags": ["Loader", "PNG", "Shader"],
+"namespace": "Loader",
+"description": "The standard list of Loader's mods.",
+"extendedDescription": "A Loader's API should implement a mandatoryAPI and an optionalAPI field for external config convenience as well as a files and a load method respectively for asset loading and Dictionnary registration.",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["api", "config"],
+"name": "check",
+"tags": ["Loader"],
+"namespace": "Loader",
+"description": "This function takes an api and a config and make sure the mandatoryAPI or optionnalAPI is respected.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["member", "input"],
+"name": "validator",
+"tags": ["Loader"],
+"namespace": "Loader",
+"description": "Call on one's api, this function validate some config input based on the api's member's type",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "error",
+"tags": ["Loader"],
+"namespace": "Loader",
+"description": "This function is called on a loading error and print on console some pretty message.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Modulable",
+"tags": ["Modulable"],
+"namespace": "",
+"description": "The Modulable type is a dummy type.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "QuadList",
+"tags": ["QuadList", "Static", "needCare"],
+"namespace": "",
+"description": "The standard QuadList type that encapsulate the Love2D Quad type.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["config", "image"],
+"name": "create",
+"tags": ["QuadList"],
+"namespace": "QuadList",
+"description": "This function create a QuadList from a config and an Image.",
+"extendedDescription": "",
+"examples": ["ql = QuadList.create({...}, image)"],
+"returns": []
+}
+,{
+"arguments": ["config", "quadlist"],
+"name": "toCanvasList",
+"tags": ["QuadList"],
+"namespace": "QuadList",
+"description": "This function create a list of Drawable from a QuadList.",
+"extendedDescription": "",
+"examples": ["t = QuadList.toCanvasList({...}, ql)"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "State",
+"tags": ["State", "Static"],
+"namespace": "",
+"description": "The state module.",
+"extendedDescription": "It handle state's change with the metamethod __call.",
+"examples": ["State('Loading')"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "StateEvent",
+"tags": ["State"],
+"namespace": "State",
+"description": "The events supported by the State module.",
+"extendedDescription": "",
+"examples": ["once", "before", "after"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "StateCallback",
+"tags": ["State", "needCare"],
+"namespace": "State",
+"description": "The callbacks supported by the State module",
+"extendedDescription": "-- Callback dispatch should be handle by an EventDispatcher or such",
+"examples": ["update", "draw", "wheelmoved", "keypressed", "mousepressed"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "StateList",
+"tags": ["State", "Loading", "Test", "Other", "Map"],
+"namespace": "State",
+"description": "The list of the differents states availables.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "UI",
+"tags": ["UI"],
+"namespace": "",
+"description": "The UI module",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Container",
+"tags": ["UI", "Container"],
+"namespace": "UI",
+"description": "A basic UI container",
+"extendedDescription": "",
+"examples": ["container = UI.Container:create(...)"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "PNG",
+"tags": ["Loader", "PNG"],
+"namespace": "",
+"description": "The PNG loading mod.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "mandatoryAPI",
+"tags": ["PNG"],
+"namespace": "PNG",
+"description": "The mandatoryAPI of a PNG",
+"extendedDescription": "",
+"examples": ["{\n screen = {\n  name = 'screen',\n  model = {\n   width = 'number',\n   height = 'number'\n  },\n }\n}"],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "optionalAPI",
+"tags": ["PNG"],
+"namespace": "PNG",
+"description": "The optionalAPI of a PNG",
+"extendedDescription": "",
+"examples": ["{\n grid = {\n  name = 'grid',\n  model = {\n   width = 'number',\n   height = 'number'\n  }\n },\n spacing = {\n  name = 'spacing',\n  model = {\n   width = {\n    type = 'number',\n    value = 0\n   },\n   height = {\n    type = 'number',\n    value = 0\n   }\n  }\n }\n}"],
+"returns": []
+}
+,{
+"arguments": ["path", "filename", "configname"],
+"name": "files",
+"tags": ["PNG"],
+"namespace": "PNG",
+"description": "This function opens a .png file and optionnaly an adjacent .lua file",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["path", "filename", "configname"],
+"name": "load",
+"tags": ["PNG"],
+"namespace": "PNG",
+"description": "This function applies a config upon a Image and load the result into the Dictionnary",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Shader",
+"tags": ["Loader", "Shader"],
+"namespace": "",
+"description": "The Shader loading mod.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["path", "filename"],
+"name": "files",
+"tags": ["Shader"],
+"namespace": "Shader",
+"description": "This function takes a .glsl path and optionnaly a .lua file",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["filename"],
+"name": "load",
+"tags": ["Shader"],
+"namespace": "Shader",
+"description": "This function load a Shader type into the Dictionnary.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Loading",
+"tags": ["Loading", "State"],
+"namespace": "",
+"description": "The Loading State lasts until the static Loader's queue is empty.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Map",
+"tags": ["Map", "State"],
+"namespace": "",
+"description": "The Map State, where magic is done.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Other",
+"tags": ["State", "Other"],
+"namespace": "",
+"description": "Some other demo state.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Test",
+"tags": ["State", "Test"],
+"namespace": "",
+"description": "Some test state.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "Container",
+"tags": ["Container", "Drawable"],
+"namespace": "",
+"description": "The UI Container module.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "create_from_nothing",
+"tags": ["Container"],
+"namespace": "Container",
+"description": "Create a Container from nothing.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["Image"],
+"name": "create_from_Image",
+"tags": ["Container"],
+"namespace": "Container",
+"description": "Create a Container from an Image",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["width", "height"],
+"name": "create_from_dimensions",
+"tags": ["Container"],
+"namespace": "Container",
+"description": "Create a Container from a sizing.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["Description", "width", "height"],
+"name": "create_from_description",
+"tags": ["Container"],
+"namespace": "Container",
+"description": "Create a Container from a Description",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["item"],
+"name": "push",
+"tags": ["Container"],
+"namespace": "Container",
+"description": "Adds an item to a Container and calculate his position relative to the inner queue.",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["dt"],
+"name": "update",
+"tags": ["Container"],
+"namespace": "Container",
+"description": "The update event for EventDispatcher",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["x", "y", "button"],
+"name": "mousepressed",
+"tags": ["Container"],
+"namespace": "Container",
+"description": "The mousepressed event for EventDispatcher",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": ["x", "y", "scale"],
+"name": "draw",
+"tags": ["Container"],
+"namespace": "Container",
+"description": "The draw event for EventDispatcher",
+"extendedDescription": "",
+"examples": [],
+"returns": []
+}
+,{
+"arguments": [],
+"name": "create",
+"tags": ["Container"],
+"namespace": "Container",
+"description": "Standard Selector Constructor",
+"extendedDescription": "",
+"examples": ["Container:create()", "Container:create({}, 100, 100)", "Container:create(100, 100)", "Container:create(image)"],
+"returns": []
 }
 ]

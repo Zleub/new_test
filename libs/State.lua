@@ -13,8 +13,29 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: State
+-- namespace:
+-- description: The state module.
+-- extendedDescription: It handle state's change with the metamethod __call.
+-- arguments:
+-- returns:
+-- tags: "State", "Static"
+-- examples: "State('Loading')"
+
 local State = {}
 State.once_t = {}
+
+----
+-- name: StateEvent
+-- namespace: State
+-- description: The events supported by the State module.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "State"
+-- examples: "once", "before", "after"
+
 setmetatable(State, {
 	__call = function (self, state)
 
@@ -37,6 +58,16 @@ setmetatable(State, {
 		end
 	end
 })
+
+----
+-- name: StateCallback
+-- namespace: State
+-- description: The callbacks supported by the State module
+-- extendedDescription: -- Callback dispatch should be handle by an EventDispatcher or such
+-- arguments:
+-- returns:
+-- tags: "State", "needCare"
+-- examples: "update", "draw", "wheelmoved", "keypressed", "mousepressed"
 
 function State:update(dt)
 	State[self.current]:update(dt)
@@ -64,6 +95,16 @@ function State:mousepressed(x, y, button)
 	end
 end
 
+----
+-- name: StateList
+-- namespace: State
+-- description: The list of the differents states availables.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "State", "Loading", "Test", "Other", "Map"
+-- examples:
+
 State.Loading = require('libs.state.loading')
 
 State.Test = require('libs.state.test')
@@ -71,7 +112,5 @@ State.Test = require('libs.state.test')
 State.Other = require('libs.state.other')
 
 State.Map = require('libs.state.map')
-
-
 
 return State

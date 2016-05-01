@@ -13,9 +13,29 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: Draggable
+-- namespace:
+-- description: The Draggable base
+-- extendedDescription: The Draggable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatcher to get it triggered.
+-- arguments:
+-- returns:
+-- tags: "Draggable", "EventDispatcher", "Drawable"
+-- examples:
+
 local Draggable = Drawable:expand()
 
 Draggable.name = 'Draggable'
+
+----
+-- name: update
+-- namespace: Draggable
+-- description: The update event for an EventDispatcher
+-- extendedDescription:
+-- arguments: "dt"
+-- returns:
+-- tags: "Draggable"
+-- examples:
 
 function Draggable:update(dt)
 	local x, y = love.mouse.getPosition()
@@ -32,6 +52,17 @@ function Draggable:update(dt)
 		end
 	end
 end
+
+----
+-- name: draw
+-- namespace: Draggable
+-- description: The draw event for an EventDispatcher
+-- extendedDescription:
+-- arguments: "x", "y", "scale"
+-- returns:
+-- tags: "Draggable"
+-- examples:
+
 
 function Draggable:draw(x, y, scale)
 	Drawable.draw(self, x, y, scale)

@@ -13,11 +13,41 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+----
+-- name: Loader
+-- namespace:
+-- description: This is the standard loader for assets and such.
+-- extendedDescription: The Loader type is divided into two main uses so that asset declaration should be distinct from asset instanciation. Point is to allow diversity in manipulation of both image's format and composition.
+-- arguments:
+-- returns:
+-- tags: "Loader", "needCare", "Static"
+-- examples:
+
 local Loader = {}
+
+----
+-- name: getSize
+-- namespace: Loader
+-- description: This is a method that return the number of element into the Loader that need to be loaded.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Loader"
+-- examples: "Loader:getSize()"
 
 function Loader:getSize()
 	return #self.queue
 end
+
+----
+-- name: load
+-- namespace: Loader
+-- description: The standard method to load the next ressource from the loader's queue. Return the next element to load.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Loader", "needCare"
+-- examples: "Loader:load()"
 
 function Loader:load()
 	if self.queue and self.queue[1] then
@@ -28,6 +58,16 @@ function Loader:load()
 	end
 end
 
+----
+-- name: push
+-- namespace: Loader
+-- description: This is the standard way to add a ressource to the loader's queue.
+-- extendedDescription: The first parameter is the Loader's module to use in order to load the ressource.
+-- arguments: "mod", "..."
+-- returns:
+-- tags: "Loader", "needCare"
+-- examples: "Loader:push( Loader.PNG, '/images/hello.png')"
+
 function Loader:push(mod , ...)
 	self.queue = self.queue or {}
 
@@ -36,8 +76,28 @@ end
 
 ----------------------------------------
 
+----
+-- name: LoaderAPIList
+-- namespace: Loader
+-- description: The standard list of Loader's mods.
+-- extendedDescription: A Loader's API should implement a mandatoryAPI and an optionalAPI field for external config convenience as well as a files and a load method respectively for asset loading and Dictionnary registration.
+-- arguments:
+-- returns:
+-- tags: "Loader", "PNG", "Shader"
+-- examples:
+
 Loader.PNG = require 'libs.loader.PNG'
 Loader.Shader = require 'libs.loader.Shader'
+
+----
+-- name: check
+-- namespace: Loader
+-- description: This function takes an api and a config and make sure the mandatoryAPI or optionnalAPI is respected.
+-- extendedDescription:
+-- arguments: "api", "config"
+-- returns:
+-- tags: "Loader"
+-- examples:
 
 function Loader.check(api, config)
 
@@ -83,6 +143,16 @@ function Loader.check(api, config)
 	return config
 end
 
+----
+-- name: validator
+-- namespace: Loader
+-- description: Call on one's api, this function validate some config input based on the api's member's type
+-- extendedDescription:
+-- arguments: "member", "input"
+-- returns:
+-- tags: "Loader"
+-- examples:
+
 function Loader.validator(member, input)
 	if type(input) ~= 'table' then
 		return Loader.error(member)
@@ -102,6 +172,16 @@ function Loader.validator(member, input)
 		end
 	end
 end
+
+----
+-- name: error
+-- namespace: Loader
+-- description: This function is called on a loading error and print on console some pretty message.
+-- extendedDescription:
+-- arguments:
+-- returns:
+-- tags: "Loader"
+-- examples:
 
 function Loader.error(member)
 	local err = member.name.." : {\n"
