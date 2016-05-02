@@ -17,8 +17,6 @@ inspect = require 'exts.inspect'
 
 require 'libs.Lib'
 
-doc_file = io.open('doc/new_test.json', 'w')
-doc_file:write('[\n')
 require_list(
 	'libs.Class',
 
@@ -36,7 +34,6 @@ require_list(
 	'libs.Loader',
 	'libs.State'
 )
-doc_file:write('\n]')
 
 function love.load()
 	debug(_VERSION)

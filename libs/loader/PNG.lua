@@ -130,19 +130,19 @@ function PNG:load(path, filename, configname)
 	if config and config.grid then
 
 		local quadlist = QuadList.create(config, img)
-		Dictionnary:set(filename, QuadList.toCanvasList(config, quadlist))
+		Dictionnary(filename, QuadList.toCanvasList(config, quadlist))
 
 
 		if config.exports then
 			for k,v in pairs(config.exports) do
-				Dictionnary:set(k, Compound:create(filename, v))
+				Dictionnary(k, Compound:create(filename, v))
 			end
 		end
 
 	else
 		local d = Drawable:create(img)
 
-		Dictionnary:set(filename, d)
+		Dictionnary(filename, d)
 	end
 
 	return filename

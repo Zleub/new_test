@@ -21,28 +21,18 @@
 -- arguments:
 -- returns:
 -- tags: "Dictionnary"
--- examples: "Dictionnary[image]..."
+-- examples: "Dictionnary('image', image)", "Dictionnary.image ..."
 
-local Dictionnary = {}
+local Dictionnary = setmetatable({}, {
+	__call = function (t, k, v)
+		if t[k] then
+			print(Color.shell('Erasing', 'orange')..' Dictionnary['..k..']')
+		else
+			print('Dictionnary '..':\t'..Color.shell(k, 'green'))
+		end
 
-----
--- name: set
--- namespace: Dictionnary
--- description: The standard Dictionnary setter
--- extendedDescription:
--- arguments: "key", "value"
--- returns:
--- tags: "Dictionnary"
--- examples: "Dictionnary.set('image', Image)"
-
-function Dictionnary:set(k, v)
-	if Dictionnary[k] then
-		print(Color.shell('Erasing', 'orange')..' Dictionnary['..k..']')
-	else
-		print('Dictionnary '..':\t'..Color.shell(k, 'green'))
+		t[k] = v
 	end
-
-	self[k] = v
-end
+})
 
 return Dictionnary

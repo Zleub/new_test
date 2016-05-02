@@ -39,13 +39,7 @@ function CanvasBatch:create_from_function(f, width, height)
 	local canvas = love.graphics.newCanvas(width, height)
 
 	love.graphics.setCanvas(canvas)
-	for i=0, width - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.width do
-		for j=0, height - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.height do
-
-			f(i, j)
-
-		end
-	end
+	f(width, height)
 	love.graphics.setCanvas()
 
 	local d = Drawable:create( love.graphics.newImage( canvas:newImageData() ) )

@@ -86,9 +86,9 @@ end
 -- namespace: Container
 -- description: Create a Container from a Description
 -- extendedDescription:
--- arguments: "Description", "width", "height"
+-- arguments: "description", "width", "height"
 -- returns:
--- tags: "Container"
+-- tags: "Container", "Description"
 -- examples:
 
 function Container:create_from_description(desc, width, height)

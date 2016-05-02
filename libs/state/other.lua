@@ -32,8 +32,12 @@ return {
 		self.EventDispatch = EventDispatcher:create()
 
 		local batch = CanvasBatch:create(
-			function (i, j)
-				Dictionnary['hyptosis_tile-art-batch-1'][313]:draw(i, j)
+			function (width, height)
+				for i=0, width - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.width do
+					for j=0, height - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.height do
+						Dictionnary['hyptosis_tile-art-batch-1'][313]:draw(i, j)
+					end
+				end
 			end,
 			love.graphics.getWidth(),
 			love.graphics.getHeight() / 2
@@ -43,9 +47,13 @@ return {
 		self.EventDispatch:add( batch )
 
 		local batch = CanvasBatch:create(
-			function (i, j)
-				local n = love.math.random(-1, 1)
-				Dictionnary['hyptosis_tile-art-batch-1'][302 + 30 * n ]:draw(i, j)
+			function (width, height)
+				for i=0, width - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.width do
+					for j=0, height - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.height do
+						local n = love.math.random(-1, 1)
+						Dictionnary['hyptosis_tile-art-batch-1'][302 + 30 * n ]:draw(i, j)
+					end
+				end
 			end,
 			love.graphics.getWidth(),
 			Dictionnary['hyptosis_tile-art-batch-1'].screen.height * 2
@@ -92,6 +100,9 @@ return {
 
 		self.font = love.graphics.newFont('Minimal3x5.ttf', 32)
 
+		for k,v in pairs(Dictionnary) do
+			print(k,v)
+		end
 	end,
 
 	before = function (self) end,
