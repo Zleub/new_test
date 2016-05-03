@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Loading", "State"
+-- tags: "v0.0", "Loading", "State"
 -- examples:
 
 return {

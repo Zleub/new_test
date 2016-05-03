@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "QuadList", "Static", "needCare"
+-- tags: "v0.0", "QuadList", "Static", "needCare"
 -- examples:
 
 local QuadList = {}
@@ -32,7 +32,7 @@ local QuadList = {}
 -- extendedDescription:
 -- arguments: "config", "image"
 -- returns:
--- tags: "QuadList"
+-- tags: "v0.0", "QuadList"
 -- examples: "ql = QuadList.create({...}, image)"
 
 function QuadList.create(config, image)
@@ -60,7 +60,7 @@ end
 -- extendedDescription:
 -- arguments: "config", "quadlist"
 -- returns:
--- tags: "QuadList"
+-- tags: "v0.0", "QuadList"
 -- examples: "t = QuadList.toCanvasList({...}, ql)"
 
 function QuadList.toCanvasList(config, quadlist)

@@ -20,7 +20,7 @@
 -- extendedDescription: The Draggable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatcher to get it triggered.
 -- arguments:
 -- returns:
--- tags: "Draggable", "EventDispatcher", "Drawable"
+-- tags: "v0.0", "Draggable", "EventDispatcher", "Drawable"
 -- examples:
 
 local Draggable = Drawable:expand()
@@ -34,7 +34,7 @@ Draggable.name = 'Draggable'
 -- extendedDescription:
 -- arguments: "dt"
 -- returns:
--- tags: "Draggable"
+-- tags: "v0.0", "Draggable"
 -- examples:
 
 function Draggable:update(dt)
@@ -60,7 +60,7 @@ end
 -- extendedDescription:
 -- arguments: "x", "y", "scale"
 -- returns:
--- tags: "Draggable"
+-- tags: "v0.0", "Draggable"
 -- examples:
 
 

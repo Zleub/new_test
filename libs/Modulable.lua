@@ -22,7 +22,7 @@ local Modulable = Class:expand()
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Modulable"
+-- tags: "v0.0", "Modulable"
 -- examples:
 
 return Modulable

@@ -22,7 +22,7 @@ QuadList = require 'libs.QuadList'
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Loader", "PNG"
+-- tags: "v0.0", "Loader", "PNG"
 -- examples:
 
 local PNG = {}
@@ -34,7 +34,7 @@ local PNG = {}
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "PNG"
+-- tags: "v0.0", "PNG"
 -- examples: "{\n screen = {\n  name = 'screen',\n  model = {\n   width = 'number',\n   height = 'number'\n  },\n }\n}"
 
 PNG.mandatoryAPI = {
@@ -54,7 +54,7 @@ PNG.mandatoryAPI = {
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "PNG"
+-- tags: "v0.0", "PNG"
 -- examples: "{\n grid = {\n  name = 'grid',\n  model = {\n   width = 'number',\n   height = 'number'\n  }\n },\n spacing = {\n  name = 'spacing',\n  model = {\n   width = {\n    type = 'number',\n    value = 0\n   },\n   height = {\n    type = 'number',\n    value = 0\n   }\n  }\n }\n}"
 
 PNG.optionalAPI = {
@@ -87,7 +87,7 @@ PNG.optionalAPI = {
 -- extendedDescription:
 -- arguments: "path", "filename", "configname"
 -- returns:
--- tags: "PNG"
+-- tags: "v0.0", "PNG"
 -- examples:
 
 function PNG.files(path, filename, configname)
@@ -120,7 +120,7 @@ end
 -- extendedDescription:
 -- arguments: "path", "filename", "configname"
 -- returns:
--- tags: "PNG"
+-- tags: "v0.0", "PNG"
 -- examples:
 
 function PNG:load(path, filename, configname)

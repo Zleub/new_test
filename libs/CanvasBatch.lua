@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns: "Drawable"
--- tags: "Drawable", "needCare", "CanvasBatch"
+-- tags: "v0.0", "Drawable", "needCare", "CanvasBatch"
 -- examples: "CanvasBatch:create(f, w, h)"
 
 local CanvasBatch = Drawable:expand()
@@ -32,7 +32,7 @@ local CanvasBatch = Drawable:expand()
 -- extendedDescription:
 -- arguments: "function", "width", "height"
 -- returns:
--- tags: "needCare", "CanvasBatch"
+-- tags: "v0.0", "needCare", "CanvasBatch"
 -- examples:
 
 function CanvasBatch:create_from_function(f, width, height)
@@ -54,7 +54,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "CanvasBatch"
+-- tags: "v0.0", "CanvasBatch"
 -- examples: "CanvasBatch:create(function, number, number)"
 
 function CanvasBatch:create(...)

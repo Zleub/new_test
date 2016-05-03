@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Dictionnary"
+-- tags: "v0.0", "Dictionnary"
 -- examples: "Dictionnary('image', image)", "Dictionnary.image ..."
 
 local Dictionnary = setmetatable({}, {

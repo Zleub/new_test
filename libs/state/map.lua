@@ -22,7 +22,7 @@ local Map = {}
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Map", "State"
+-- tags: "v0.0", "Map", "State"
 -- examples:
 
 function Map:once()

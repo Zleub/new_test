@@ -20,7 +20,7 @@
 -- extendedDescription: The Clickable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatcher to get it triggered.
 -- arguments:
 -- returns:
--- tags: "Clickable", "EventDispatcher", "Drawable"
+-- tags: "v0.0", "Clickable", "EventDispatcher", "Drawable"
 -- examples:
 
 local Clickable = Drawable:expand()
@@ -32,7 +32,7 @@ local Clickable = Drawable:expand()
 -- extendedDescription:
 -- arguments: "x", "y", "button"
 -- returns:
--- tags: "Clickable"
+-- tags: "v0.0", "Clickable"
 -- examples:
 
 function Clickable:mousepressed(x, y, button)
@@ -51,7 +51,7 @@ end
 -- extendedDescription:
 -- arguments: "x", "y", "scale"
 -- returns:
--- tags: "Clickable"
+-- tags: "v0.0", "Clickable"
 -- examples:
 
 function Clickable:draw(x, y, scale)

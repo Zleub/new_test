@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Loader", "Shader"
+-- tags: "v0.0", "Loader", "Shader"
 -- examples:
 
 local Shader = {}
@@ -35,7 +35,7 @@ Shader.optionalAPI = {}
 -- extendedDescription:
 -- arguments: "path", "filename"
 -- returns:
--- tags: "Shader"
+-- tags: "v0.0", "Shader"
 -- examples:
 
 function Shader.files(path, filename)
@@ -67,7 +67,7 @@ end
 -- extendedDescription:
 -- arguments: "filename"
 -- returns:
--- tags: "Shader"
+-- tags: "v0.0", "Shader"
 -- examples:
 
 function Shader:load(filename)

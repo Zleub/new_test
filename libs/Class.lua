@@ -22,7 +22,7 @@ local Class = {}
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Class"
+-- tags: "v0.0", "Class"
 -- examples: "local Module = Class:expand()"
 
 Class.name = 'Class'
@@ -34,7 +34,7 @@ Class.name = 'Class'
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Class"
+-- tags: "v0.0", "Class"
 -- examples: "Something:grettings()"
 
 function Class.grettings()
@@ -48,7 +48,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Class", "Metatable"
+-- tags: "v0.0", "Class", "Metatable"
 -- examples:
 
 function Class.__index(t, k)
@@ -62,7 +62,7 @@ function Class.__index(t, k)
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Class", "needCare"
+-- tags: "v0.0", "Class", "needCare"
 -- examples: "Something:type()"
 
 function Class:type()
@@ -76,7 +76,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Class", "needCare"
+-- tags: "v0.0", "Class", "needCare"
 -- examples: "for t in Something:type_iter do ... end"
 
 function Class:type_iter()
@@ -98,7 +98,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Class"
+-- tags: "v0.0", "Class"
 -- examples: "Something:dump()"
 
 function Class.dump(self)
@@ -112,7 +112,7 @@ end
 -- extendedDescription: This function take a table as an argument and returns a new table with the paramter as a metatable.
 -- arguments: "baseClass"
 -- returns: "newClass"
--- tags: "Class", "Metatable"
+-- tags: "v0.0", "Class", "Metatable"
 -- examples: "newClass = Class:expand()", "newC = newClass:expand()"
 
 function Class.expand(baseClass)
@@ -131,7 +131,7 @@ end
 -- extendedDescription: This function take a table as an argument and return a shallow copy of that table.
 -- arguments: "baseClass"
 -- returns: "newInstance"
--- tags: "Class", "Metatable"
+-- tags: "v0.0", "Class", "Metatable"
 -- examples: "s = Something:create()"
 
 function Class.create(baseClass)

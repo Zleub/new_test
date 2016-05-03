@@ -20,7 +20,7 @@
 -- extendedDescription: It handle state's change with the metamethod __call.
 -- arguments:
 -- returns:
--- tags: "State", "Static"
+-- tags: "v0.0", "State", "Static"
 -- examples: "State('Loading')"
 
 local State = {}
@@ -33,7 +33,7 @@ State.once_t = {}
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "State"
+-- tags: "v0.0", "State"
 -- examples: "once", "before", "after"
 
 setmetatable(State, {
@@ -66,7 +66,7 @@ setmetatable(State, {
 -- extendedDescription: -- Callback dispatch should be handle by an EventDispatcher or such
 -- arguments:
 -- returns:
--- tags: "State", "needCare"
+-- tags: "v0.0", "State", "needCare"
 -- examples: "update", "draw", "wheelmoved", "keypressed", "mousepressed"
 
 function State:update(dt)
@@ -102,7 +102,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "State", "Loading", "Test", "Other", "Map"
+-- tags: "v0.0", "State", "Loading", "Test", "Other", "Map"
 -- examples:
 
 State.Loading = require('libs.state.loading')

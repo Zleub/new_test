@@ -20,7 +20,7 @@
 -- extendedDescription: The Loader type is divided into two main uses so that asset declaration should be distinct from asset instanciation. Point is to allow diversity in manipulation of both image's format and composition.
 -- arguments:
 -- returns:
--- tags: "Loader", "needCare", "Static"
+-- tags: "v0.0", "Loader", "needCare", "Static"
 -- examples:
 
 local Loader = {}
@@ -32,7 +32,7 @@ local Loader = {}
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Loader"
+-- tags: "v0.0", "Loader"
 -- examples: "Loader:getSize()"
 
 function Loader:getSize()
@@ -46,7 +46,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Loader", "needCare"
+-- tags: "v0.0", "Loader", "needCare"
 -- examples: "Loader:load()"
 
 function Loader:load()
@@ -65,7 +65,7 @@ end
 -- extendedDescription: The first parameter is the Loader's module to use in order to load the ressource.
 -- arguments: "mod", "..."
 -- returns:
--- tags: "Loader", "needCare"
+-- tags: "v0.0", "Loader", "needCare"
 -- examples: "Loader:push( Loader.PNG, '/images/hello.png')"
 
 function Loader:push(mod , ...)
@@ -83,7 +83,7 @@ end
 -- extendedDescription: A Loader's API should implement a mandatoryAPI and an optionalAPI field for external config convenience as well as a files and a load method respectively for asset loading and Dictionnary registration.
 -- arguments:
 -- returns:
--- tags: "Loader", "PNG", "Shader"
+-- tags: "v0.0", "Loader", "PNG", "Shader"
 -- examples:
 
 Loader.PNG = require 'libs.loader.PNG'
@@ -96,7 +96,7 @@ Loader.Shader = require 'libs.loader.Shader'
 -- extendedDescription:
 -- arguments: "api", "config"
 -- returns:
--- tags: "Loader"
+-- tags: "v0.0", "Loader"
 -- examples:
 
 function Loader.check(api, config)
@@ -150,7 +150,7 @@ end
 -- extendedDescription:
 -- arguments: "member", "input"
 -- returns:
--- tags: "Loader"
+-- tags: "v0.0", "Loader"
 -- examples:
 
 function Loader.validator(member, input)
@@ -180,7 +180,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Loader"
+-- tags: "v0.0", "Loader"
 -- examples:
 
 function Loader.error(member)

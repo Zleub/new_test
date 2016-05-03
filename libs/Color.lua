@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Color"
+-- tags: "v0.0", "Color"
 -- examples
 
 local Color = {}
@@ -32,7 +32,7 @@ local Color = {}
 -- extendedDescription:
 -- arguments: "colorName", "factor"
 -- returns:
--- tags: "Color", "Graphics"
+-- tags: "v0.0", "Color", "Graphics"
 -- examples: "Color:apply('white', 0.2)"
 
 function Color:apply(colorname, factor)
@@ -49,7 +49,7 @@ end
 -- extendedDescription:
 -- arguments: "colorName"
 -- returns:
--- tags: "Color", "Graphics"
+-- tags: "v0.0", "Color", "Graphics"
 -- examples: "Color:extract('white')"
 
 function Color:extract(colorname)
@@ -59,43 +59,43 @@ end
 ----
 -- name: white
 -- namespace: Color
--- tags: "Color", "ColorList", "Graphics"
+-- tags: "v0.0", "Color", "ColorList", "Graphics"
 Color.white = { 255, 255 , 255, 255 }
 
 ----
 -- name: black
 -- namespace: Color
--- tags: "Color", "ColorList", "Graphics"
+-- tags: "v0.0", "Color", "ColorList", "Graphics"
 Color.black = { 0, 0 , 0, 255 }
 
 ----
 -- name: brown
 -- namespace: Color
--- tags: "Color", "ColorList", "Graphics"
+-- tags: "v0.0", "Color", "ColorList", "Graphics"
 Color.brown = { 85, 39 , 0, 255 }
 
 ----
 -- name: green
 -- namespace: Color
--- tags: "Color", "ColorList", "Graphics"
+-- tags: "v0.0", "Color", "ColorList", "Graphics"
 Color.green = { 45, 136 , 45, 255 }
 
 ----
 -- name: yellow
 -- namespace: Color
--- tags: "Color", "ColorList", "Graphics"
+-- tags: "v0.0", "Color", "ColorList", "Graphics"
 Color.yellow = { 217, 196 , 21, 255 }
 
 ----
 -- name: blue
 -- namespace:Color
--- tags: "Color", "ColorList", "Graphics"
+-- tags: "v0.0", "Color", "ColorList", "Graphics"
 Color.blue = { 34, 102 , 102, 255 }
 
 ----
 -- name: grey
 -- namespace:Color
--- tags: "Color", "ColorList", "Graphics"
+-- tags: "v0.0", "Color", "ColorList", "Graphics"
 Color.grey = { 127, 127 , 127, 255 }
 
 ----
@@ -105,7 +105,7 @@ Color.grey = { 127, 127 , 127, 255 }
 -- extendedDescription:
 -- arguments: "string", "asciiColor"
 -- returns: "string"
--- tags: "Color"
+-- tags: "v0.0", "Color"
 -- examples: "str = Color.shell('HelloWorld', 'red')"
 function Color.shell(str, color)
 	local colors = {

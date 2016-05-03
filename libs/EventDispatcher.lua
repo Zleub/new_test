@@ -20,7 +20,7 @@
 -- extendedDescription: It allow you to pack a set of object which need callback propagation for a minimal iteration.
 -- arguments:
 -- returns:
--- tags: "EventDispatcher"
+-- tags: "v0.0", "EventDispatcher"
 -- examples: "ED = EventDispatcher:create()", "ED:add( drawable )"
 
 local EventDispatcher = Class:expand()
@@ -42,7 +42,7 @@ local events = {
 -- extendedDescription:
 -- arguments: "..."
 -- returns:
--- tags: "EventDispatcher"
+-- tags: "v0.0", "EventDispatcher"
 -- examples: "load", "update", "draw", "keypressed", "mousepressed", "wheelmoved"
 
 function Event:dispatch(...)
@@ -62,7 +62,7 @@ end
 -- extendedDescription:
 -- arguments: "objet"
 -- returns:
--- tags: "EventDispatcher"
+-- tags: "v0.0", "EventDispatcher"
 -- examples: "ED:add( drawable )"
 
 function EventDispatcher:add(elem)
@@ -80,7 +80,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "EventDispatcher"
+-- tags: "v0.0", "EventDispatcher"
 -- examples: "ED = EventDispatcher:create()"
 
 function EventDispatcher:create()

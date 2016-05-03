@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Compound", "Drawable"
+-- tags: "v0.0", "Compound", "Drawable"
 -- examples: "Compound:create('file', {})", "Compound:create({}, w, h)"
 
 ----
@@ -30,7 +30,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Compound"
+-- tags: "v0.0", "Compound"
 -- examples:
 
 local Compound = Drawable:expand()
@@ -44,7 +44,7 @@ Compound.name = 'Compound'
 -- extendedDescription:
 -- arguments: "filename", "description"
 -- returns:
--- tags: "Compound", "Description"
+-- tags: "v0.0", "Compound", "Description"
 -- examples:
 
 function Compound:create_from_filename(filename, desc)
@@ -72,7 +72,7 @@ end
 -- extendedDescription:
 -- arguments: "description", "width", "height"
 -- returns:
--- tags: "Compound", "Description"
+-- tags: "v0.0", "Compound", "Description"
 -- examples:
 
 function Compound:create_from_size(desc, width, height)
@@ -116,7 +116,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Compound"
+-- tags: "v0.0", "Compound"
 -- examples: "Compound:create('filename', {})", "Compound:create({}, 100, 100)"
 
 

@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Container", "Drawable"
+-- tags: "v0.0", "Container", "Drawable"
 -- examples:
 
 local Container = Drawable:expand()
@@ -34,7 +34,7 @@ Container.name = 'Container'
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Container"
+-- tags: "v0.0", "Container"
 -- examples:
 
 function Container:create_from_nothing()
@@ -54,7 +54,7 @@ end
 -- extendedDescription:
 -- arguments: "Image"
 -- returns:
--- tags: "Container"
+-- tags: "v0.0", "Container"
 -- examples:
 
 function Container:create_from_Image(image)
@@ -68,7 +68,7 @@ end
 -- extendedDescription:
 -- arguments: "width", "height"
 -- returns:
--- tags: "Container"
+-- tags: "v0.0", "Container"
 -- examples:
 
 function Container:create_from_dimensions(width, height)
@@ -88,7 +88,7 @@ end
 -- extendedDescription:
 -- arguments: "description", "width", "height"
 -- returns:
--- tags: "Container", "Description"
+-- tags: "v0.0", "Container", "Description"
 -- examples:
 
 function Container:create_from_description(desc, width, height)
@@ -105,7 +105,7 @@ end
 -- extendedDescription:
 -- arguments: "item"
 -- returns:
--- tags: "Container"
+-- tags: "v0.0", "Container"
 -- examples:
 
 function Container:push(item)
@@ -143,7 +143,7 @@ end
 -- extendedDescription:
 -- arguments: "dt"
 -- returns:
--- tags: "Container", "EventDispatcher"
+-- tags: "v0.0", "Container", "EventDispatcher"
 -- examples:
 
 function Container:update(dt)
@@ -157,7 +157,7 @@ end
 -- extendedDescription:
 -- arguments: "x", "y", "button"
 -- returns:
--- tags: "Container", "EventDispatcher"
+-- tags: "v0.0", "Container", "EventDispatcher"
 -- examples:
 
 function Container:mousepressed(x, y, button)
@@ -171,7 +171,7 @@ end
 -- extendedDescription:
 -- arguments: "x", "y", "scale"
 -- returns:
--- tags: "Container", "EventDispatcher"
+-- tags: "v0.0", "Container", "EventDispatcher"
 -- examples:
 
 function Container:draw(x, y, scale)
@@ -189,7 +189,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Container"
+-- tags: "v0.0", "Container"
 -- examples: "Container:create()", "Container:create({}, 100, 100)", "Container:create(100, 100)", "Container:create(image)"
 
 function Container:create(...)

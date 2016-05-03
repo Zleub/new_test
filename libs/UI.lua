@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "UI"
+-- tags: "v0.0", "UI"
 -- examples:
 
 local UI = {}
@@ -32,7 +32,7 @@ local UI = {}
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "UI", "Container"
+-- tags: "v0.0", "UI", "Container"
 -- examples: "container = UI.Container:create(...)"
 
 UI.Container = require 'libs.ui.container'

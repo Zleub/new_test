@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "State", "Test"
+-- tags: "v0.0", "State", "Test"
 -- examples:
 
 return {

@@ -20,7 +20,7 @@
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Drawable", "EventDispatcher"
+-- tags: "v0.0", "Drawable", "EventDispatcher"
 -- examples:
 
 local Drawable = Class:expand()
@@ -32,7 +32,7 @@ local Drawable = Class:expand()
 -- extendedDescription:
 -- arguments: "Image"
 -- returns:
--- tags: "Drawable"
+-- tags: "v0.0", "Drawable"
 -- examples: "Drawable:create(image)"
 
 function Drawable:create(img)
@@ -62,7 +62,7 @@ Drawable.name =  'Drawable'
 -- extendedDescription:
 -- arguments: "x", "y"
 -- returns:
--- tags: "Drawable"
+-- tags: "v0.0", "Drawable"
 -- examples: "d:moveBy(10, 10)"
 
 function Drawable:moveBy(x, y)
@@ -76,7 +76,7 @@ end
 -- extendedDescription:
 -- arguments: "x", "y"
 -- returns:
--- tags: "Drawable"
+-- tags: "v0.0", "Drawable"
 -- examples: "d:moveAt(10, 10)"
 
 function Drawable:moveAt(x, y)
@@ -90,7 +90,7 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "Drawable"
+-- tags: "v0.0", "Drawable"
 -- examples: "d:getSize()"
 
 function Drawable:getSize()
@@ -104,7 +104,7 @@ end
 -- extendedDescription:
 -- arguments: "padding_x", "padding_y", "scale"
 -- returns:
--- tags: "Drawable"
+-- tags: "v0.0", "Drawable"
 -- examples: "d:draw()"
 
 function Drawable:draw(x, y, scale)

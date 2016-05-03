@@ -20,7 +20,7 @@
 -- extendedDescription: The function work with some stringifiction of type into a string to find out which function of the definiton_table to call.\nDefinitively not classy.
 -- arguments: "module", "definition_table", "..."
 -- returns:
--- tags: "Tips&Tricks"
+-- tags: "v0.0", "Tips&Tricks"
 -- examples: "function Something:create(...)\n\treturn definitions_solver(self, {\n\t['_'] = function (...) debug('Something._', {...}) end,\n\t['string'] = Something.create_from_string,\n\t['number, number'] = Something.create_from_size\n\t}, ...)\nend"
 
 function definitions_solver(self, def_table, ...)
@@ -95,7 +95,7 @@ end
 -- extendedDescription: That function use the last part of a path as the index for the global variable.
 -- arguments: "path"
 -- returns:
--- tags: "Tips&Tricks"
+-- tags: "v0.0", "Tips&Tricks"
 -- examples: "require_list('lib.Class', 'ext.inspect')"
 
 function require_list(...)
