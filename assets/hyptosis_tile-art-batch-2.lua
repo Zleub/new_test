@@ -20,9 +20,9 @@ config.screen = {
 	height = 32
 }
 
-config.grid = {
-	width = 32,
-	height = 32
-}
+-- config.grid = {
+-- 	width = 32,
+-- 	height = 32
+-- }
 
 return config

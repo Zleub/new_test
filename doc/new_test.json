@@ -1,171 +1,171 @@
 [{
-"name": "CanvasBatch",
-"tags": ["v0.0", "Drawable", "needCare", "CanvasBatch"],
-"arguments": [],
-"description": "This is a standard construction of the Drawable type.",
 "namespace": "",
-"extendedDescription": "",
 "examples": ["CanvasBatch:create(f, w, h)"],
-"returns": ["Drawable"]
+"tags": ["v0.0", "Drawable", "needCare", "CanvasBatch"],
+"returns": ["Drawable"],
+"name": "CanvasBatch",
+"arguments": [],
+"extendedDescription": "",
+"description": "This is a standard construction of the Drawable type."
 }
 ,{
-"name": "create_from_function",
+"namespace": "CanvasBatch",
+"examples": [],
 "tags": ["v0.0", "needCare", "CanvasBatch"],
+"returns": [],
+"name": "create_from_function",
 "arguments": ["function", "width", "height"],
-"description": "This function create a Drawable of W * H and apply an function for filling.",
-"namespace": "CanvasBatch",
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "This function create a Drawable of W * H and apply an function for filling."
 }
 ,{
-"name": "create",
-"tags": ["v0.0", "CanvasBatch"],
-"arguments": [],
-"description": "Standard Selector Constructor",
 "namespace": "CanvasBatch",
-"extendedDescription": "",
 "examples": ["CanvasBatch:create(function, number, number)"],
-"returns": []
-}
-,{
-"name": "Class",
-"tags": ["v0.0", "Class"],
-"arguments": [],
-"description": "This is the standard Class module.",
-"namespace": "",
-"extendedDescription": "",
-"examples": ["local Module = Class:expand()"],
-"returns": []
-}
-,{
-"name": "grettings",
-"tags": ["v0.0", "Class"],
-"arguments": [],
-"description": "This is the standard grettings function",
-"namespace": "Class",
-"extendedDescription": "",
-"examples": ["Something:grettings()"],
-"returns": []
-}
-,{
-"name": "__index",
-"tags": ["v0.0", "Class", "Metatable"],
-"arguments": [],
-"description": "This is the Class __index metamethod, allowing inheritance by metatable.",
-"namespace": "Class",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "type",
-"tags": ["v0.0", "Class", "needCare"],
-"arguments": [],
-"description": "The standard type function for the Class inheritance tree.",
-"namespace": "Class",
-"extendedDescription": "",
-"examples": ["Something:type()"],
-"returns": []
-}
-,{
-"name": "type_iter",
-"tags": ["v0.0", "Class", "needCare"],
-"arguments": [],
-"description": "The standard type iterator function for the Class inheritance tree.",
-"namespace": "Class",
-"extendedDescription": "",
-"examples": ["for t in Something:type_iter do ... end"],
-"returns": []
-}
-,{
-"name": "dump",
-"tags": ["v0.0", "Class"],
-"arguments": [],
-"description": "The standard debug function.",
-"namespace": "Class",
-"extendedDescription": "",
-"examples": ["Something:dump()"],
-"returns": []
-}
-,{
-"name": "expand",
-"tags": ["v0.0", "Class", "Metatable"],
-"arguments": ["baseClass"],
-"description": "The standard function for prototyping.",
-"namespace": "Class",
-"extendedDescription": "This function take a table as an argument and returns a new table with the paramter as a metatable.",
-"examples": ["newClass = Class:expand()", "newC = newClass:expand()"],
-"returns": ["newClass"]
-}
-,{
+"tags": ["v0.0", "CanvasBatch"],
+"returns": [],
 "name": "create",
-"tags": ["v0.0", "Class", "Metatable"],
-"arguments": ["baseClass"],
-"description": "The standard function to create an instance to a class.",
+"arguments": [],
+"extendedDescription": "",
+"description": "Standard Selector Constructor"
+}
+,{
+"namespace": "",
+"examples": ["local Module = Class:expand()"],
+"tags": ["v0.0", "Class"],
+"returns": [],
+"name": "Class",
+"arguments": [],
+"extendedDescription": "",
+"description": "This is the standard Class module."
+}
+,{
 "namespace": "Class",
-"extendedDescription": "This function take a table as an argument and return a shallow copy of that table.",
+"examples": ["Something:grettings()"],
+"tags": ["v0.0", "Class"],
+"returns": [],
+"name": "grettings",
+"arguments": [],
+"extendedDescription": "",
+"description": "This is the standard grettings function"
+}
+,{
+"namespace": "Class",
+"examples": [],
+"tags": ["v0.0", "Class", "Metatable"],
+"returns": [],
+"name": "__index",
+"arguments": [],
+"extendedDescription": "",
+"description": "This is the Class __index metamethod, allowing inheritance by metatable."
+}
+,{
+"namespace": "Class",
+"examples": ["Something:type()"],
+"tags": ["v0.0", "Class", "needCare"],
+"returns": [],
+"name": "type",
+"arguments": [],
+"extendedDescription": "",
+"description": "The standard type function for the Class inheritance tree."
+}
+,{
+"namespace": "Class",
+"examples": ["for t in Something:type_iter do ... end"],
+"tags": ["v0.0", "Class", "needCare"],
+"returns": [],
+"name": "type_iter",
+"arguments": [],
+"extendedDescription": "",
+"description": "The standard type iterator function for the Class inheritance tree."
+}
+,{
+"namespace": "Class",
+"examples": ["Something:dump()"],
+"tags": ["v0.0", "Class"],
+"returns": [],
+"name": "dump",
+"arguments": [],
+"extendedDescription": "",
+"description": "The standard debug function."
+}
+,{
+"namespace": "Class",
+"examples": ["newClass = Class:expand()", "newC = newClass:expand()"],
+"tags": ["v0.0", "Class", "Metatable"],
+"returns": ["newClass"],
+"name": "expand",
+"arguments": ["baseClass"],
+"extendedDescription": "This function take a table as an argument and returns a new table with the paramter as a metatable.",
+"description": "The standard function for prototyping."
+}
+,{
+"namespace": "Class",
 "examples": ["s = Something:create()"],
-"returns": ["newInstance"]
+"tags": ["v0.0", "Class", "Metatable"],
+"returns": ["newInstance"],
+"name": "create",
+"arguments": ["baseClass"],
+"extendedDescription": "This function take a table as an argument and return a shallow copy of that table.",
+"description": "The standard function to create an instance to a class."
 }
 ,{
-"name": "Clickable",
+"namespace": "",
+"examples": [],
 "tags": ["v0.0", "Clickable", "EventDispatcher", "Drawable"],
+"returns": [],
+"name": "Clickable",
 "arguments": [],
-"description": "The Clickable base",
-"namespace": "",
 "extendedDescription": "The Clickable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatcher to get it triggered.",
-"examples": [],
-"returns": []
+"description": "The Clickable base"
 }
 ,{
+"namespace": "Clickable",
+"examples": [],
+"tags": ["v0.0", "Clickable"],
+"returns": [],
 "name": "mousepressed",
-"tags": ["v0.0", "Clickable"],
 "arguments": ["x", "y", "button"],
-"description": "The mousepressed event for an EventDispatcher",
-"namespace": "Clickable",
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "The mousepressed event for an EventDispatcher"
 }
 ,{
-"name": "draw",
+"namespace": "Clickable",
+"examples": [],
 "tags": ["v0.0", "Clickable"],
+"returns": [],
+"name": "draw",
 "arguments": ["x", "y", "scale"],
-"description": "The Drawable's draw implementation",
-"namespace": "Clickable",
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "The Drawable's draw implementation"
 }
 ,{
-"name": "Color",
-"tags": ["v0.0", "Color"],
-"arguments": [],
-"description": "The Color module is meant to shorter ascii and love2d color management.",
 "namespace": "",
+"tags": ["v0.0", "Color"],
+"returns": [],
+"name": "Color",
+"arguments": [],
 "extendedDescription": "",
-"returns": []
+"description": "The Color module is meant to shorter ascii and love2d color management."
 }
 ,{
-"name": "apply",
-"tags": ["v0.0", "Color", "Graphics"],
-"arguments": ["colorName", "factor"],
-"description": "The apply function returns a quartet of (number * factor) given a string for color purposes.",
 "namespace": "Color",
-"extendedDescription": "",
 "examples": ["Color:apply('white', 0.2)"],
-"returns": []
+"tags": ["v0.0", "Color", "Graphics"],
+"returns": [],
+"name": "apply",
+"arguments": ["colorName", "factor"],
+"extendedDescription": "",
+"description": "The apply function returns a quartet of (number * factor) given a string for color purposes."
 }
 ,{
-"name": "extract",
-"tags": ["v0.0", "Color", "Graphics"],
-"arguments": ["colorName"],
-"description": "The extract function returns a quartet of number given a string for color purposes.",
 "namespace": "Color",
-"extendedDescription": "",
 "examples": ["Color:extract('white')"],
-"returns": []
+"tags": ["v0.0", "Color", "Graphics"],
+"returns": [],
+"name": "extract",
+"arguments": ["colorName"],
+"extendedDescription": "",
+"description": "The extract function returns a quartet of number given a string for color purposes."
 }
 ,{
 "namespace": "Color",
@@ -203,3646 +203,653 @@
 "name": "grey"
 }
 ,{
-"name": "shell",
-"tags": ["v0.0", "Color"],
-"arguments": ["string", "asciiColor"],
-"description": "A function for shell's color rendering",
 "namespace": "Color",
-"extendedDescription": "",
 "examples": ["str = Color.shell('HelloWorld', 'red')"],
-"returns": ["string"]
+"tags": ["v0.0", "Color"],
+"returns": ["string"],
+"name": "shell",
+"arguments": ["string", "asciiColor"],
+"extendedDescription": "",
+"description": "A function for shell's color rendering"
 }
 ,{
-"name": "Compound",
-"tags": ["v0.0", "Compound", "Drawable"],
-"arguments": [],
-"description": "A Compound is a Drawable made from others Drawables.",
 "namespace": "",
-"extendedDescription": "",
 "examples": ["Compound:create('file', {})", "Compound:create({}, w, h)"],
-"returns": []
+"tags": ["v0.0", "Compound", "Drawable"],
+"returns": [],
+"name": "Compound",
+"arguments": [],
+"extendedDescription": "",
+"description": "A Compound is a Drawable made from others Drawables."
 }
 ,{
+"namespace": "Compound",
+"examples": [],
+"tags": ["v0.0", "Compound"],
+"returns": [],
 "name": "Description",
-"tags": ["v0.0", "Compound"],
 "arguments": [],
-"description": "A Compound Description",
-"namespace": "Compound",
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "A Compound Description"
 }
 ,{
+"namespace": "Compound",
+"examples": [],
+"tags": ["v0.0", "Compound", "Description"],
+"returns": [],
 "name": "create_from_filename",
-"tags": ["v0.0", "Compound", "Description"],
 "arguments": ["filename", "description"],
-"description": "This function create a Drawable from a filename and an arbitrary description",
-"namespace": "Compound",
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "This function create a Drawable from a filename and an arbitrary description"
 }
 ,{
-"name": "create_from_size",
+"namespace": "Compound",
+"examples": [],
 "tags": ["v0.0", "Compound", "Description"],
+"returns": [],
+"name": "create_from_size",
 "arguments": ["description", "width", "height"],
-"description": "This function create a Drawable given a description and some size",
-"namespace": "Compound",
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "This function create a Drawable given a description and some size"
 }
 ,{
-"name": "create",
-"tags": ["v0.0", "Compound"],
-"arguments": [],
-"description": "Standard Selector Constructor",
 "namespace": "Compound",
-"extendedDescription": "",
 "examples": ["Compound:create('filename', {})", "Compound:create({}, 100, 100)"],
-"returns": []
+"tags": ["v0.0", "Compound"],
+"returns": [],
+"name": "create",
+"arguments": [],
+"extendedDescription": "",
+"description": "Standard Selector Constructor"
 }
 ,{
-"name": "Dictionnary",
-"tags": ["v0.0", "Dictionnary"],
-"arguments": [],
-"description": "The Love2D Image Dictionnary",
 "namespace": "",
+"examples": ["QuadDescription = Description {\n screen = {\n  width = 'number',\n  height = 'number'\n }\n}"],
+"tags": ["v0.1", "Description"],
+"returns": [],
+"name": "Description",
+"arguments": ["model"],
 "extendedDescription": "",
+"description": "The tool to make Images upon a single meaningful call. Return a validation function."
+}
+,{
+"namespace": "",
 "examples": ["Dictionnary('image', image)", "Dictionnary.image ..."],
-"returns": []
+"tags": ["v0.0", "Dictionnary"],
+"returns": [],
+"name": "Dictionnary",
+"arguments": [],
+"extendedDescription": "",
+"description": "The Love2D Image Dictionnary"
 }
 ,{
-"name": "Draggable",
+"namespace": "",
+"examples": [],
 "tags": ["v0.0", "Draggable", "EventDispatcher", "Drawable"],
+"returns": [],
+"name": "Draggable",
 "arguments": [],
-"description": "The Draggable base",
-"namespace": "",
 "extendedDescription": "The Draggable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatcher to get it triggered.",
-"examples": [],
-"returns": []
+"description": "The Draggable base"
 }
 ,{
+"namespace": "Draggable",
+"examples": [],
+"tags": ["v0.0", "Draggable"],
+"returns": [],
 "name": "update",
-"tags": ["v0.0", "Draggable"],
 "arguments": ["dt"],
-"description": "The update event for an EventDispatcher",
-"namespace": "Draggable",
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "The update event for an EventDispatcher"
 }
 ,{
-"name": "draw",
+"namespace": "Draggable",
+"examples": [],
 "tags": ["v0.0", "Draggable"],
+"returns": [],
+"name": "draw",
 "arguments": ["x", "y", "scale"],
-"description": "The draw event for an EventDispatcher",
-"namespace": "Draggable",
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "The draw event for an EventDispatcher"
 }
 ,{
-"name": "Drawable",
+"namespace": "",
+"examples": [],
 "tags": ["v0.0", "Drawable", "EventDispatcher"],
+"returns": [],
+"name": "Drawable",
 "arguments": [],
-"description": "The standard Drawable type.",
-"namespace": "",
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "The standard Drawable type."
 }
 ,{
-"name": "create",
-"tags": ["v0.0", "Drawable"],
-"arguments": ["Image"],
-"description": "The standard way to construct a Drawable from an Love2d Image.",
 "namespace": "Drawable",
-"extendedDescription": "",
 "examples": ["Drawable:create(image)"],
-"returns": []
-}
-,{
-"name": "moveBy",
 "tags": ["v0.0", "Drawable"],
-"arguments": ["x", "y"],
-"description": "This method allow to move a Drawable.",
-"namespace": "Drawable",
-"extendedDescription": "",
-"examples": ["d:moveBy(10, 10)"],
-"returns": []
-}
-,{
-"name": "moveAt",
-"tags": ["v0.0", "Drawable"],
-"arguments": ["x", "y"],
-"description": "This method allow to position a Drawable",
-"namespace": "Drawable",
-"extendedDescription": "",
-"examples": ["d:moveAt(10, 10)"],
-"returns": []
-}
-,{
-"name": "getSize",
-"tags": ["v0.0", "Drawable"],
-"arguments": [],
-"description": "This method returns the actual (scaled) size of a Drawable.",
-"namespace": "Drawable",
-"extendedDescription": "",
-"examples": ["d:getSize()"],
-"returns": []
-}
-,{
-"name": "draw",
-"tags": ["v0.0", "Drawable"],
-"arguments": ["padding_x", "padding_y", "scale"],
-"description": "The draw event for an EventDispatcher",
-"namespace": "Drawable",
-"extendedDescription": "",
-"examples": ["d:draw()"],
-"returns": []
-}
-,{
-"name": "EventDispatcher",
-"tags": ["v0.0", "EventDispatcher"],
-"arguments": [],
-"description": "The standard EventDispatcher type.",
-"namespace": "",
-"extendedDescription": "It allow you to pack a set of object which need callback propagation for a minimal iteration.",
-"examples": ["ED = EventDispatcher:create()", "ED:add( drawable )"],
-"returns": []
-}
-,{
-"name": "EventList",
-"tags": ["v0.0", "EventDispatcher"],
-"arguments": ["..."],
-"description": "The event list handled by an EventDispatcher's instance.",
-"namespace": "EventDispatcher",
-"extendedDescription": "",
-"examples": ["load", "update", "draw", "keypressed", "mousepressed", "wheelmoved"],
-"returns": []
-}
-,{
-"name": "add",
-"tags": ["v0.0", "EventDispatcher"],
-"arguments": ["objet"],
-"description": "The standard way to add an object to an EventDispatcher.",
-"namespace": "EventDispatcher",
-"extendedDescription": "",
-"examples": ["ED:add( drawable )"],
-"returns": []
-}
-,{
+"returns": [],
 "name": "create",
-"tags": ["v0.0", "EventDispatcher"],
-"arguments": [],
-"description": "The standard way to create a new instance of the EventDispatcher type.",
-"namespace": "EventDispatcher",
-"extendedDescription": "",
-"examples": ["ED = EventDispatcher:create()"],
-"returns": []
-}
-,{
-"name": "definition_solver",
-"tags": ["v0.0", "Tips&Tricks"],
-"arguments": ["module", "definition_table", "..."],
-"description": "Function for polymorphism in Lua.",
-"namespace": "",
-"extendedDescription": "The function work with some stringifiction of type into a string to find out which function of the definiton_table to call.\nDefinitively not classy.",
-"examples": ["function Something:create(...)\n\treturn definitions_solver(self, {\n\t['_'] = function (...) debug('Something._', {...}) end,\n\t['string'] = Something.create_from_string,\n\t['number, number'] = Something.create_from_size\n\t}, ...)\nend"],
-"returns": []
-}
-,{
-"name": "clamp",
-"tags": [],
-"arguments": ["number", "min", "max"],
-"description": "The function to clamp a number",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "debug",
-"tags": [],
-"arguments": ["anything"],
-"description": "Function for easy debugging.",
-"namespace": "",
-"extendedDescription": "",
-"examples": ["debug(...)"],
-"returns": []
-}
-,{
-"name": "require_list",
-"tags": ["v0.0", "Tips&Tricks"],
-"arguments": ["path"],
-"description": "Function for easy requirement",
-"namespace": "",
-"extendedDescription": "That function use the last part of a path as the index for the global variable.",
-"examples": ["require_list('lib.Class', 'ext.inspect')"],
-"returns": []
-}
-,{
-"name": "Loader",
-"tags": ["v0.0", "Loader", "needCare", "Static"],
-"arguments": [],
-"description": "This is the standard loader for assets and such.",
-"namespace": "",
-"extendedDescription": "The Loader type is divided into two main uses so that asset declaration should be distinct from asset instanciation. Point is to allow diversity in manipulation of both image's format and composition.",
-"examples": [],
-"returns": []
-}
-,{
-"name": "getSize",
-"tags": ["v0.0", "Loader"],
-"arguments": [],
-"description": "This is a method that return the number of element into the Loader that need to be loaded.",
-"namespace": "Loader",
-"extendedDescription": "",
-"examples": ["Loader:getSize()"],
-"returns": []
-}
-,{
-"name": "load",
-"tags": ["v0.0", "Loader", "needCare"],
-"arguments": [],
-"description": "The standard method to load the next ressource from the loader's queue. Return the next element to load.",
-"namespace": "Loader",
-"extendedDescription": "",
-"examples": ["Loader:load()"],
-"returns": []
-}
-,{
-"name": "push",
-"tags": ["v0.0", "Loader", "needCare"],
-"arguments": ["mod", "..."],
-"description": "This is the standard way to add a ressource to the loader's queue.",
-"namespace": "Loader",
-"extendedDescription": "The first parameter is the Loader's module to use in order to load the ressource.",
-"examples": ["Loader:push( Loader.PNG, '/images/hello.png')"],
-"returns": []
-}
-,{
-"name": "LoaderAPIList",
-"tags": ["v0.0", "Loader", "PNG", "Shader"],
-"arguments": [],
-"description": "The standard list of Loader's mods.",
-"namespace": "Loader",
-"extendedDescription": "A Loader's API should implement a mandatoryAPI and an optionalAPI field for external config convenience as well as a files and a load method respectively for asset loading and Dictionnary registration.",
-"examples": [],
-"returns": []
-}
-,{
-"name": "check",
-"tags": ["v0.0", "Loader"],
-"arguments": ["api", "config"],
-"description": "This function takes an api and a config and make sure the mandatoryAPI or optionnalAPI is respected.",
-"namespace": "Loader",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "validator",
-"tags": ["v0.0", "Loader"],
-"arguments": ["member", "input"],
-"description": "Call on one's api, this function validate some config input based on the api's member's type",
-"namespace": "Loader",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "error",
-"tags": ["v0.0", "Loader"],
-"arguments": [],
-"description": "This function is called on a loading error and print on console some pretty message.",
-"namespace": "Loader",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "Modulable",
-"tags": ["v0.0", "Modulable"],
-"arguments": [],
-"description": "The Modulable type is a dummy type.",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "QuadList",
-"tags": ["v0.0", "QuadList", "Static", "needCare"],
-"arguments": [],
-"description": "The standard QuadList type that encapsulate the Love2D Quad type.",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "create",
-"tags": ["v0.0", "QuadList"],
-"arguments": ["config", "image"],
-"description": "This function create a QuadList from a config and an Image.",
-"namespace": "QuadList",
-"extendedDescription": "",
-"examples": ["ql = QuadList.create({...}, image)"],
-"returns": []
-}
-,{
-"name": "toCanvasList",
-"tags": ["v0.0", "QuadList"],
-"arguments": ["config", "quadlist"],
-"description": "This function create a list of Drawable from a QuadList.",
-"namespace": "QuadList",
-"extendedDescription": "",
-"examples": ["t = QuadList.toCanvasList({...}, ql)"],
-"returns": []
-}
-,{
-"name": "State",
-"tags": ["v0.0", "State", "Static"],
-"arguments": [],
-"description": "The state module.",
-"namespace": "",
-"extendedDescription": "It handle state's change with the metamethod __call.",
-"examples": ["State('Loading')"],
-"returns": []
-}
-,{
-"name": "StateEvent",
-"tags": ["v0.0", "State"],
-"arguments": [],
-"description": "The events supported by the State module.",
-"namespace": "State",
-"extendedDescription": "",
-"examples": ["once", "before", "after"],
-"returns": []
-}
-,{
-"name": "StateCallback",
-"tags": ["v0.0", "State", "needCare"],
-"arguments": [],
-"description": "The callbacks supported by the State module",
-"namespace": "State",
-"extendedDescription": "-- Callback dispatch should be handle by an EventDispatcher or such",
-"examples": ["update", "draw", "wheelmoved", "keypressed", "mousepressed"],
-"returns": []
-}
-,{
-"name": "StateList",
-"tags": ["v0.0", "State", "Loading", "Test", "Other", "Map"],
-"arguments": [],
-"description": "The list of the differents states availables.",
-"namespace": "State",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "UI",
-"tags": ["v0.0", "UI"],
-"arguments": [],
-"description": "The UI module",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "Container",
-"tags": ["v0.0", "UI", "Container"],
-"arguments": [],
-"description": "A basic UI container",
-"namespace": "UI",
-"extendedDescription": "",
-"examples": ["container = UI.Container:create(...)"],
-"returns": []
-}
-,{
-"name": "PNG",
-"tags": ["v0.0", "Loader", "PNG"],
-"arguments": [],
-"description": "The PNG loading mod.",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "mandatoryAPI",
-"tags": ["v0.0", "PNG"],
-"arguments": [],
-"description": "The mandatoryAPI of a PNG",
-"namespace": "PNG",
-"extendedDescription": "",
-"examples": ["{\n screen = {\n  name = 'screen',\n  model = {\n   width = 'number',\n   height = 'number'\n  },\n }\n}"],
-"returns": []
-}
-,{
-"name": "optionalAPI",
-"tags": ["v0.0", "PNG"],
-"arguments": [],
-"description": "The optionalAPI of a PNG",
-"namespace": "PNG",
-"extendedDescription": "",
-"examples": ["{\n grid = {\n  name = 'grid',\n  model = {\n   width = 'number',\n   height = 'number'\n  }\n },\n spacing = {\n  name = 'spacing',\n  model = {\n   width = {\n    type = 'number',\n    value = 0\n   },\n   height = {\n    type = 'number',\n    value = 0\n   }\n  }\n }\n}"],
-"returns": []
-}
-,{
-"name": "files",
-"tags": ["v0.0", "PNG"],
-"arguments": ["path", "filename", "configname"],
-"description": "This function opens a .png file and optionnaly an adjacent .lua file",
-"namespace": "PNG",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "load",
-"tags": ["v0.0", "PNG"],
-"arguments": ["path", "filename", "configname"],
-"description": "This function applies a config upon a Image and load the result into the Dictionnary",
-"namespace": "PNG",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "Shader",
-"tags": ["v0.0", "Loader", "Shader"],
-"arguments": [],
-"description": "The Shader loading mod.",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "files",
-"tags": ["v0.0", "Shader"],
-"arguments": ["path", "filename"],
-"description": "This function takes a .glsl path and optionnaly a .lua file",
-"namespace": "Shader",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "load",
-"tags": ["v0.0", "Shader"],
-"arguments": ["filename"],
-"description": "This function load a Shader type into the Dictionnary.",
-"namespace": "Shader",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "Loading",
-"tags": ["v0.0", "Loading", "State"],
-"arguments": [],
-"description": "The Loading State lasts until the static Loader's queue is empty.",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "Map",
-"tags": ["v0.0", "Map", "State"],
-"arguments": [],
-"description": "The Map State, where magic is done.",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "Other",
-"tags": ["v0.0", "State", "Other"],
-"arguments": [],
-"description": "Some other demo state.",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "Test",
-"tags": ["v0.0", "State", "Test"],
-"arguments": [],
-"description": "Some test state.",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "Container",
-"tags": ["v0.0", "Container", "Drawable"],
-"arguments": [],
-"description": "The UI Container module.",
-"namespace": "",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "create_from_nothing",
-"tags": ["v0.0", "Container"],
-"arguments": [],
-"description": "Create a Container from nothing.",
-"namespace": "Container",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "create_from_Image",
-"tags": ["v0.0", "Container"],
 "arguments": ["Image"],
-"description": "Create a Container from an Image",
-"namespace": "Container",
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "The standard way to construct a Drawable from an Love2d Image."
 }
 ,{
-"name": "create_from_dimensions",
-"tags": ["v0.0", "Container"],
-"arguments": ["width", "height"],
-"description": "Create a Container from a sizing.",
-"namespace": "Container",
+"namespace": "Drawable",
+"examples": ["d:moveBy(10, 10)"],
+"tags": ["v0.0", "Drawable"],
+"returns": [],
+"name": "moveBy",
+"arguments": ["x", "y"],
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "This method allow to move a Drawable."
 }
 ,{
-"name": "create_from_description",
-"tags": ["v0.0", "Container", "Description"],
-"arguments": ["description", "width", "height"],
-"description": "Create a Container from a Description",
-"namespace": "Container",
+"namespace": "Drawable",
+"examples": ["d:moveAt(10, 10)"],
+"tags": ["v0.0", "Drawable"],
+"returns": [],
+"name": "moveAt",
+"arguments": ["x", "y"],
 "extendedDescription": "",
-"examples": [],
-"returns": []
+"description": "This method allow to position a Drawable"
 }
 ,{
-"name": "push",
-"tags": ["v0.0", "Container"],
-"arguments": ["item"],
-"description": "Adds an item to a Container and calculate his position relative to the inner queue.",
-"namespace": "Container",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "update",
-"tags": ["v0.0", "Container", "EventDispatcher"],
-"arguments": ["dt"],
-"description": "The update event for EventDispatcher",
-"namespace": "Container",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "mousepressed",
-"tags": ["v0.0", "Container", "EventDispatcher"],
-"arguments": ["x", "y", "button"],
-"description": "The mousepressed event for EventDispatcher",
-"namespace": "Container",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "draw",
-"tags": ["v0.0", "Container", "EventDispatcher"],
-"arguments": ["x", "y", "scale"],
-"description": "The draw event for EventDispatcher",
-"namespace": "Container",
-"extendedDescription": "",
-"examples": [],
-"returns": []
-}
-,{
-"name": "create",
-"tags": ["v0.0", "Container"],
+"namespace": "Drawable",
+"examples": ["d:getSize()"],
+"tags": ["v0.0", "Drawable"],
+"returns": [],
+"name": "getSize",
 "arguments": [],
-"description": "Standard Selector Constructor",
-"namespace": "Container",
 "extendedDescription": "",
+"description": "This method returns the actual (scaled) size of a Drawable."
+}
+,{
+"namespace": "Drawable",
+"examples": ["d:draw()"],
+"tags": ["v0.0", "Drawable"],
+"returns": [],
+"name": "draw",
+"arguments": ["padding_x", "padding_y", "scale"],
+"extendedDescription": "",
+"description": "The draw event for an EventDispatcher"
+}
+,{
+"namespace": "",
+"examples": ["ED = EventDispatcher:create()", "ED:add( drawable )"],
+"tags": ["v0.0", "EventDispatcher"],
+"returns": [],
+"name": "EventDispatcher",
+"arguments": [],
+"extendedDescription": "It allow you to pack a set of object which need callback propagation for a minimal iteration.",
+"description": "The standard EventDispatcher type."
+}
+,{
+"namespace": "EventDispatcher",
+"examples": ["load", "update", "draw", "keypressed", "mousepressed", "wheelmoved"],
+"tags": ["v0.0", "EventDispatcher"],
+"returns": [],
+"name": "EventList",
+"arguments": ["..."],
+"extendedDescription": "",
+"description": "The event list handled by an EventDispatcher's instance."
+}
+,{
+"namespace": "EventDispatcher",
+"examples": ["ED:add( drawable )"],
+"tags": ["v0.0", "EventDispatcher"],
+"returns": [],
+"name": "add",
+"arguments": ["objet"],
+"extendedDescription": "",
+"description": "The standard way to add an object to an EventDispatcher."
+}
+,{
+"namespace": "EventDispatcher",
+"examples": ["ED = EventDispatcher:create()"],
+"tags": ["v0.0", "EventDispatcher"],
+"returns": [],
+"name": "create",
+"arguments": [],
+"extendedDescription": "",
+"description": "The standard way to create a new instance of the EventDispatcher type."
+}
+,{
+"namespace": "",
+"examples": ["function Something:create(...)\n\treturn definitions_solver(self, {\n\t['_'] = function (...) debug('Something._', {...}) end,\n\t['string'] = Something.create_from_string,\n\t['number, number'] = Something.create_from_size\n\t}, ...)\nend"],
+"tags": ["v0.0", "Tips&Tricks"],
+"returns": [],
+"name": "definition_solver",
+"arguments": ["module", "definition_table", "..."],
+"extendedDescription": "The function work with some stringifiction of type into a string to find out which function of the definiton_table to call.\nDefinitively not classy.",
+"description": "Function for polymorphism in Lua."
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": [],
+"returns": [],
+"name": "clamp",
+"arguments": ["number", "min", "max"],
+"extendedDescription": "",
+"description": "The function to clamp a number"
+}
+,{
+"namespace": "",
+"examples": ["debug(...)"],
+"tags": [],
+"returns": [],
+"name": "debug",
+"arguments": ["anything"],
+"extendedDescription": "",
+"description": "Function for easy debugging."
+}
+,{
+"namespace": "",
+"examples": ["require_list('lib.Class', 'ext.inspect')"],
+"tags": ["v0.0", "Tips&Tricks"],
+"returns": [],
+"name": "require_list",
+"arguments": ["path"],
+"extendedDescription": "That function use the last part of a path as the index for the global variable.",
+"description": "Function for easy requirement"
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "Loader", "needCare", "Static"],
+"returns": [],
+"name": "Loader",
+"arguments": [],
+"extendedDescription": "The Loader type is divided into two main uses so that asset declaration should be distinct from asset instanciation. Point is to allow diversity in manipulation of both image's format and composition.",
+"description": "This is the standard loader for assets and such."
+}
+,{
+"namespace": "Loader",
+"examples": ["Loader:getSize()"],
+"tags": ["v0.0", "Loader"],
+"returns": [],
+"name": "getSize",
+"arguments": [],
+"extendedDescription": "",
+"description": "This is a method that return the number of element into the Loader that need to be loaded."
+}
+,{
+"namespace": "Loader",
+"examples": ["Loader:load()"],
+"tags": ["v0.0", "Loader", "needCare"],
+"returns": [],
+"name": "load",
+"arguments": [],
+"extendedDescription": "",
+"description": "The standard method to load the next ressource from the loader's queue. Return the next element to load."
+}
+,{
+"namespace": "Loader",
+"examples": ["Loader:push( Loader.PNG, '/images/hello.png')"],
+"tags": ["v0.0", "Loader", "needCare"],
+"returns": [],
+"name": "push",
+"arguments": ["mod", "..."],
+"extendedDescription": "The first parameter is the Loader's module to use in order to load the ressource.",
+"description": "This is the standard way to add a ressource to the loader's queue."
+}
+,{
+"namespace": "Loader",
+"examples": [],
+"tags": ["v0.0", "Loader", "PNG", "Shader"],
+"returns": [],
+"name": "LoaderAPIList",
+"arguments": [],
+"extendedDescription": "A Loader's API should implement a mandatoryAPI and an optionalAPI field for external config convenience as well as a files and a load method respectively for asset loading and Dictionnary registration.",
+"description": "The standard list of Loader's mods."
+}
+,{
+"namespace": "Loader",
+"examples": [],
+"tags": ["v0.0", "Loader"],
+"returns": [],
+"name": "check",
+"arguments": ["api", "config"],
+"extendedDescription": "",
+"description": "This function takes an api and a config and make sure the mandatoryAPI or optionnalAPI is respected."
+}
+,{
+"namespace": "Loader",
+"examples": [],
+"tags": ["v0.0", "Loader"],
+"returns": [],
+"name": "validator",
+"arguments": ["member", "input"],
+"extendedDescription": "",
+"description": "Call on one's api, this function validate some config input based on the api's member's type"
+}
+,{
+"namespace": "Loader",
+"examples": [],
+"tags": ["v0.0", "Loader"],
+"returns": [],
+"name": "error",
+"arguments": [],
+"extendedDescription": "",
+"description": "This function is called on a loading error and print on console some pretty message."
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "Loader", "PNG"],
+"returns": [],
+"name": "PNG",
+"arguments": [],
+"extendedDescription": "",
+"description": "The PNG loading mod."
+}
+,{
+"namespace": "PNG",
+"examples": ["{\n screen = {\n  name = 'screen',\n  model = {\n   width = 'number',\n   height = 'number'\n  },\n }\n}"],
+"tags": ["v0.0", "PNG"],
+"returns": [],
+"name": "mandatoryAPI",
+"arguments": [],
+"extendedDescription": "",
+"description": "The mandatoryAPI of a PNG"
+}
+,{
+"namespace": "PNG",
+"examples": ["{\n grid = {\n  name = 'grid',\n  model = {\n   width = 'number',\n   height = 'number'\n  }\n },\n spacing = {\n  name = 'spacing',\n  model = {\n   width = {\n    type = 'number',\n    value = 0\n   },\n   height = {\n    type = 'number',\n    value = 0\n   }\n  }\n }\n}"],
+"tags": ["v0.0", "PNG"],
+"returns": [],
+"name": "optionalAPI",
+"arguments": [],
+"extendedDescription": "",
+"description": "The optionalAPI of a PNG"
+}
+,{
+"namespace": "PNG",
+"examples": [],
+"tags": ["v0.0", "PNG"],
+"returns": [],
+"name": "files",
+"arguments": ["path", "filename", "configname"],
+"extendedDescription": "",
+"description": "This function opens a .png file and optionnaly an adjacent .lua file"
+}
+,{
+"namespace": "PNG",
+"examples": [],
+"tags": ["v0.0", "PNG"],
+"returns": [],
+"name": "load",
+"arguments": ["path", "filename", "configname"],
+"extendedDescription": "",
+"description": "This function applies a config upon a Image and load the result into the Dictionnary"
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "Loader", "Shader"],
+"returns": [],
+"name": "Shader",
+"arguments": [],
+"extendedDescription": "",
+"description": "The Shader loading mod."
+}
+,{
+"namespace": "Shader",
+"examples": [],
+"tags": ["v0.0", "Shader"],
+"returns": [],
+"name": "files",
+"arguments": ["path", "filename"],
+"extendedDescription": "",
+"description": "This function takes a .glsl path and optionnaly a .lua file"
+}
+,{
+"namespace": "Shader",
+"examples": [],
+"tags": ["v0.0", "Shader"],
+"returns": [],
+"name": "load",
+"arguments": ["filename"],
+"extendedDescription": "",
+"description": "This function load a Shader type into the Dictionnary."
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "Modulable"],
+"returns": [],
+"name": "Modulable",
+"arguments": [],
+"extendedDescription": "",
+"description": "The Modulable type is a dummy type."
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "QuadList", "Static", "needCare"],
+"returns": [],
+"name": "QuadList",
+"arguments": [],
+"extendedDescription": "",
+"description": "The standard QuadList type that encapsulate the Love2D Quad type."
+}
+,{
+"namespace": "QuadList",
+"examples": ["ql = QuadList.create({...}, image)"],
+"tags": ["v0.0", "QuadList"],
+"returns": [],
+"name": "create",
+"arguments": ["config", "image"],
+"extendedDescription": "",
+"description": "This function create a QuadList from a config and an Image."
+}
+,{
+"namespace": "QuadList",
+"examples": ["t = QuadList.toCanvasList({...}, ql)"],
+"tags": ["v0.0", "QuadList"],
+"returns": [],
+"name": "toCanvasList",
+"arguments": ["config", "quadlist"],
+"extendedDescription": "",
+"description": "This function create a list of Drawable from a QuadList."
+}
+,{
+"namespace": "",
+"examples": ["State('Loading')"],
+"tags": ["v0.0", "State", "Static"],
+"returns": [],
+"name": "State",
+"arguments": [],
+"extendedDescription": "It handle state's change with the metamethod __call.",
+"description": "The state module."
+}
+,{
+"namespace": "State",
+"examples": ["once", "before", "after"],
+"tags": ["v0.0", "State"],
+"returns": [],
+"name": "StateEvent",
+"arguments": [],
+"extendedDescription": "",
+"description": "The events supported by the State module."
+}
+,{
+"namespace": "State",
+"examples": ["update", "draw", "wheelmoved", "keypressed", "mousepressed"],
+"tags": ["v0.0", "State", "needCare"],
+"returns": [],
+"name": "StateCallback",
+"arguments": [],
+"extendedDescription": "-- Callback dispatch should be handle by an EventDispatcher or such",
+"description": "The callbacks supported by the State module"
+}
+,{
+"namespace": "State",
+"examples": [],
+"tags": ["v0.0", "State", "Loading", "Test", "Other", "Map"],
+"returns": [],
+"name": "StateList",
+"arguments": [],
+"extendedDescription": "",
+"description": "The list of the differents states availables."
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "Loading", "State"],
+"returns": [],
+"name": "Loading",
+"arguments": [],
+"extendedDescription": "",
+"description": "The Loading State lasts until the static Loader's queue is empty."
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "Map", "State"],
+"returns": [],
+"name": "Map",
+"arguments": [],
+"extendedDescription": "",
+"description": "The Map State, where magic is done."
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "State", "Other"],
+"returns": [],
+"name": "Other",
+"arguments": [],
+"extendedDescription": "",
+"description": "Some other demo state."
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "State", "Test"],
+"returns": [],
+"name": "Test",
+"arguments": [],
+"extendedDescription": "",
+"description": "Some test state."
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "UI"],
+"returns": [],
+"name": "UI",
+"arguments": [],
+"extendedDescription": "",
+"description": "The UI module"
+}
+,{
+"namespace": "UI",
+"examples": ["container = UI.Container:create(...)"],
+"tags": ["v0.0", "UI", "Container"],
+"returns": [],
+"name": "Container",
+"arguments": [],
+"extendedDescription": "",
+"description": "A basic UI container"
+}
+,{
+"namespace": "",
+"examples": [],
+"tags": ["v0.0", "Container", "Drawable"],
+"returns": [],
+"name": "Container",
+"arguments": [],
+"extendedDescription": "",
+"description": "The UI Container module."
+}
+,{
+"namespace": "Container",
+"examples": [],
+"tags": ["v0.0", "Container"],
+"returns": [],
+"name": "create_from_nothing",
+"arguments": [],
+"extendedDescription": "",
+"description": "Create a Container from nothing."
+}
+,{
+"namespace": "Container",
+"examples": [],
+"tags": ["v0.0", "Container"],
+"returns": [],
+"name": "create_from_Image",
+"arguments": ["Image"],
+"extendedDescription": "",
+"description": "Create a Container from an Image"
+}
+,{
+"namespace": "Container",
+"examples": [],
+"tags": ["v0.0", "Container"],
+"returns": [],
+"name": "create_from_dimensions",
+"arguments": ["width", "height"],
+"extendedDescription": "",
+"description": "Create a Container from a sizing."
+}
+,{
+"namespace": "Container",
+"examples": [],
+"tags": ["v0.0", "Container", "Description"],
+"returns": [],
+"name": "create_from_description",
+"arguments": ["description", "width", "height"],
+"extendedDescription": "",
+"description": "Create a Container from a Description"
+}
+,{
+"namespace": "Container",
+"examples": [],
+"tags": ["v0.0", "Container"],
+"returns": [],
+"name": "push",
+"arguments": ["item"],
+"extendedDescription": "",
+"description": "Adds an item to a Container and calculate his position relative to the inner queue."
+}
+,{
+"namespace": "Container",
+"examples": [],
+"tags": ["v0.0", "Container", "EventDispatcher"],
+"returns": [],
+"name": "update",
+"arguments": ["dt"],
+"extendedDescription": "",
+"description": "The update event for EventDispatcher"
+}
+,{
+"namespace": "Container",
+"examples": [],
+"tags": ["v0.0", "Container", "EventDispatcher"],
+"returns": [],
+"name": "mousepressed",
+"arguments": ["x", "y", "button"],
+"extendedDescription": "",
+"description": "The mousepressed event for EventDispatcher"
+}
+,{
+"namespace": "Container",
+"examples": [],
+"tags": ["v0.0", "Container", "EventDispatcher"],
+"returns": [],
+"name": "draw",
+"arguments": ["x", "y", "scale"],
+"extendedDescription": "",
+"description": "The draw event for EventDispatcher"
+}
+,{
+"namespace": "Container",
 "examples": ["Container:create()", "Container:create({}, 100, 100)", "Container:create(100, 100)", "Container:create(image)"],
-"returns": []
+"tags": ["v0.0", "Container"],
+"returns": [],
+"name": "create",
+"arguments": [],
+"extendedDescription": "",
+"description": "Standard Selector Constructor"
 }
-]local inspect = require 'exts.inspect'
-
--- print(inspect(arg))
-
-local matches = {
-	[0] = '%-%-%-%-',
-	[1] = '%-%- (name):%s?(.*)',
-	[2] = '%-%- (namespace):%s?(.*)',
-	[3] = '%-%- (description):%s?(.*)',
-	[4] = '%-%- (extendedDescription):%s?(.*)',
-	[5] = '%-%- (arguments):%s?(.*)',
-	[6] = '%-%- (returns):%s?(.*)',
-	[7] = '%-%- (tags):%s?(.*)',
-	[8] = '%-%- (examples):%s?(.*)',
-}
-
-io.write('[')
-local count = 0
-for i,v in ipairs(arg) do
-	local l
-	local file = io.open(v)
-	repeat
-		l = file:read('*l')
-		if l and l:match(matches[0]) then
-			local res = {}
-			l = file:read('*l')
-			for j,m in ipairs(matches) do
-				local k,val = l:match(m)
-				if k then
-					res[k] = val
-					l = file:read('*l')
-				end
-			end
-
-			local key_table = {}
-			for k,v in pairs(res) do
-				table.insert(key_table, k)
-			end
-
-			local str = "{\n"
-			for i,k in ipairs(key_table) do
-
-				if k == 'arguments' or k == 'returns' or k == 'tags' or k == 'examples' then
-					str = str..'"'..k..'": ['..res[k]..']'
-				else
-					str = str..'"'..k..'": "'..res[k]..'"'
-				end
-
-				if res[key_table[i + 1]] then
-					str = str..',\n'
-				else
-					str = str..'\n'
-				end
-			end
-			str = str.."}"
-
-			if str ~= "{\n}" then
-				if count >= 1 then
-					print(','..str)
-				else
-					print(str)
-				end
-				count = count + 1
-			end
-
-		end
-	until l == nil
-	file:close()
-end
-io.write(']')
-return {
-
-	screen = {
-		width = 32 * 2,
-		height = 36 * 2
-	},
-
-	grid = {
-		width = 32,
-		height = 36
-	},
-
-}
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  TEST:hyptosis_tile-art-batch-1
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2015-12-20 02:42:43
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 18:17:30
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-return {
-
-	screen = {
-		width = 64,
-		height = 64
-	},
-
-	grid = {
-		width = 32,
-		height = 32
-	},
-
-	exports = {
-		banner = {
-			width = 1,
-			height = 2,
-			{ 743 - 2 },
-			{ 773 - 2 }
-		}
-	}
-
-}
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  TEST:hyptosis_tile-art-batch-1
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2015-12-20 02:42:43
--- :ddddddddddhyyddddddddddd: Modified: 2016-01-03 11:23:42
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-local config = {}
-
-config.screen = {
-	width = 32,
-	height = 32
-}
-
-config.grid = {
-	width = 32,
-	height = 32
-}
-
-return config
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:UI
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-09 18:29:51
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-09 19:15:28
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-local config = {}
-
-config.screen = {
-	width = 64,
-	height = 64
-}
-
-config.grid = {
-	width = 32,
-	height = 32
-}
-
-config.spacing = {
-	width = 2,
-	height = 2
-}
-
-config.exports = {}
-config.exports.test = {
-	width = 3,
-	height = 6,
-	{ 1 + 25 * 1, 2 + 25 * 1, 3 + 25 * 1 },
-	{ 1 + 25 * 2, 2 + 25 * 2, 3 + 25 * 2 },
-	{ 1 + 25 * 2, 2 + 25 * 2, 3 + 25 * 2 },
-	{ 1 + 25 * 2, 2 + 25 * 2, 3 + 25 * 2 },
-	{ 1 + 25 * 2, 2 + 25 * 2, 3 + 25 * 2 },
-	{ 1 + 25 * 3, 2 + 25 * 3, 3 + 25 * 3 },
-}
-
-return config
-local config = {}
-
-config.screen = {
-	width = 16,
-	height = 18
-}
-
-config.grid = {
-	width = 16,
-	height = 18
-}
-
-return config
-local inspect ={
-  _VERSION = 'inspect.lua 3.0.0',
-  _URL     = 'http://github.com/kikito/inspect.lua',
-  _DESCRIPTION = 'human-readable representations of tables',
-  _LICENSE = [[
-    MIT LICENSE
-
-    Copyright (c) 2013 Enrique García Cota
-
-    Permission is hereby granted, free of charge, to any person obtaining a
-    copy of this software and associated documentation files (the
-    "Software"), to deal in the Software without restriction, including
-    without limitation the rights to use, copy, modify, merge, publish,
-    distribute, sublicense, and/or sell copies of the Software, and to
-    permit persons to whom the Software is furnished to do so, subject to
-    the following conditions:
-
-    The above copyright notice and this permission notice shall be included
-    in all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  ]]
-}
-
-inspect.KEY       = setmetatable({}, {__tostring = function() return 'inspect.KEY' end})
-inspect.METATABLE = setmetatable({}, {__tostring = function() return 'inspect.METATABLE' end})
-
--- Apostrophizes the string if it has quotes, but not aphostrophes
--- Otherwise, it returns a regular quoted string
-local function smartQuote(str)
-  if str:match('"') and not str:match("'") then
-    return "'" .. str .. "'"
-  end
-  return '"' .. str:gsub('"', '\\"') .. '"'
-end
-
-local controlCharsTranslation = {
-  ["\a"] = "\\a",  ["\b"] = "\\b", ["\f"] = "\\f",  ["\n"] = "\\n",
-  ["\r"] = "\\r",  ["\t"] = "\\t", ["\v"] = "\\v"
-}
-
-local function escapeChar(c) return controlCharsTranslation[c] end
-
-local function escape(str)
-  local result = str:gsub("\\", "\\\\"):gsub("(%c)", escapeChar)
-  return result
-end
-
-local function isIdentifier(str)
-  return type(str) == 'string' and str:match( "^[_%a][_%a%d]*$" )
-end
-
-local function isSequenceKey(k, length)
-  return type(k) == 'number'
-     and 1 <= k
-     and k <= length
-     and math.floor(k) == k
-end
-
-local defaultTypeOrders = {
-  ['number']   = 1, ['boolean']  = 2, ['string'] = 3, ['table'] = 4,
-  ['function'] = 5, ['userdata'] = 6, ['thread'] = 7
-}
-
-local function sortKeys(a, b)
-  local ta, tb = type(a), type(b)
-
-  -- strings and numbers are sorted numerically/alphabetically
-  if ta == tb and (ta == 'string' or ta == 'number') then return a < b end
-
-  local dta, dtb = defaultTypeOrders[ta], defaultTypeOrders[tb]
-  -- Two default types are compared according to the defaultTypeOrders table
-  if dta and dtb then return defaultTypeOrders[ta] < defaultTypeOrders[tb]
-  elseif dta     then return true  -- default types before custom ones
-  elseif dtb     then return false -- custom types after default ones
-  end
-
-  -- custom types are sorted out alphabetically
-  return ta < tb
-end
-
-local function getNonSequentialKeys(t)
-  local keys, length = {}, #t
-  for k,_ in pairs(t) do
-    if not isSequenceKey(k, length) then table.insert(keys, k) end
-  end
-  table.sort(keys, sortKeys)
-  return keys
-end
-
-local function getToStringResultSafely(t, mt)
-  local __tostring = type(mt) == 'table' and rawget(mt, '__tostring')
-  local str, ok
-  if type(__tostring) == 'function' then
-    ok, str = pcall(__tostring, t)
-    str = ok and str or 'error: ' .. tostring(str)
-  end
-  if type(str) == 'string' and #str > 0 then return str end
-end
-
-local maxIdsMetaTable = {
-  __index = function(self, typeName)
-    rawset(self, typeName, 0)
-    return 0
-  end
-}
-
-local idsMetaTable = {
-  __index = function (self, typeName)
-    local col = setmetatable({}, {__mode = "kv"})
-    rawset(self, typeName, col)
-    return col
-  end
-}
-
-local function countTableAppearances(t, tableAppearances)
-  tableAppearances = tableAppearances or setmetatable({}, {__mode = "k"})
-
-  if type(t) == 'table' then
-    if not tableAppearances[t] then
-      tableAppearances[t] = 1
-      for k,v in pairs(t) do
-        countTableAppearances(k, tableAppearances)
-        countTableAppearances(v, tableAppearances)
-      end
-      countTableAppearances(getmetatable(t), tableAppearances)
-    else
-      tableAppearances[t] = tableAppearances[t] + 1
-    end
-  end
-
-  return tableAppearances
-end
-
-local copySequence = function(s)
-  local copy, len = {}, #s
-  for i=1, len do copy[i] = s[i] end
-  return copy, len
-end
-
-local function makePath(path, ...)
-  local keys = {...}
-  local newPath, len = copySequence(path)
-  for i=1, #keys do
-    newPath[len + i] = keys[i]
-  end
-  return newPath
-end
-
-local function processRecursive(process, item, path)
-  if item == nil then return nil end
-
-  local processed = process(item, path)
-  if type(processed) == 'table' then
-    local processedCopy = {}
-    local processedKey
-
-    for k,v in pairs(processed) do
-      processedKey = processRecursive(process, k, makePath(path, k, inspect.KEY))
-      if processedKey ~= nil then
-        processedCopy[processedKey] = processRecursive(process, v, makePath(path, processedKey))
-      end
-    end
-
-    local mt  = processRecursive(process, getmetatable(processed), makePath(path, inspect.METATABLE))
-    setmetatable(processedCopy, mt)
-    processed = processedCopy
-  end
-  return processed
-end
-
-
--------------------------------------------------------------------
-
-local Inspector = {}
-local Inspector_mt = {__index = Inspector}
-
-function Inspector:puts(...)
-  local args   = {...}
-  local buffer = self.buffer
-  local len    = #buffer
-  for i=1, #args do
-    len = len + 1
-    buffer[len] = tostring(args[i])
-  end
-end
-
-function Inspector:down(f)
-  self.level = self.level + 1
-  f()
-  self.level = self.level - 1
-end
-
-function Inspector:tabify()
-  self:puts(self.newline, string.rep(self.indent, self.level))
-end
-
-function Inspector:alreadyVisited(v)
-  return self.ids[type(v)][v] ~= nil
-end
-
-function Inspector:getId(v)
-  local tv = type(v)
-  local id = self.ids[tv][v]
-  if not id then
-    id              = self.maxIds[tv] + 1
-    self.maxIds[tv] = id
-    self.ids[tv][v] = id
-  end
-  return id
-end
-
-function Inspector:putKey(k)
-  if isIdentifier(k) then return self:puts(k) end
-  self:puts("[")
-  self:putValue(k)
-  self:puts("]")
-end
-
-function Inspector:putTable(t)
-  if t == inspect.KEY or t == inspect.METATABLE then
-    self:puts(tostring(t))
-  elseif self:alreadyVisited(t) then
-    self:puts('<table ', self:getId(t), '>')
-  elseif self.level >= self.depth then
-    self:puts('{...}')
-  else
-    if self.tableAppearances[t] > 1 then self:puts('<', self:getId(t), '>') end
-
-    local nonSequentialKeys = getNonSequentialKeys(t)
-    local length            = #t
-    local mt                = getmetatable(t)
-    local toStringResult    = getToStringResultSafely(t, mt)
-
-    self:puts('{')
-    self:down(function()
-      if toStringResult then
-        self:puts(' -- ', escape(toStringResult))
-        if length >= 1 then self:tabify() end
-      end
-
-      local count = 0
-      for i=1, length do
-        if count > 0 then self:puts(',') end
-        self:puts(' ')
-        self:putValue(t[i])
-        count = count + 1
-      end
-
-      for _,k in ipairs(nonSequentialKeys) do
-        if count > 0 then self:puts(',') end
-        self:tabify()
-        self:putKey(k)
-        self:puts(' = ')
-        self:putValue(t[k])
-        count = count + 1
-      end
-
-      if mt then
-        if count > 0 then self:puts(',') end
-        self:tabify()
-        self:puts('<metatable> = ')
-        self:putValue(mt)
-      end
-    end)
-
-    if #nonSequentialKeys > 0 or mt then -- result is multi-lined. Justify closing }
-      self:tabify()
-    elseif length > 0 then -- array tables have one extra space before closing }
-      self:puts(' ')
-    end
-
-    self:puts('}')
-  end
-end
-
-function Inspector:putValue(v)
-  local tv = type(v)
-
-  if tv == 'string' then
-    self:puts(smartQuote(escape(v)))
-  elseif tv == 'number' or tv == 'boolean' or tv == 'nil' then
-    self:puts(tostring(v))
-  elseif tv == 'table' then
-    self:putTable(v)
-  else
-    self:puts('<',tv,' ',self:getId(v),'>')
-  end
-end
-
--------------------------------------------------------------------
-
-function inspect.inspect(root, options)
-  options       = options or {}
-
-  local depth   = options.depth   or math.huge
-  local newline = options.newline or '\n'
-  local indent  = options.indent  or '  '
-  local process = options.process
-
-  if process then
-    root = processRecursive(process, root, {})
-  end
-
-  local inspector = setmetatable({
-    depth            = depth,
-    buffer           = {},
-    level            = 0,
-    ids              = setmetatable({}, idsMetaTable),
-    maxIds           = setmetatable({}, maxIdsMetaTable),
-    newline          = newline,
-    indent           = indent,
-    tableAppearances = countTableAppearances(root)
-  }, Inspector_mt)
-
-  inspector:putValue(root)
-
-  return table.concat(inspector.buffer)
-end
-
-setmetatable(inspect, { __call = function(_, ...) return inspect.inspect(...) end })
-
-return inspect
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:CanvasBatch
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-14 21:09:50
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 21:31:33
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: CanvasBatch
--- namespace:
--- description: This is a standard construction of the Drawable type.
--- extendedDescription:
--- arguments:
--- returns: "Drawable"
--- tags: "v0.0", "Drawable", "needCare", "CanvasBatch"
--- examples: "CanvasBatch:create(f, w, h)"
-
-local CanvasBatch = Drawable:expand()
-
-----
--- name: create_from_function
--- namespace: CanvasBatch
--- description: This function create a Drawable of W * H and apply an function for filling.
--- extendedDescription:
--- arguments: "function", "width", "height"
--- returns:
--- tags: "v0.0", "needCare", "CanvasBatch"
--- examples:
-
-function CanvasBatch:create_from_function(f, width, height)
-	local canvas = love.graphics.newCanvas(width, height)
-
-	love.graphics.setCanvas(canvas)
-	f(width, height)
-	love.graphics.setCanvas()
-
-	local d = Drawable:create( love.graphics.newImage( canvas:newImageData() ) )
-
-	return d
-end
-
-----
--- name: create
--- namespace: CanvasBatch
--- description: Standard Selector Constructor
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "CanvasBatch"
--- examples: "CanvasBatch:create(function, number, number)"
-
-function CanvasBatch:create(...)
-	return definitions_solver(self, {
-		['_'] = function (...) debug('CanvasBatch solver', ...) end,
-		['function, number, number'] = CanvasBatch.create_from_function,
-	}, ...)
-end
-
-return CanvasBatch
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  TEST:Class
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2015-12-19 23:25:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 22:01:14
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-local Class = {}
-
-----
--- name: Class
--- namespace:
--- description: This is the standard Class module.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Class"
--- examples: "local Module = Class:expand()"
-
-Class.name = 'Class'
-
-----
--- name: grettings
--- namespace: Class
--- description: This is the standard grettings function
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Class"
--- examples: "Something:grettings()"
-
-function Class.grettings()
-	print('Class.grettings')
-end
-
-----
--- name: __index
--- namespace: Class
--- description: This is the Class __index metamethod, allowing inheritance by metatable.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Class", "Metatable"
--- examples:
-
-function Class.__index(t, k)
-		return getmetatable(t)[k]
-	end
-
-----
--- name: type
--- namespace: Class
--- description: The standard type function for the Class inheritance tree.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Class", "needCare"
--- examples: "Something:type()"
-
-function Class:type()
-	return self.name
-end
-
-----
--- name: type_iter
--- namespace: Class
--- description: The standard type iterator function for the Class inheritance tree.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Class", "needCare"
--- examples: "for t in Something:type_iter do ... end"
-
-function Class:type_iter()
-	local s = self
-
-	return function ()
-		if s == nil then return end
-
-		local t = s:type()
-		s = getmetatable(s)
-		return t
-	end
-end
-
-----
--- name: dump
--- namespace: Class
--- description: The standard debug function.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Class"
--- examples: "Something:dump()"
-
-function Class.dump(self)
-	debug(self)
-end
-
-----
--- name: expand
--- namespace: Class
--- description: The standard function for prototyping.
--- extendedDescription: This function take a table as an argument and returns a new table with the paramter as a metatable.
--- arguments: "baseClass"
--- returns: "newClass"
--- tags: "v0.0", "Class", "Metatable"
--- examples: "newClass = Class:expand()", "newC = newClass:expand()"
-
-function Class.expand(baseClass)
-	local new = {}
-
-	baseClass.__index = Class.__index
-
-	setmetatable(new, baseClass)
-	return new
-end
-
-----
--- name: create
--- namespace: Class
--- description: The standard function to create an instance to a class.
--- extendedDescription: This function take a table as an argument and return a shallow copy of that table.
--- arguments: "baseClass"
--- returns: "newInstance"
--- tags: "v0.0", "Class", "Metatable"
--- examples: "s = Something:create()"
-
-function Class.create(baseClass)
-	local new = {}
-
-	for k,v in pairs(baseClass) do
-		new[k] = v
-	end
-
-	setmetatable(new, getmetatable(baseClass))
-
-	return new
-end
-
-return Class
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:Clickable
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-15 23:51:15
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 00:27:14
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Clickable
--- namespace:
--- description: The Clickable base
--- extendedDescription: The Clickable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatcher to get it triggered.
--- arguments:
--- returns:
--- tags: "v0.0", "Clickable", "EventDispatcher", "Drawable"
--- examples:
-
-local Clickable = Drawable:expand()
-
-----
--- name: mousepressed
--- namespace: Clickable
--- description: The mousepressed event for an EventDispatcher
--- extendedDescription:
--- arguments: "x", "y", "button"
--- returns:
--- tags: "v0.0", "Clickable"
--- examples:
-
-function Clickable:mousepressed(x, y, button)
-	if self.x < x and x < self.x + self.width and
-		self.y < y and y < self.y + self.height then
-
-		print(x, y, button)
-
-	end
-end
-
-----
--- name: draw
--- namespace: Clickable
--- description: The Drawable's draw implementation
--- extendedDescription:
--- arguments: "x", "y", "scale"
--- returns:
--- tags: "v0.0", "Clickable"
--- examples:
-
-function Clickable:draw(x, y, scale)
-	Drawable.draw(self, x, y, scale)
-end
-
-return Clickable
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  TEST:Color
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2015-12-31 13:16:27
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 20:49:11
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Color
--- namespace:
--- description: The Color module is meant to shorter ascii and love2d color management.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Color"
--- examples
-
-local Color = {}
-
-----
--- name: apply
--- namespace: Color
--- description: The apply function returns a quartet of (number * factor) given a string for color purposes.
--- extendedDescription:
--- arguments: "colorName", "factor"
--- returns:
--- tags: "v0.0", "Color", "Graphics"
--- examples: "Color:apply('white', 0.2)"
-
-function Color:apply(colorname, factor)
-	return self[colorname][1] * factor,
-	self[colorname][2] * factor,
-	self[colorname][3] * factor,
-	self[colorname][4]
-end
-
-----
--- name: extract
--- namespace: Color
--- description: The extract function returns a quartet of number given a string for color purposes.
--- extendedDescription:
--- arguments: "colorName"
--- returns:
--- tags: "v0.0", "Color", "Graphics"
--- examples: "Color:extract('white')"
-
-function Color:extract(colorname)
-	return self[colorname][1], self[colorname][2], self[colorname][3], self[colorname][4]
-end
-
-----
--- name: white
--- namespace: Color
--- tags: "v0.0", "Color", "ColorList", "Graphics"
-Color.white = { 255, 255 , 255, 255 }
-
-----
--- name: black
--- namespace: Color
--- tags: "v0.0", "Color", "ColorList", "Graphics"
-Color.black = { 0, 0 , 0, 255 }
-
-----
--- name: brown
--- namespace: Color
--- tags: "v0.0", "Color", "ColorList", "Graphics"
-Color.brown = { 85, 39 , 0, 255 }
-
-----
--- name: green
--- namespace: Color
--- tags: "v0.0", "Color", "ColorList", "Graphics"
-Color.green = { 45, 136 , 45, 255 }
-
-----
--- name: yellow
--- namespace: Color
--- tags: "v0.0", "Color", "ColorList", "Graphics"
-Color.yellow = { 217, 196 , 21, 255 }
-
-----
--- name: blue
--- namespace:Color
--- tags: "v0.0", "Color", "ColorList", "Graphics"
-Color.blue = { 34, 102 , 102, 255 }
-
-----
--- name: grey
--- namespace:Color
--- tags: "v0.0", "Color", "ColorList", "Graphics"
-Color.grey = { 127, 127 , 127, 255 }
-
-----
--- name: shell
--- namespace: Color
--- description: A function for shell's color rendering
--- extendedDescription:
--- arguments: "string", "asciiColor"
--- returns: "string"
--- tags: "v0.0", "Color"
--- examples: "str = Color.shell('HelloWorld', 'red')"
-function Color.shell(str, color)
-	local colors = {
-		black = 0,
-		red = 1,
-		green = 2,
-		yellow = 3,
-		blue = 4,
-		magenta = 5,
-		cyan = 6,
-		white = 7,
-
-		orange = 202
-	}
-
-	if colors[color] then
-		return('\27[38;5;'..colors[color]..'m'..str..'\27[38;5;7m')
-	else
-		return('\27[38;5;'..color..'m'..str..'\27[38;5;7m')
-	end
-
-end
-
-return Color
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:Compound
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-11 00:55:46
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 22:27:17
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Compound
--- namespace:
--- description: A Compound is a Drawable made from others Drawables.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Compound", "Drawable"
--- examples: "Compound:create('file', {})", "Compound:create({}, w, h)"
-
-----
--- name: Description
--- namespace: Compound
--- description: A Compound Description
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Compound"
--- examples:
-
-local Compound = Drawable:expand()
-
-Compound.name = 'Compound'
-
-----
--- name: create_from_filename
--- namespace: Compound
--- description: This function create a Drawable from a filename and an arbitrary description
--- extendedDescription:
--- arguments: "filename", "description"
--- returns:
--- tags: "v0.0", "Compound", "Description"
--- examples:
-
-function Compound:create_from_filename(filename, desc)
-	local _w, _h = Dictionnary[filename].screen.width, Dictionnary[filename].screen.height
-	local canvas = love.graphics.newCanvas(desc.width * _w, desc.height * _h)
-
-	love.graphics.setCanvas(canvas)
-	for i = 0, desc.height - 1 do
-		for j = 0, desc.width - 1 do
-			Dictionnary[filename][desc[i + 1][j + 1]]:draw(j * _w, i * _h, 1)
-		end
-	end
-	love.graphics.setCanvas()
-
-	local c = Drawable.create(self, love.graphics.newImage(canvas:newImageData()))
-	c.scale = _w * desc.width / c.image:getWidth()
-
-	return c
-end
-
-----
--- name: create_from_size
--- namespace: Compound
--- description: This function create a Drawable given a description and some size
--- extendedDescription:
--- arguments: "description", "width", "height"
--- returns:
--- tags: "v0.0", "Compound", "Description"
--- examples:
-
-function Compound:create_from_size(desc, width, height)
-	local d = Dictionnary[desc.image]
-
-	local _w = width / d.screen.width
-	local _h = height / d.screen.height
-	local c = love.graphics.newCanvas(width, height)
-
-	love.graphics.setCanvas(c)
-	for i=1, _w - 1 do
-		for j=1, _h - 1 do
-			d[desc.body]:draw(i * d.screen.width, j * d.screen.height)
-		end
-	end
-	for i=1, _w - 1 do
-		d[desc.bu]:draw(i * d.screen.width, 0)
-		d[desc.bd]:draw(i * d.screen.width, height - d.screen.height)
-	end
-	for i=1, _h - 1 do
-		d[desc.bl]:draw(0, i * d.screen.height)
-		d[desc.br]:draw(width - d.screen.width, i * d.screen.height)
-
-	end
-	d[desc.ul]:draw()
-	d[desc.ur]:draw(width - d.screen.width)
-	d[desc.dl]:draw(0, height - d.screen.height)
-	d[desc.dr]:draw(width - d.screen.width, height - d.screen.height)
-	love.graphics.setCanvas()
-
-	local c = Drawable.create(self, love.graphics.newImage(c:newImageData()))
-	c.width, c.height = width, height
-
-	return c
-end
-
-----
--- name: create
--- namespace: Compound
--- description: Standard Selector Constructor
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Compound"
--- examples: "Compound:create('filename', {})", "Compound:create({}, 100, 100)"
-
-
-function Compound:create(...)
-	return definitions_solver(self, {
-		['_'] = function (...) debug('Compound.anything', {...}) end,
-		['string, table'] = Compound.create_from_filename,
-		['table, number, number'] = Compound.create_from_size
-	}, ...)
-end
-
-return Compound
-Color = require 'libs.Color'
-
-----
--- name: Description
--- namespace:
--- description: The tool to make Images upon a single meaningful call. Return a validation function.
--- extendedDescription:
--- arguments: "model"
--- returns:
--- tags: "v0.1", 'Description'
--- examples: "QuadDescription = Description {\n screen = {\n  width = 'number',\n  height = 'number'\n }\n}"
-
-local Description = setmetatable({}, {
-	__call = function (t, ...)
-	return Description.parse(...)
-end
-})
-
-function Description.error(model, k, i)
-	local i = i or 0
-	local format = function (i, s)
-		return string.format("%"..(#s + i).."s", s)
-	end
-
-	if type(model[k]) ~= 'table' then
-		print( format(i, k..' : '..model[k]) )
-	else
-		print( format(i, k..' : {') )
-		for nk,nv in pairs(model[k]) do
-			Description.error(model[k], nk, i + 1)
-		end
-		print( format(i, '}') )
-	end
-
-	return false
-end
-
-function Description.parse(model)
-	return function(t, i)
-		local err = true
-		for k,v in pairs(model) do
-			if not t then err = Description.error(model, k)
-			elseif not t[k] then err = Description.error(model, k)
-			elseif type(model[k]) == 'table' and type(t[k]) ~= 'table' then
-				err = Description.error(model, k)
-			elseif type(model[k]) == 'table' then
-				err = Description(model[k])(t[k], k)
-			elseif type(t[k]) ~= model[k] then err = Description.error(model, k) end
-
-			if i and not err then print('in', i) end
-			if not err then return false end
-		end
-
-		return true
-	end
-end
-
-return Description
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:Dictionnary
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-12 17:03:06
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 17:32:13
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Dictionnary
--- namespace:
--- description: The Love2D Image Dictionnary
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Dictionnary"
--- examples: "Dictionnary('image', image)", "Dictionnary.image ..."
-
-local Dictionnary = setmetatable({}, {
-	__call = function (t, k, v)
-		if t[k] then
-			print(Color.shell('Erasing', 'orange')..' Dictionnary['..k..']')
-		else
-			print('Dictionnary '..':\t'..Color.shell(k, 'green'))
-		end
-
-		t[k] = v
-	end
-})
-
-return Dictionnary
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:Draggable
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-09 19:25:49
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 16:26:01
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Draggable
--- namespace:
--- description: The Draggable base
--- extendedDescription: The Draggable prototype expand the Drawable type with the mousepressed event. It should be placed into a EventDispatcher to get it triggered.
--- arguments:
--- returns:
--- tags: "v0.0", "Draggable", "EventDispatcher", "Drawable"
--- examples:
-
-local Draggable = Drawable:expand()
-
-Draggable.name = 'Draggable'
-
-----
--- name: update
--- namespace: Draggable
--- description: The update event for an EventDispatcher
--- extendedDescription:
--- arguments: "dt"
--- returns:
--- tags: "v0.0", "Draggable"
--- examples:
-
-function Draggable:update(dt)
-	local x, y = love.mouse.getPosition()
-
-	if self.drag then
-		self:moveBy(x - self.drag.x, y - self.drag.y)
-		self.drag = nil
-	end
-	if self.x < x and x < self.x + self.width * self.scale
-		and self.y < y and y < self.y + self.height * self.scale then
-
-		if love.mouse.isDown(1) then
-			self.drag = {x = x, y = y}
-		end
-	end
-end
-
-----
--- name: draw
--- namespace: Draggable
--- description: The draw event for an EventDispatcher
--- extendedDescription:
--- arguments: "x", "y", "scale"
--- returns:
--- tags: "v0.0", "Draggable"
--- examples:
-
-
-function Draggable:draw(x, y, scale)
-	Drawable.draw(self, x, y, scale)
-end
-
-return Draggable
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  TEST:Drawable
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2015-12-19 23:21:33
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 22:27:44
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Drawable
--- namespace:
--- description: The standard Drawable type.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Drawable", "EventDispatcher"
--- examples:
-
-local Drawable = Class:expand()
-
-----
--- name: create
--- namespace: Drawable
--- description: The standard way to construct a Drawable from an Love2d Image.
--- extendedDescription:
--- arguments: "Image"
--- returns:
--- tags: "v0.0", "Drawable"
--- examples: "Drawable:create(image)"
-
-function Drawable:create(img)
-	if img and img:type() ~= 'Image' then
-		print('I got some error')
-	end
-
-	local d = Class.create(self)
-	if img then
-		d.image = img
-		d.image:setFilter('nearest')
-		d.width, d.height = img:getDimensions()
-	end
-
-	d.x, d.y = 0, 0
-	d.scale = 1
-
-	return d
-end
-
-Drawable.name =  'Drawable'
-
-----
--- name: moveBy
--- namespace: Drawable
--- description: This method allow to move a Drawable.
--- extendedDescription:
--- arguments: "x", "y"
--- returns:
--- tags: "v0.0", "Drawable"
--- examples: "d:moveBy(10, 10)"
-
-function Drawable:moveBy(x, y)
-	self.x, self.y = self.x + x, self.y + y
-end
-
-----
--- name: moveAt
--- namespace: Drawable
--- description: This method allow to position a Drawable
--- extendedDescription:
--- arguments: "x", "y"
--- returns:
--- tags: "v0.0", "Drawable"
--- examples: "d:moveAt(10, 10)"
-
-function Drawable:moveAt(x, y)
-	self.x, self.y = x, y
-end
-
-----
--- name: getSize
--- namespace: Drawable
--- description: This method returns the actual (scaled) size of a Drawable.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Drawable"
--- examples: "d:getSize()"
-
-function Drawable:getSize()
-	return self.image:getWidth() * self.scale, self.image:getHeight() * self.scale
-end
-
-----
--- name: draw
--- namespace: Drawable
--- description: The draw event for an EventDispatcher
--- extendedDescription:
--- arguments: "padding_x", "padding_y", "scale"
--- returns:
--- tags: "v0.0", "Drawable"
--- examples: "d:draw()"
-
-function Drawable:draw(x, y, scale)
-	x = x or 0
-	y = y or 0
-	scale = scale or 1
-
-	love.graphics.draw(self.image, self.x + x, self.y + y, 0, self.scale * scale, self.scale * scale)
-end
-
-return Drawable
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:EventDispatcher
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-15 22:52:59
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 00:53:31
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: EventDispatcher
--- namespace:
--- description: The standard EventDispatcher type.
--- extendedDescription: It allow you to pack a set of object which need callback propagation for a minimal iteration.
--- arguments:
--- returns:
--- tags: "v0.0", "EventDispatcher"
--- examples: "ED = EventDispatcher:create()", "ED:add( drawable )"
-
-local EventDispatcher = Class:expand()
-local Event = Class:expand()
-local events = {
-	'load',
-	'update',
-	'draw',
-
-	'keypressed',
-	'mousepressed',
-	'wheelmoved'
-}
-
-----
--- name: EventList
--- namespace: EventDispatcher
--- description: The event list handled by an EventDispatcher's instance.
--- extendedDescription:
--- arguments: "..."
--- returns:
--- tags: "v0.0", "EventDispatcher"
--- examples: "load", "update", "draw", "keypressed", "mousepressed", "wheelmoved"
-
-function Event:dispatch(...)
-	for i,v in ipairs(self) do
-		if type(v[self.name]) ~= 'function' then
-			print('EventDispatcher '..Color.shell(self.name, 'orange')..'is no function')
-		else
-			v[self.name](v, ...)
-		end
-	end
-end
-
-----
--- name: add
--- namespace: EventDispatcher
--- description: The standard way to add an object to an EventDispatcher.
--- extendedDescription:
--- arguments: "objet"
--- returns:
--- tags: "v0.0", "EventDispatcher"
--- examples: "ED:add( drawable )"
-
-function EventDispatcher:add(elem)
-	for k,v in pairs(elem) do
-		if self[k] and type(self[k]) == 'table' then
-			table.insert(self[k], elem)
-		end
-	end
-end
-
-----
--- name: create
--- namespace: EventDispatcher
--- description: The standard way to create a new instance of the EventDispatcher type.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "EventDispatcher"
--- examples: "ED = EventDispatcher:create()"
-
-function EventDispatcher:create()
-	local e = Class.create(self)
-
-	for i,v in ipairs(events) do
-		e[v] = Class.create(Event)
-		e[v].name = v
-	end
-
-	return e
-end
-
-return EventDispatcher
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:Lib
--- /ddddy:oddddddddds:sddddd/ By Zleub - Zleub
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-16 17:32:29
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 17:32:42
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: definition_solver
--- namespace:
--- description: Function for polymorphism in Lua.
--- extendedDescription: The function work with some stringifiction of type into a string to find out which function of the definiton_table to call.\nDefinitively not classy.
--- arguments: "module", "definition_table", "..."
--- returns:
--- tags: "v0.0", "Tips&Tricks"
--- examples: "function Something:create(...)\n\treturn definitions_solver(self, {\n\t['_'] = function (...) debug('Something._', {...}) end,\n\t['string'] = Something.create_from_string,\n\t['number, number'] = Something.create_from_size\n\t}, ...)\nend"
-
-function definitions_solver(self, def_table, ...)
-	local s = ''
-
-	for i,v in ipairs({...}) do
-		if type(v) == 'table' and v.type then s = s..v:type()
-		elseif type(v) == 'userdata' then s = s..v:type()
-		else s = s..type(v) end
-		if ({...})[i + 1] then s = s..', ' end
-	end
-
-	if def_table[s] then
-		return def_table[s](self, ...)
-	else
-		return def_table['_'](self, ...)
-	end
-end
-
-----
--- name: clamp
--- namespace:
--- description: The function to clamp a number
--- extendedDescription:
--- arguments: "number", "min", "max"
--- returns:
--- tags:
--- examples:
-
-function clamp(num, min, max)
-	if num < min then return min
-	elseif num > max then return max
-	else return num end
-end
-
-----
--- name: debug
--- namespace:
--- description: Function for easy debugging.
--- extendedDescription:
--- arguments: "anything"
--- returns:
--- tags:
--- examples: "debug(...)"
-
-function debug(...)
-	if ({...})[1] == nil then print('nil') end
-
-	for i,v in ipairs({...}) do
-		io.write(inspect(v))
-		if ({...})[i + 1] then
-			io.write(', ')
-		else
-			io.write('\n')
-		end
-	end
-end
-
-function print_require_list(...)
-	for k,v in ipairs({...}) do
-		local name = v:match('.+%.(%w+)')
-
-		_G[name] = require(v)
-		print(name..' required:', inspect( _G[name], {depth = 1} ) )
-	end
-end
-
-----
--- name: require_list
--- namespace:
--- description: Function for easy requirement
--- extendedDescription: That function use the last part of a path as the index for the global variable.
--- arguments: "path"
--- returns:
--- tags: "v0.0", "Tips&Tricks"
--- examples: "require_list('lib.Class', 'ext.inspect')"
-
-function require_list(...)
-	local args = ({...})
-	for k,v in ipairs(args) do
-		local name = v:match('.+%.([%w_]+)')
-
-		_G[name] = require(v)
-	end
-end
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  TEST:Loader
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-01-01 14:19:16
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 19:10:40
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Loader
--- namespace:
--- description: This is the standard loader for assets and such.
--- extendedDescription: The Loader type is divided into two main uses so that asset declaration should be distinct from asset instanciation. Point is to allow diversity in manipulation of both image's format and composition.
--- arguments:
--- returns:
--- tags: "v0.0", "Loader", "needCare", "Static"
--- examples:
-
-local Loader = {}
-
-----
--- name: getSize
--- namespace: Loader
--- description: This is a method that return the number of element into the Loader that need to be loaded.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Loader"
--- examples: "Loader:getSize()"
-
-function Loader:getSize()
-	return #self.queue
-end
-
-----
--- name: load
--- namespace: Loader
--- description: The standard method to load the next ressource from the loader's queue. Return the next element to load.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Loader", "needCare"
--- examples: "Loader:load()"
-
-function Loader:load()
-	if self.queue and self.queue[1] then
-		local name = self.queue[1].mod:load( unpack(self.queue[1].args) )
-
-		table.remove(self.queue, 1)
-		if self.queue[1] then return self.queue[1].args[2] end
-	end
-end
-
-----
--- name: push
--- namespace: Loader
--- description: This is the standard way to add a ressource to the loader's queue.
--- extendedDescription: The first parameter is the Loader's module to use in order to load the ressource.
--- arguments: "mod", "..."
--- returns:
--- tags: "v0.0", "Loader", "needCare"
--- examples: "Loader:push( Loader.PNG, '/images/hello.png')"
-
-function Loader:push(mod , ...)
-	self.queue = self.queue or {}
-
-	table.insert(self.queue, {mod = mod, args = {...}})
-end
-
-----------------------------------------
-
-----
--- name: LoaderAPIList
--- namespace: Loader
--- description: The standard list of Loader's mods.
--- extendedDescription: A Loader's API should implement a mandatoryAPI and an optionalAPI field for external config convenience as well as a files and a load method respectively for asset loading and Dictionnary registration.
--- arguments:
--- returns:
--- tags: "v0.0", "Loader", "PNG", "Shader"
--- examples:
-
-Loader.PNG = require 'libs.loader.PNG'
-Loader.Shader = require 'libs.loader.Shader'
-
-----
--- name: check
--- namespace: Loader
--- description: This function takes an api and a config and make sure the mandatoryAPI or optionnalAPI is respected.
--- extendedDescription:
--- arguments: "api", "config"
--- returns:
--- tags: "v0.0", "Loader"
--- examples:
-
-function Loader.check(api, config)
-
-	for k,v in pairs(api.mandatoryAPI) do
-
-		if not config[k] then
-			io.write(config.file..", "..Color.shell("error:\n", "red")..Loader.error(v)..'\n')
-			config[k] = nil
-			return
-		end
-
-		local err = Loader.validator(v, config[k])
-		if err then
-			io.write(config.file..", "..Color.shell("error:\n", "red")..err..'\n')
-			config[k] = nil
-			return
-		end
-	end
-
-
-	for k, v in pairs(api.optionalAPI) do
-
-		if config[k] then
-			local err = Loader.validator(v, config[k])
-
-			if err then
-				io.write(config.file..", "..Color.shell("warning:\n", 'orange')..err..'\n')
-				config[k] = nil
-			end
-		end
-
-		if not config[k] then
-			local t = {}
-			local err = Loader.validator(v, t)
-
-			if next(t) ~= nil then
-				config[k] = t
-			end
-		end
-
-	end
-
-	return config
-end
-
-----
--- name: validator
--- namespace: Loader
--- description: Call on one's api, this function validate some config input based on the api's member's type
--- extendedDescription:
--- arguments: "member", "input"
--- returns:
--- tags: "v0.0", "Loader"
--- examples:
-
-function Loader.validator(member, input)
-	if type(input) ~= 'table' then
-		return Loader.error(member)
-	end
-
-	for k,v in pairs(member.model) do
-
-		if type(v) == 'table' then
-			if input[k] and type(input[k]) ~= v.type then
-				return Loader.error(member)
-			end
-			input[k] = input[k] or v.value
-		else
-			if not input[k] or type(input[k]) ~= v then
-				return Loader.error(member)
-			end
-		end
-	end
-end
-
-----
--- name: error
--- namespace: Loader
--- description: This function is called on a loading error and print on console some pretty message.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Loader"
--- examples:
-
-function Loader.error(member)
-	local err = member.name.." : {\n"
-	for k,v in pairs(member.model) do
-		if type(v) == 'table' then
-			err = err.."  "..k..": "..v.type..",\n"
-		else
-			err = err.."  "..k..": "..v..",\n"
-		end
-	end
-	return err.."}"
-end
-
-return Loader
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:Loader.PNG
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-03 18:21:06
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-14 23:55:03
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-QuadList = require 'libs.QuadList'
-
-----
--- name: PNG
--- namespace:
--- description: The PNG loading mod.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Loader", "PNG"
--- examples:
-
-local PNG = {}
-
-----
--- name: mandatoryAPI
--- namespace: PNG
--- description: The mandatoryAPI of a PNG
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "PNG"
--- examples: "{\n screen = {\n  name = 'screen',\n  model = {\n   width = 'number',\n   height = 'number'\n  },\n }\n}"
-
-PNG.mandatoryAPI = {
-	screen = {
-		name = "screen",
-		model = {
-			width = 'number',
-			height = 'number'
-		},
-	}
-}
-
-----
--- name: optionalAPI
--- namespace: PNG
--- description: The optionalAPI of a PNG
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "PNG"
--- examples: "{\n grid = {\n  name = 'grid',\n  model = {\n   width = 'number',\n   height = 'number'\n  }\n },\n spacing = {\n  name = 'spacing',\n  model = {\n   width = {\n    type = 'number',\n    value = 0\n   },\n   height = {\n    type = 'number',\n    value = 0\n   }\n  }\n }\n}"
-
-PNG.optionalAPI = {
-	grid = {
-		name = "grid",
-		model = {
-			width = 'number',
-			height = 'number'
-		}
-	},
-	spacing = {
-		name = "spacing",
-		model = {
-			width = {
-				type = 'number',
-				value = 0
-			},
-			height = {
-				type = 'number',
-				value = 0
-			}
-		}
-	}
-}
-
-----
--- name: files
--- namespace: PNG
--- description: This function opens a .png file and optionnaly an adjacent .lua file
--- extendedDescription:
--- arguments: "path", "filename", "configname"
--- returns:
--- tags: "v0.0", "PNG"
--- examples:
-
-function PNG.files(path, filename, configname)
-	local fileimg = path..filename..'.png'
-	local fileconfig = path..(configname or filename)..'.lua'
-
-	local config, img
-
-	if love.filesystem.exists(fileconfig) then
-		config = dofile(fileconfig)
-		config.file = fileconfig
-	else
-		print('No such file '..fileconfig)
-		config = {}
-		config.file = fileconfig
-	end
-
-	if (love.filesystem.exists(fileimg)) then
-		img = love.graphics.newImage(fileimg)
-		img:setFilter( 'nearest', 'nearest')
-	else return print('No such file '..fileimg) end
-
-	return config, img
-end
-
-----
--- name: load
--- namespace: PNG
--- description: This function applies a config upon a Image and load the result into the Dictionnary
--- extendedDescription:
--- arguments: "path", "filename", "configname"
--- returns:
--- tags: "v0.0", "PNG"
--- examples:
-
-function PNG:load(path, filename, configname)
-	config, img = PNG.files(path, filename, configname)
-	config = Loader.check(self, config)
-
-	if config and config.grid then
-
-		local quadlist = QuadList.create(config, img)
-		Dictionnary(filename, QuadList.toCanvasList(config, quadlist))
-
-
-		if config.exports then
-			for k,v in pairs(config.exports) do
-				Dictionnary(k, Compound:create(filename, v))
-			end
-		end
-
-	else
-		local d = Drawable:create(img)
-
-		Dictionnary(filename, d)
-	end
-
-	return filename
-end
-
-return PNG
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:Shader
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-11 19:34:03
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 18:59:55
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Shader
--- namespace:
--- description: The Shader loading mod.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Loader", "Shader"
--- examples:
-
-local Shader = {}
-
-Shader.mandatoryAPI = {}
-Shader.optionalAPI = {}
-
-----
--- name: files
--- namespace: Shader
--- description: This function takes a .glsl path and optionnaly a .lua file
--- extendedDescription:
--- arguments: "path", "filename"
--- returns:
--- tags: "v0.0", "Shader"
--- examples:
-
-function Shader.files(path, filename)
-	local fileshader = path..filename..'.glsl'
-	local fileconfig = path..filename..'.lua'
-
-	local config, shader
-
-	if love.filesystem.exists(fileconfig) then
-		config = dofile(fileconfig)
-		config.file = fileconfig
-	else
-		print('No such file '..fileconfig)
-		config = {}
-		config.file = fileconfig
-	end
-
-	if (love.filesystem.exists(fileshader)) then
-		shader = love.graphics.newShader(fileshader)
-	else return print('No such file '..fileshader) end
-
-	return config, shader
-end
-
-----
--- name: load
--- namespace: Shader
--- description: This function load a Shader type into the Dictionnary.
--- extendedDescription:
--- arguments: "filename"
--- returns:
--- tags: "v0.0", "Shader"
--- examples:
-
-function Shader:load(filename)
-	config, shader = Shader.files(filename)
-	config = Loader.check(self, config)
-
-	Dictionnary:set(filename, shader)
-
-	return filename
-end
-
-return Shader
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:Modulable
--- /ddddy:oddddddddds:sddddd/ By Zleub - Zleub
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-16 16:27:50
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 16:29:02
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-local Modulable = Class:expand()
-
-----
--- name: Modulable
--- namespace:
--- description: The Modulable type is a dummy type.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Modulable"
--- examples:
-
-return Modulable
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  TEST:QuadList
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2015-12-20 02:09:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 14:58:06
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: QuadList
--- namespace:
--- description: The standard QuadList type that encapsulate the Love2D Quad type.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "QuadList", "Static", "needCare"
--- examples:
-
-local QuadList = {}
-
-----
--- name: create
--- namespace: QuadList
--- description: This function create a QuadList from a config and an Image.
--- extendedDescription:
--- arguments: "config", "image"
--- returns:
--- tags: "v0.0", "QuadList"
--- examples: "ql = QuadList.create({...}, image)"
-
-function QuadList.create(config, image)
-	local i, j = 0, 0
-	local q = { [0] = image }
-	local w, h = image:getDimensions()
-
-	while j < h do
-		i = 0
-		while i < w do
-			table.insert(q, love.graphics.newQuad(i, j, config.grid.width + config.spacing.width, config.grid.height + config.spacing.height,
-					w, h))
-			i = i + config.grid.width + config.spacing.width
-		end
-		j = j + config.grid.height + config.spacing.height
-	end
-
-	return q
-end
-
-----
--- name: toCanvasList
--- namespace: QuadList
--- description: This function create a list of Drawable from a QuadList.
--- extendedDescription:
--- arguments: "config", "quadlist"
--- returns:
--- tags: "v0.0", "QuadList"
--- examples: "t = QuadList.toCanvasList({...}, ql)"
-
-function QuadList.toCanvasList(config, quadlist)
-	local canvaslist = {
-		screen = config.screen
-	}
-	local canvas = love.graphics.newCanvas(config.grid.width, config.grid.height)
-
-	love.graphics.setCanvas(canvas)
-	for i,v in ipairs(quadlist) do
-		love.graphics.clear()
-		love.graphics.draw(quadlist[0], quadlist[i])
-
-		local d = Drawable:create( love.graphics.newImage(canvas:newImageData()) )
-		d.scale = config.screen.width / d.image:getWidth()
-
-		table.insert(canvaslist, d)
-	end
-	love.graphics.setCanvas()
-
-	return canvaslist
-end
-
-return QuadList
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  TEST:State
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-01-03 13:17:11
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-15 23:57:09
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: State
--- namespace:
--- description: The state module.
--- extendedDescription: It handle state's change with the metamethod __call.
--- arguments:
--- returns:
--- tags: "v0.0", "State", "Static"
--- examples: "State('Loading')"
-
-local State = {}
-State.once_t = {}
-
-----
--- name: StateEvent
--- namespace: State
--- description: The events supported by the State module.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "State"
--- examples: "once", "before", "after"
-
-setmetatable(State, {
-	__call = function (self, state)
-
-		if self.current and self[self.current].after then
-			self[self.current]:after()
-		end
-
-		self.previous = self.current or self.previous
-
-		print(self.previous..' -> '..state)
-		self.current = state
-
-		if not self.once_t[self.current] and self[self.current].once then
-			self.once_t[self.current] = true
-			self[self.current]:once()
-		end
-
-		if self[self.current].before then
-			self[self.current]:before()
-		end
-	end
-})
-
-----
--- name: StateCallback
--- namespace: State
--- description: The callbacks supported by the State module
--- extendedDescription: -- Callback dispatch should be handle by an EventDispatcher or such
--- arguments:
--- returns:
--- tags: "v0.0", "State", "needCare"
--- examples: "update", "draw", "wheelmoved", "keypressed", "mousepressed"
-
-function State:update(dt)
-	State[self.current]:update(dt)
-end
-
-function State:draw()
-	State[self.current]:draw()
-end
-
-function State:wheelmoved(x, y)
-	if State[self.current].wheelmoved then
-		State[self.current]:wheelmoved(x, y)
-	end
-end
-
-function State:keypressed(x, y)
-	if State[self.current].keypressed then
-		State[self.current]:keypressed(x, y)
-	end
-end
-
-function State:mousepressed(x, y, button)
-	if State[self.current].mousepressed then
-		State[self.current]:mousepressed(x, y, button)
-	end
-end
-
-----
--- name: StateList
--- namespace: State
--- description: The list of the differents states availables.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "State", "Loading", "Test", "Other", "Map"
--- examples:
-
-State.Loading = require('libs.state.loading')
-
-State.Test = require('libs.state.test')
-
-State.Other = require('libs.state.other')
-
-State.Map = require('libs.state.map')
-
-return State
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:loading
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-09 19:18:29
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-12 16:08:30
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Loading
--- namespace:
--- description: The Loading State lasts until the static Loader's queue is empty.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Loading", "State"
--- examples:
-
-return {
-
-	before = function (self)
-		self.nbr = Loader:getSize()
-	end,
-
-	update = function (self, dt)
-		local elem = Loader:load()
-
-		if elem then self.text = elem
-		else State(State.previous) end
-	end,
-
-	draw = function (self)
-		local p = (love.graphics.getWidth() - love.graphics.getWidth() / 2) / self.nbr
-		local w = (love.graphics.getWidth() - love.graphics.getWidth() / 2)
-		local h = love.graphics.getHeight() / 20
-
-		love.graphics.print(self.text, love.graphics.getWidth() / 2 - (#self.text), love.graphics.getHeight() / 2 - h)
-		love.graphics.rectangle('fill', (love.graphics.getWidth() / 2 - w / 2), love.graphics.getHeight() / 2 - h / 2, p * (self.nbr - Loader:getSize()), h)
-		love.graphics.rectangle('line', love.graphics.getWidth() / 2 - w / 2, love.graphics.getHeight() / 2 - h / 2, w, h)
-
-	end
-}
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:map
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-09 19:52:52
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 15:45:05
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-local Map = {}
-
-----
--- name: Map
--- namespace:
--- description: The Map State, where magic is done.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Map", "State"
--- examples:
-
-function Map:once()
-	self.scale = 1
-	self.x, self.y = 0, 0
-
-	-- self.map
-	self.size = 100
-	self.complx = 500
-	self.mult = 100
-	self.div = 1
-
-	self.imgdt = love.image.newImageData(self.size, self.size)
-
-	self.map_screen = 800
-	self.map_scale = self.map_screen / self.size
-end
-
-function Map:update(dt)
-	if love.keyboard.isDown('up') then self.y = self.y - self.complx end
-	if love.keyboard.isDown('down') then self.y = self.y + self.complx end
-	if love.keyboard.isDown('left') then self.x = self.x - self.complx end
-	if love.keyboard.isDown('right') then self.x = self.x + self.complx end
-
-	if love.keyboard.isDown('pageup') then
-		self.complx = self.complx + 10
-		 end
-	if love.keyboard.isDown('pagedown') then
-		if self.complx > 1 then
-			self.complx = self.complx - 10
-		end
-	end
-
-	if love.keyboard.isDown('a') then
-		self.mult = self.mult + 1
-	end
-	if love.keyboard.isDown('z') then
-		if self.mult > 1 then
-			self.mult = self.mult - 1
-		end
-	end
-
-	self.img = self:render_noise(function ()
-		if C * ( 1 / 16) > M * (15 / 16) then return  Color:extract('white') end
-		if C * ( 2 / 16) > M * (14 / 16) then return  Color:extract('brown') end
-		if C * ( 6 / 16) > M * (10 / 16) then return  Color:extract('green') end
-		if C * ( 6.5 / 16) > M * (9.5 / 16) then return  Color:extract('yellow') end
-		-- if C * ( 4 / 16) > M * (12 / 16) then return  Color:extract('yellow') end
-
-		return Color:extract('blue')
-		end)
-end
-
-function Map:draw()
-	love.graphics.draw(self.img, 0, 0, 0, self.map_scale, self.map_scale)
-	-- love.graphics.draw(imgmap2, map_screen, 0, 0, map_scale, map_scale)
-end
-
-function Map:keypressed(key)
-	if key == 'home' then self.div = self.div + 1 end
-	if key == 'end' then
-		if self.div > 1 then self.div = self.div - 1 end
-	end
-	if key == 'space' then State('Test') end
-end
-
-function Map:wheelmoved(x, y)
-	if y > 0 then self.complx = self.complx + 1
-	elseif self.complx > 0 then self.complx = self.complx - 1 end
-end
-
-function Map:render_noise(f)
-
-	local s = 100
-
-	function draw_pixel(i, j, r, g, b, a)
-
-		C = love.math.noise(
-			((i - self.size / 2) * self.complx + self.x) / self.mult / self.size,
-			((j - self.size / 2) * self.complx + self.y) / self.mult / self.size
-		)
-
-		CC = love.math.noise(
-			((i - self.size / 2) * self.complx + self.x) / 100 / self.size,
-			((j - self.size / 2) * self.complx + self.y) / 100 / self.size
-		)
-
-		M = love.math.noise(
-			((i - self.size / 2) * self.complx + self.x) / 1000 / self.size,
-			((j - self.size / 2) * self.complx + self.y) / 1000 / self.size
-		)
-
-		return f()
-	end
-
-	self.imgdt:mapPixel(draw_pixel)
-	local img = love.graphics.newImage(self.imgdt)
-	img:setFilter('nearest', 'nearest')
-	return img
-end
-
-function draw(nbr)
-	if nbr > 0.9 then return 255 * nbr, 255 * nbr , 255 * nbr, 255 end
-	if nbr > 0.75 then return 85 * nbr,  39 * nbr ,   0 * nbr, 255 end
-	if nbr > 0.5 then return  45 * nbr, 136 * nbr ,  45 * nbr, 255 end
-	if nbr > 0.4 then return  217 * nbr, 196 * nbr ,  21 * nbr, 255 end
-	if nbr < 0.4 then return  34 * nbr, 102 * nbr , 102 * nbr, 255 end
-end
-
-return Map
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:other
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-09 19:19:25
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 00:28:50
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Other
--- namespace:
--- description: Some other demo state.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "State", "Other"
--- examples:
-
-return {
-	once = function (self)
-		self.time = 0
-		self.cmp = 0
-		self.mousewheel = 1
-
-		self.EventDispatch = EventDispatcher:create()
-
-		local batch = CanvasBatch:create(
-			function (width, height)
-				for i=0, width - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.width do
-					for j=0, height - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.height do
-						Dictionnary['hyptosis_tile-art-batch-1'][313]:draw(i, j)
-					end
-				end
-			end,
-			love.graphics.getWidth(),
-			love.graphics.getHeight() / 2
-		)
-
-		batch.y = love.graphics.getHeight() / 4
-		self.EventDispatch:add( batch )
-
-		local batch = CanvasBatch:create(
-			function (width, height)
-				for i=0, width - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.width do
-					for j=0, height - 1, Dictionnary['hyptosis_tile-art-batch-1'].screen.height do
-						local n = love.math.random(-1, 1)
-						Dictionnary['hyptosis_tile-art-batch-1'][302 + 30 * n ]:draw(i, j)
-					end
-				end
-			end,
-			love.graphics.getWidth(),
-			Dictionnary['hyptosis_tile-art-batch-1'].screen.height * 2
-		)
-
-		local drawable = Drawable:create(batch.image)
-		drawable.y = love.graphics.getHeight() / 4 - Dictionnary['hyptosis_tile-art-batch-1'].screen.height * 2
-		self.EventDispatch:add( drawable )
-
-
-		local container = UI.Container:create(
-			-- {
-			-- 	image = 'UI',
-			-- 	ul = 26, ur = 28, dl = 76, dr = 78,
-			-- 	bl = 51, br = 53, bu = 27, bd = 77,
-			-- 	body = 52
-			-- },
-			love.graphics.getWidth(),
-			love.graphics.getHeight() / 4
-		)
-		container.y = (love.graphics.getHeight() / 4) * 3
-
-		local item = Compound:create('UI', {
-			width = 3,
-			height = 1,
-			{ 13, 14, 15 }
-		})
-
-		local item2 = Compound:create('UI', {
-			width = 2,
-			height = 2,
-			{ 20 + 25 * 5, 21 + 25 * 5 },
-			{ 20 + 25 * 6, 21 + 25 * 6}
-		})
-
-		self.container = container
-		self.b = container:push(Drawable:create(item2.image))
-		self.b1 = container:push(Drawable:create(item.image))
-		self.b2 = container:push(Drawable:create(item.image))
-		self.b3 = container:push(Clickable:create(item.image))
-		self.b4 = container:push(Drawable:create(item.image))
-
-		self.EventDispatch:add( container )
-
-		self.font = love.graphics.newFont('Minimal3x5.ttf', 32)
-
-		for k,v in pairs(Dictionnary) do
-			print(k,v)
-		end
-	end,
-
-	before = function (self) end,
-
-	update = function (self, dt)
-		self.time = self.time + dt
-		if self.cmp < math.floor(self.time) then
-			self.cmp = math.floor(self.time)
-		end
-
-		self.EventDispatch.update:dispatch(dt)
-
-	end,
-
-	draw = function (self)
-		love.graphics.print(self.mousewheel)
-
-		self.EventDispatch.draw:dispatch()
-
-		love.graphics.setColor(Color:extract('black'))
-		love.graphics.setFont(self.font)
-		love.graphics.print('test', self.b1.x + (self.b1.width - self.font:getWidth('test')) / 2, self.b1.y + (self.b1.height - self.font:getHeight()) / 2)
-		love.graphics.setFont(love.defaultfont)
-		love.graphics.setColor(Color:extract('white'))
-
-
-		Dictionnary['warrior_m'][5]:draw(200, 200)
-		Dictionnary['warrior_f'][5]:draw(200, 300)
-
-	end,
-
-	keypressed = function (self, key)
-		if key == 'space' then State('Map') end
-		if key == 'a' then self.time = 1 end
-
-		if key == 'q' then self.mousewheel = self.mousewheel + 1 end
-		if key == 's' then self.mousewheel = self.mousewheel - 1 end
-	end,
-
-	wheelmoved = function (self, x, y)
-		self.mousewheel = self.mousewheel + y
-		if self.mousewheel < 1 then self.mousewheel = 1 end
-	end,
-
-	mousepressed = function (self, x, y, button)
-		self.EventDispatch.mousepressed:dispatch(x, y, button)
-	end
-
-}
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:test
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-09 19:18:37
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 18:16:59
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Test
--- namespace:
--- description: Some test state.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "State", "Test"
--- examples:
-
-return {
-	once = function (self)
-		self.text = 'toto'
-		self.time = 0
-		self.cmp = 1
-		self.test = 1
-
-		self.EventDispatch = EventDispatcher:create()
-
-		local m = Modulable.create(Draggable)
-
-		function m:load()
-			self.x, self.y = 0, 0
-			self.width, self.height = 32 * 2, 32 * 2
-			self.scale = 2
-			self.canvas = love.graphics.newCanvas(self.width, self.height)
-			self.d = Drawable:create( love.graphics.newImage( self.canvas:newImageData() ) )
-			self.data = self.d.image:getData( )
-			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
-		end
-		function m:update(dt, cmp, test)
-			Draggable.update(self)
-
-			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
-			self.shader:send("width", self.width)
-			self.shader:send("height", self.height)
-			self.shader:send("resolution", cmp)
-			self.shader:send("test", test)
-			self.shader:send("x", 0)
-			self.shader:send("y", 0)
-
-			love.graphics.setCanvas(self.canvas)
-				love.graphics.clear()
-				love.graphics.setShader(self.shader)
-				love.graphics.polygon('fill',
-					16 * 2,  0 * 2,
-					 1 * 2, 11 * 2,
-					 7 * 2, 29 * 2,
-					25 * 2, 29 * 2,
-					31 * 2, 11 * 2
-				)
-				love.graphics.setShader()
-				love.graphics.setColor(0, 0, 0, 255)
-				love.graphics.polygon('fill',
-					16 * 2,  2 * 2,
-					 3 * 2, 12 * 2,
-					 8 * 2, 27 * 2,
-					24 * 2, 27 * 2,
-					29 * 2, 12 * 2
-				)
-				love.graphics.setColor(Color:extract('white'))
-			love.graphics.setCanvas()
-
-			local d = self.canvas:newImageData()
-			self.data:paste( d, 0, 0, 0, 0, self.width, self.height )
-			self.d.image:refresh()
-			self.d.x, self.d.y = self.x, self.y
-
-		end
-		function m:draw(x, y, scale)
-			self.d:draw(x, y, self.scale)
-		end
-
-		m:load()
-		self.EventDispatch:add(m)
-
-		local m = Modulable.create(Draggable)
-		function m:load()
-			self.d = Dictionnary['Untitled_master'][8]
-			self.scale = 8
-			self.x, self.y = self.d.x, self.d.y
-			self.width, self.height = self.d:getSize()
-			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
-		end
-		function m:update(dt, cmp, test)
-			Draggable.update(self)
-
-			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
-			self.shader:send("width", self.width * self.scale)
-			self.shader:send("height", self.height * self.scale)
-			self.shader:send("resolution", cmp)
-			self.shader:send("test", test)
-			self.shader:send("x", self.x)
-			self.shader:send("y", self.y)
-		end
-		function m:draw()
-			self.d:draw(self.x, self.y, self.scale)
-			love.graphics.setShader(self.shader)
-			self.d:draw(self.x, self.y, self.scale)
-			love.graphics.setShader()
-		end
-
-		m:load()
-		m.x = 100
-		self.EventDispatch:add(m)
-
-		local m = Modulable.create(Draggable)
-		function m:load()
-			self.d = Dictionnary['Untitled_master'][8]
-			self.scale = 1
-			self.x, self.y = 0, 0
-			self.width, self.height = 200, 200
-			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
-		end
-		function m:update(dt, cmp, test)
-			Draggable.update(self)
-
-			self.shader = love.graphics.newShader('shaders/test_shader2.glsl')
-			self.shader:send("width", self.width * self.scale)
-			self.shader:send("height", self.height * self.scale)
-			self.shader:send("resolution", cmp)
-			self.shader:send("test", test)
-			self.shader:send("x", self.x)
-			self.shader:send("y", self.y)
-		end
-		function m:draw()
-			love.graphics.setShader(self.shader)
-			love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
-			love.graphics.setShader()
-		end
-
-		m:load()
-		m.x = 200
-		self.EventDispatch:add(m)
-	end,
-	update = function (self, dt)
-		if not self.pause then self.time = self.time + dt / 2.5 end
-		self.test = math.cos(self.time) * 4
-
-		self.EventDispatch.update:dispatch(dt, self.cmp, self.test)
-	end,
-	draw = function (self)
-		love.graphics.print(self.time, 0, 0)
-		love.graphics.print(self.cmp, 0, 15)
-		love.graphics.print(self.test, 0, 30)
-
-
-		self.EventDispatch.draw:dispatch()
-
-		Dictionnary.banner:draw()
-	end,
-	wheelmoved = function (self, x, y)
-		self.cmp  = self.cmp + y
-	end,
-	keypressed = function (self, key)
-		if key == 'space' then State('Other') end
-		if key == 'return' then
-			if self.pause then self.pause = false
-			else self.pause = true end
-		end
-
-
-		if key == 'a' then
-			self.test = self.test + 1
-		elseif key == 'z' then
-			self.test = self.test - 1
-		end
-
-		if key == 'w' then
-			self.cmp = self.cmp + 1
-		elseif key == 'x' then
-			self.cmp = self.cmp - 1
-		end
-
-
-	end
-}
-
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  TEST:UI
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-01-31 15:24:23
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-13 13:20:41
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: UI
--- namespace:
--- description: The UI module
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "UI"
--- examples:
-
-local UI = {}
-
-----
--- name: Container
--- namespace: UI
--- description: A basic UI container
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "UI", "Container"
--- examples: "container = UI.Container:create(...)"
-
-UI.Container = require 'libs.ui.container'
-
-return UI
---          `--::-.`
---      ./shddddddddhs+.
---    :yddddddddddddddddy:
---  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  new_test:container
--- /ddddy:oddddddddds:sddddd/ By adebray - adebray
--- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2016-02-11 17:15:43
--- :ddddddddddhyyddddddddddd: Modified: 2016-02-16 00:28:19
---  odddddddd/`:-`sdddddddds
---   +ddddddh`+dh +dddddddo
---    -sdddddh///sdddddds-
---      .+ydddddddddhs/.
---          .-::::-`
-
-----
--- name: Container
--- namespace:
--- description: The UI Container module.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Container", "Drawable"
--- examples:
-
-local Container = Drawable:expand()
-
-Container.name = 'Container'
-
-----
--- name: create_from_nothing
--- namespace: Container
--- description: Create a Container from nothing.
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Container"
--- examples:
-
-function Container:create_from_nothing()
-	local c = Drawable.create(self)
-
-	c.x, c.y = 0, 0
-	c.width, c.height = 0, 0
-	c.queue = {}
-
-	return c
-end
-
-----
--- name: create_from_Image
--- namespace: Container
--- description: Create a Container from an Image
--- extendedDescription:
--- arguments: "Image"
--- returns:
--- tags: "v0.0", "Container"
--- examples:
-
-function Container:create_from_Image(image)
-	return Drawable.create(self, image)
-end
-
-----
--- name: create_from_dimensions
--- namespace: Container
--- description: Create a Container from a sizing.
--- extendedDescription:
--- arguments: "width", "height"
--- returns:
--- tags: "v0.0", "Container"
--- examples:
-
-function Container:create_from_dimensions(width, height)
-	local c = Drawable.create(self)
-
-	c.x, c.y = 0, 0
-	c.width, c.height = width, height
-	c.queue = EventDispatcher:create()
-
-	return c
-end
-
-----
--- name: create_from_description
--- namespace: Container
--- description: Create a Container from a Description
--- extendedDescription:
--- arguments: "description", "width", "height"
--- returns:
--- tags: "v0.0", "Container", "Description"
--- examples:
-
-function Container:create_from_description(desc, width, height)
-	local c = Compound.create(self, desc, width, height)
-	c.queue = EventDispatcher:create()
-
-	return c
-end
-
-----
--- name: push
--- namespace: Container
--- description: Adds an item to a Container and calculate his position relative to the inner queue.
--- extendedDescription:
--- arguments: "item"
--- returns:
--- tags: "v0.0", "Container"
--- examples:
-
-function Container:push(item)
-	if item.x < self.x then item.x = self.x end
-	if item.y < self.y then item.y = self.y end
-
-	local last_elem = self.last_elem
-	if last_elem then
-		if last_elem.y + last_elem.height + item.height < self.y + self.height then
-			item.y = last_elem.y + last_elem.height - self.padd / 2
-			if last_elem.x > item.x then
-				item.x = last_elem.x - self.padd / 2
-			end
-		else
-			item.x = last_elem.x + last_elem.width
-		end
-	end
-
-	local padd = self.height - item.height
-	if not self.padd then self.padd = padd
-	elseif padd < self.padd then self.padd = padd end
-
-	item.x = item.x + self.padd / 2
-	item.y = item.y + self.padd / 2
-
-	self.queue:add(item)
-	self.last_elem = item
-	return item
-end
-
-----
--- name: update
--- namespace: Container
--- description: The update event for EventDispatcher
--- extendedDescription:
--- arguments: "dt"
--- returns:
--- tags: "v0.0", "Container", "EventDispatcher"
--- examples:
-
-function Container:update(dt)
-	self.queue.update:dispatch(dt)
-end
-
-----
--- name: mousepressed
--- namespace: Container
--- description: The mousepressed event for EventDispatcher
--- extendedDescription:
--- arguments: "x", "y", "button"
--- returns:
--- tags: "v0.0", "Container", "EventDispatcher"
--- examples:
-
-function Container:mousepressed(x, y, button)
-	self.queue.mousepressed:dispatch(x, y, button)
-end
-
-----
--- name: draw
--- namespace: Container
--- description: The draw event for EventDispatcher
--- extendedDescription:
--- arguments: "x", "y", "scale"
--- returns:
--- tags: "v0.0", "Container", "EventDispatcher"
--- examples:
-
-function Container:draw(x, y, scale)
-	if self.image then
-		Drawable.draw(self, x, y, scale)
-	end
-
-	self.queue.draw:dispatch(x, y, scale)
-end
-
-----
--- name: create
--- namespace: Container
--- description: Standard Selector Constructor
--- extendedDescription:
--- arguments:
--- returns:
--- tags: "v0.0", "Container"
--- examples: "Container:create()", "Container:create({}, 100, 100)", "Container:create(100, 100)", "Container:create(image)"
-
-function Container:create(...)
-	return definitions_solver(self, {
-		['_'] = function (...) print('Container.anything', {...}) end,
-		['nil'] = Container.create_from_nothing,
-		['table, number, number'] = Container.create_from_description,
-		['number, number'] = Container.create_from_dimensions,
-		['Image'] = Container.create_from_Image
-	}, ...)
-end
-
-
-return Container
+]
