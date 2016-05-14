@@ -33,7 +33,7 @@ return {
 		local elem = Loader:load()
 
 		if elem then self.text = elem
-		else State(State.previous) end
+		else State(State.next()) end
 	end,
 
 	draw = function (self)

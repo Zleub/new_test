@@ -86,7 +86,6 @@ function Map:keypressed(key)
 	if key == 'end' then
 		if self.div > 1 then self.div = self.div - 1 end
 	end
-	if key == 'space' then State('Test') end
 end
 
 function Map:wheelmoved(x, y)

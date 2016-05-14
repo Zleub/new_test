@@ -135,7 +135,6 @@ return {
 	end,
 
 	keypressed = function (self, key)
-		if key == 'space' then State('Map') end
 		if key == 'a' then self.time = 1 end
 
 		if key == 'q' then self.mousewheel = self.mousewheel + 1 end

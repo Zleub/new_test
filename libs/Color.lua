@@ -122,9 +122,9 @@ function Color.shell(str, color)
 	}
 
 	if colors[color] then
-		return('\27[38;5;'..colors[color]..'m'..str..'\27[38;5;7m')
+		return('\27[38;5;'..colors[color]..'m'..str..'\27[39m')
 	else
-		return('\27[38;5;'..color..'m'..str..'\27[38;5;7m')
+		return('\27[38;5;'..color..'m'..str..'\27[39m')
 	end
 
 end

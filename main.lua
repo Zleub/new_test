@@ -18,16 +18,19 @@ inspect = require 'exts.inspect'
 require 'libs.Lib'
 
 require_list(
-	'libs.Class',
+	-- 'libs.Class',
 
 	'libs.Dictionnary',
-	'libs.Drawable',
-	'libs.Draggable',
-	'libs.Compound',
+	-- 'libs.Drawable',
+	-- 'libs.Draggable',
+	-- 'libs.Compound',
 	'libs.EventDispatcher',
-	'libs.CanvasBatch',
-	'libs.Clickable',
+	-- 'libs.CanvasBatch',
+	-- 'libs.Clickable',
 	'libs.Modulable',
+
+	-- 0.1
+	'libs.Description',
 
 	'libs.Color',
 	'libs.UI',
@@ -48,8 +51,7 @@ function love.load()
 	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_m', 'character')
 	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_f', 'character')
 
-	State.previous = 'Test'
-	State('Loading')
+	State(State.list[1])
 end
 
 function love.update(dt)

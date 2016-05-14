@@ -110,6 +110,18 @@ function Compound:create_from_size(desc, width, height)
 end
 
 ----
+-- name: draw
+-- namespace: Compound
+-- description: The standard implementation of Drawable's draw
+-- extendedDescription:
+-- arguments: "x", "y", "scale"
+-- returns:
+-- tags: "v0.0", "Compound"
+-- examples:
+
+function Compound:draw(...) Drawable.draw(self, ...) end
+
+----
 -- name: create
 -- namespace: Compound
 -- description: Standard Selector Constructor

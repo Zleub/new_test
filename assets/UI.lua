@@ -42,4 +42,6 @@ config.exports.test = {
 	{ 1 + 25 * 3, 2 + 25 * 3, 3 + 25 * 3 },
 }
 
+config.exports.ul = 26
+
 return config

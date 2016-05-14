@@ -13,7 +13,7 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-local Modulable = Class:expand()
+local Modulable = {}
 
 ----
 -- name: Modulable

@@ -35,6 +35,6 @@ local UI = {}
 -- tags: "v0.0", "UI", "Container"
 -- examples: "container = UI.Container:create(...)"
 
-UI.Container = require 'libs.ui.container'
+-- UI.Container = require 'libs.ui.container'
 
 return UI

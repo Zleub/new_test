@@ -45,9 +45,9 @@ setmetatable(State, {
 
 		self.previous = self.current or self.previous
 
-		print(self.previous..' -> '..state)
+		-- print(self.previous..' -> '..state)
 		self.current = state
-
+		debug(self.current)
 		if not self.once_t[self.current] and self[self.current].once then
 			self.once_t[self.current] = true
 			self[self.current]:once()
@@ -83,9 +83,11 @@ function State:wheelmoved(x, y)
 	end
 end
 
-function State:keypressed(x, y)
-	if State[self.current].keypressed then
-		State[self.current]:keypressed(x, y)
+function State:keypressed(key)
+	if key == 'space' then
+		State(State.next())
+	elseif State[self.current].keypressed then
+		State[self.current]:keypressed(key)
 	end
 end
 
@@ -102,15 +104,20 @@ end
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "v0.0", "State", "Loading", "Test", "Other", "Map"
+-- tags: "v0.0", "State", "Loading", "Test", "Other", "Map", "Menu"
 -- examples:
+State.index = 1
+State.list = { "Loading", "Test" } --, "Other", "Map", "Menu" }
+function State.next()
+	if State.index + 1 > #State.list then State.index = 0 end
+	State.index = State.index + 1
+	return State.list[State.index]
+end
 
 State.Loading = require('libs.state.loading')
-
 State.Test = require('libs.state.test')
-
-State.Other = require('libs.state.other')
-
-State.Map = require('libs.state.map')
+-- State.Other = require('libs.state.other')
+-- State.Map = require('libs.state.map')
+-- State.Menu = require('libs.state.menu')
 
 return State

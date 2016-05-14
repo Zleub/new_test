@@ -23,8 +23,8 @@
 -- tags: "v0.0", "EventDispatcher"
 -- examples: "ED = EventDispatcher:create()", "ED:add( drawable )"
 
-local EventDispatcher = Class:expand()
-local Event = Class:expand()
+local EventDispatcher = {}
+local Event = {}
 local events = {
 	'load',
 	'update',

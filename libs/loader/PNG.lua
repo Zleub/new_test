@@ -13,8 +13,6 @@
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-QuadList = require 'libs.QuadList'
-
 ----
 -- name: PNG
 -- namespace:
@@ -34,16 +32,13 @@ local PNG = {}
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "v0.0", "PNG"
+-- tags: "v0.1", "PNG"
 -- examples: "{\n screen = {\n  name = 'screen',\n  model = {\n   width = 'number',\n   height = 'number'\n  },\n }\n}"
 
-PNG.mandatoryAPI = {
+PNG.mandatoryAPI = Description.mandatoryAPI {
 	screen = {
-		name = "screen",
-		model = {
-			width = 'number',
-			height = 'number'
-		},
+		width = 'number',
+		height = 'number'
 	}
 }
 
@@ -54,28 +49,22 @@ PNG.mandatoryAPI = {
 -- extendedDescription:
 -- arguments:
 -- returns:
--- tags: "v0.0", "PNG"
+-- tags: "v0.1", "PNG"
 -- examples: "{\n grid = {\n  name = 'grid',\n  model = {\n   width = 'number',\n   height = 'number'\n  }\n },\n spacing = {\n  name = 'spacing',\n  model = {\n   width = {\n    type = 'number',\n    value = 0\n   },\n   height = {\n    type = 'number',\n    value = 0\n   }\n  }\n }\n}"
 
-PNG.optionalAPI = {
+PNG.optionalAPI = Description.optionalAPI {
 	grid = {
-		name = "grid",
-		model = {
-			width = 'number',
-			height = 'number'
-		}
+		width = 'number',
+		height = 'number'
 	},
 	spacing = {
-		name = "spacing",
-		model = {
-			width = {
-				type = 'number',
-				value = 0
-			},
-			height = {
-				type = 'number',
-				value = 0
-			}
+		width = {
+			type = 'number',
+			value = 0
+		},
+		height = {
+			type = 'number',
+			value = 0
 		}
 	}
 }
@@ -114,38 +103,57 @@ function PNG.files(path, filename, configname)
 end
 
 ----
--- name: load
+-- name: load_from_path
 -- namespace: PNG
 -- description: This function applies a config upon a Image and load the result into the Dictionnary
 -- extendedDescription:
 -- arguments: "path", "filename", "configname"
 -- returns:
--- tags: "v0.0", "PNG"
+-- tags: "v0.1", "PNG"
 -- examples:
 
-function PNG:load(path, filename, configname)
+function PNG:load_from_path(path, filename, configname)
+	-- print('PNG.load '..filename)
+
 	config, img = PNG.files(path, filename, configname)
-	config = Loader.check(self, config)
 
-	if config and config.grid then
+	err, msg = self.mandatoryAPI(config)
+	if not err then return print(msg..'\nin '..Color.shell(filename..'.lua', 'red')) end
 
-		local quadlist = QuadList.create(config, img)
-		Dictionnary(filename, QuadList.toCanvasList(config, quadlist))
+	err, msg = self.optionalAPI(config)
+	if not err then return print(msg..'\nin '..Color.shell(filename..'.lua', 'red')) end
 
+	if config and config.grid.width and config.grid.height then
 
-		if config.exports then
-			for k,v in pairs(config.exports) do
-				Dictionnary(k, Compound:create(filename, v))
-			end
-		end
+		-- local quadlist = QuadList.create(config, img)
+		-- Dictionnary(filename, QuadList.toCanvasList(config, quadlist))
 
-	else
-		local d = Drawable:create(img)
+		-- if config.exports then
+		-- 	for k,v in pairs(config.exports) do
+		-- 		if type(v) == 'table' then
+		-- 			Dictionnary(k, Compound:create(filename, v))
+		-- 		elseif type(v) == 'number' then
+		-- 			Dictionnary(k, quadlist[v])
+		-- 		else
+		-- 			print('PNG loading error')
+		-- 		end
+		-- 	end
+		-- end
 
-		Dictionnary(filename, d)
 	end
+	-- Dictionnary(filename, img)
+
+	Loader.Image:load(filename, img)
 
 	return filename
+end
+
+function PNG:load(...)
+	return definitions_solver(self, {
+		-- ['_'] = function (...) debug('PNG.anything', {...}) end,
+		['string, string'] = PNG.load_from_path,
+		['string, string, string'] = PNG.load_from_path
+	}, ...)
 end
 
 return PNG
