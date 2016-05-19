@@ -123,27 +123,7 @@ function PNG:load_from_path(path, filename, configname)
 	err, msg = self.optionalAPI(config)
 	if not err then return print(msg..'\nin '..Color.shell(filename..'.lua', 'red')) end
 
-	if config and config.grid.width and config.grid.height then
-
-		-- local quadlist = QuadList.create(config, img)
-		-- Dictionnary(filename, QuadList.toCanvasList(config, quadlist))
-
-		-- if config.exports then
-		-- 	for k,v in pairs(config.exports) do
-		-- 		if type(v) == 'table' then
-		-- 			Dictionnary(k, Compound:create(filename, v))
-		-- 		elseif type(v) == 'number' then
-		-- 			Dictionnary(k, quadlist[v])
-		-- 		else
-		-- 			print('PNG loading error')
-		-- 		end
-		-- 	end
-		-- end
-
-	end
-	-- Dictionnary(filename, img)
-
-	Loader.Image:load(filename, img)
+	Loader.Image:load(filename, img, config)
 
 	return filename
 end

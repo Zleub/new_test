@@ -23,10 +23,11 @@ require_list(
 	'libs.Dictionnary',
 	-- 'libs.Drawable',
 	-- 'libs.Draggable',
-	-- 'libs.Compound',
+	'libs.Compound',
 	'libs.EventDispatcher',
 	-- 'libs.CanvasBatch',
 	-- 'libs.Clickable',
+	'libs.QuadList',
 	'libs.Modulable',
 
 	-- 0.1

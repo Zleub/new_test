@@ -62,13 +62,15 @@ function Description.match(model)
 		for k,v in pairs(model) do
 			if not t then
 				err, msg = Description.error(model, k)
-			elseif not t[k] then
+			elseif type(t) ~= 'table' and type(t) ~= model[k] then
 				err, msg = Description.error(model, k)
-			elseif type(model[k]) == 'table' and type(t[k]) ~= 'table' then
+			elseif type(t) == 'table' and not t[k] then
 				err, msg = Description.error(model, k)
-			elseif type(model[k]) == 'table' then
+			elseif type(t) == 'table' and type(model[k]) == 'table' and type(t[k]) ~= 'table' then
+				err, msg = Description.error(model, k)
+			elseif type(t) == 'table' and type(model[k]) == 'table' then
 				err, msg = Description(model[k])(t[k], k)
-			elseif type(t[k]) ~= model[k] then
+			elseif type(t) == 'table' and type(t[k]) ~= model[k] then
 				err, msg = Description.error(model, k) end
 
 			if i and not err then return false, msg..'\nin'..i end

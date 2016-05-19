@@ -42,6 +42,12 @@ config.exports.test = {
 	{ 1 + 25 * 3, 2 + 25 * 3, 3 + 25 * 3 },
 }
 
-config.exports.ul = 26
+config.exports.test2 = {
+	width = love.graphics.getWidth(),
+	height = love.graphics.getHeight() / 4,
+	ul = 26, ur = 28, dl = 76, dr = 78,
+	bl = 51, br = 53, bu = 27, bd = 77,
+	body = 52
+}
 
 return config
