@@ -46,11 +46,13 @@ function love.load()
 	Loader:push( Loader.PNG, 'assets/', 'pict' )
 	Loader:push( Loader.PNG, 'assets/', 'hyptosis_tile-art-batch-1' )
 	Loader:push( Loader.PNG, 'assets/', 'hyptosis_tile-art-batch-2' )
-	Loader:push( Loader.PNG, 'assets/', 'Untitled_master' )
+	Loader:push( Loader.PNG, 'assets/', 'fighter' )
 	Loader:push( Loader.PNG, 'assets/', 'UI' )
 
 	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_m', 'character')
 	Loader:push( Loader.PNG, 'assets/characters/', 'warrior_f', 'character')
+
+	Loader:push( Loader.Class, 'content/', 'fighter')
 
 	State(State.list[1])
 end
