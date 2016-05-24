@@ -45,9 +45,8 @@ setmetatable(State, {
 
 		self.previous = self.current or self.previous
 
-		-- print(self.previous..' -> '..state)
 		self.current = state
-		debug(self.current)
+		if (self.previous) then print(self.previous..' -> '..state) end
 		if not self.once_t[self.current] and self[self.current].once then
 			self.once_t[self.current] = true
 			self[self.current]:once()
@@ -84,7 +83,12 @@ function State:wheelmoved(x, y)
 end
 
 function State:keypressed(key)
-	if key == 'space' then
+	if key == '`' then
+		print('Updating State File ->', State.current)
+		if State.once_t[State.current] then State.once_t[State.current] = nil end
+		State[State.current] = dofile('libs/state/'..string.lower(State.current)..'.lua')
+		State(State.current)
+	elseif key == 'space' then
 		State(State.next())
 	elseif State[self.current].keypressed then
 		State[self.current]:keypressed(key)
@@ -107,7 +111,7 @@ end
 -- tags: "v0.0", "State", "Loading", "Test", "Other", "Map", "Menu"
 -- examples:
 State.index = 1
-State.list = { "Loading", "Test" } --, "Other", "Map", "Menu" }
+State.list = { "Loading", "CharacterCreation", "Test" } --, "Other", "Map", "Menu" }
 function State.next()
 	if State.index + 1 > #State.list then State.index = 0 end
 	State.index = State.index + 1
@@ -116,6 +120,7 @@ end
 
 State.Loading = require('libs.state.loading')
 State.Test = require('libs.state.test')
+State.CharacterCreation = require('libs.state.character_creation')
 -- State.Other = require('libs.state.other')
 -- State.Map = require('libs.state.map')
 -- State.Menu = require('libs.state.menu')

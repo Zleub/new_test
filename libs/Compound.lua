@@ -22,10 +22,17 @@ function Compound:create(desc, width, height)
 		love.graphics.draw(d[desc.br], desc.width - width, i * height)
 	end
 
-	love.graphics.draw(d[desc.ul])
-	love.graphics.draw(d[desc.ur], desc.width - width)
-	love.graphics.draw(d[desc.dl], 0, desc.height - height)
-	love.graphics.draw(d[desc.dr], desc.width - width, desc.height - height)
+	function _(image, x, y)
+		love.graphics.setScissor(x or 0, y or 0, image:getDimensions())
+		love.graphics.clear()
+		love.graphics.setScissor()
+		love.graphics.draw(image, x, y)
+	end
+
+	_(d[desc.ul])
+	_(d[desc.ur], desc.width - width)
+	_(d[desc.dl], 0, desc.height - height)
+	_(d[desc.dr], desc.width - width, desc.height - height)
 	love.graphics.setCanvas()
 
 	return love.graphics.newImage(c:newImageData())

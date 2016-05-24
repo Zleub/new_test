@@ -89,5 +89,6 @@ end
 Loader.PNG = require 'libs.loader.PNG'
 Loader.Shader = require 'libs.loader.Shader'
 Loader.Image = require 'libs.loader.Image'
+Loader.Class = require 'libs.loader.Class'
 
 return Loader

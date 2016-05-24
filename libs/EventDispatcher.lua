@@ -73,6 +73,14 @@ function EventDispatcher:add(elem)
 	end
 end
 
+function EventDispatcher:set(key, elem)
+	for k,v in pairs(elem) do
+		if self[k] and type(self[k]) == 'table' then
+			self[k][key] = elem
+		end
+	end
+end
+
 ----
 -- name: create
 -- namespace: EventDispatcher
@@ -84,10 +92,10 @@ end
 -- examples: "ED = EventDispatcher:create()"
 
 function EventDispatcher:create()
-	local e = Class.create(self)
+	local e = setmetatable({}, { __index = function (t, i) return EventDispatcher[i] end })
 
 	for i,v in ipairs(events) do
-		e[v] = Class.create(Event)
+		e[v] = setmetatable({}, { __index = function (t, i) return Event[i] end })
 		e[v].name = v
 	end
 
